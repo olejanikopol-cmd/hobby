@@ -33,7 +33,7 @@ button{font-family:inherit;cursor:pointer}
     <nav aria-label="Кабінет" style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 24px; background: #FFFFFF">
       <div style="display: flex; align-items: center; gap: 12px; padding: 8px 8px 16px">
         <span aria-hidden="true" style="width: 52px; height: 52px; border-radius: 50%; background: #F4E4D4; display: flex; align-items: center; justify-content: center; font-family: var(--f-head); font-size: 18px; font-weight: 700">ОК</span>
-        <span style="display: flex; flex-direction: column"><span style="font-size: 16px; font-weight: 800">Оксана Коваль</span><span style="font-size: 13px; color: #56665D">Учасниця Київ</span></span>
+        <span style="display: flex; flex-direction: column"><span style="font-size: 16px; font-weight: 800">Оксана Коваль</span><span style="font-size: 13px; color: #56665D">Учасниця, Київ</span></span>
       </div>
       <sc-for list="{{menu}}" as="m" hint-placeholder-count="4">
         <a href="#" aria-current="{{m.current}}" style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 12px; border-radius: 12px; background: {{m.bg}}; color: {{m.fg}}; text-decoration: none; font-size: 15px; font-weight: 700">{{m.label}}<span style="font-size: 13px; color: #56665D">{{m.count}}</span></a>
@@ -43,7 +43,7 @@ button{font-family:inherit;cursor:pointer}
         <span style="font-family: var(--f-wave); font-size: 18px; font-weight: 700; color: #F0B23E">Режим ведучого</span>
         <span style="font-size: 14px; line-height: 1.4; color: #E4EFE8">Створи заняття і з’явись на карті</span>
       </a>
-      <a href="#" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; margin-top: 4px; color: #56665D; text-decoration: none; font-size: 15px; font-weight: 600">Вийти</a>
+      <a href="Landing.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; margin-top: 4px; color: #56665D; text-decoration: none; font-size: 15px; font-weight: 600">Вийти</a>
     </nav>
 
     <main style="flex: 999 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
@@ -113,14 +113,14 @@ class Component extends DCLogic {
         { label: 'Налаштування', count: '', current: 'false', bg: 'transparent', fg: '#16241D' }
       ],
       bookings: [
-        Object.assign({ dow: 'Ср', day: '28', month: 'жовт', tint: '#F4E4D4', status: 'Сьогодні підтверджено', kind: 'Майстер-клас', title: 'Гончарство для новачків', meta: '19:00–21:00 Поділ 650 ₴ на місці веде Олена Ткач' }, OK),
-        Object.assign({ dow: 'Сб', day: '31', month: 'жовт', tint: '#D6EBE4', status: 'Підтверджено', kind: 'Клуб', title: 'Біговий клуб: 5 км островом', meta: '08:00 Труханів острів безкоштовно' }, OK),
-        { dow: 'Вт', day: '03', month: 'лист', tint: '#E3E6F4', status: 'Очікує підтвердження', statusBg: '#FFF1D6', statusFg: '#6B4A0E', kind: 'Курс 8 занять', title: 'Акварель з нуля', meta: 'Старт о 18:30 Печерськ 3200 ₴ за курс' }
+        Object.assign({ dow: 'Ср', day: '28', month: 'жовт', tint: '#F4E4D4', status: 'Сьогодні, підтверджено', kind: 'Майстер-клас', title: 'Гончарство для новачків', meta: '19:00–21:00, Поділ, 650 ₴ на місці, веде Олена Ткач' }, OK),
+        Object.assign({ dow: 'Сб', day: '31', month: 'жовт', tint: '#D6EBE4', status: 'Підтверджено', kind: 'Клуб', title: 'Біговий клуб: 5 км островом', meta: '08:00, Труханів острів, безкоштовно' }, OK),
+        { dow: 'Вт', day: '03', month: 'лист', tint: '#E3E6F4', status: 'Очікує підтвердження', statusBg: '#FFF1D6', statusFg: '#6B4A0E', kind: 'Курс, 8 занять', title: 'Акварель з нуля', meta: 'Старт о 18:30, Печерськ, 3200 ₴ за курс' }
       ],
       favs: [
-        { cat: 'Танці', tint: '#F5DFDF', title: 'Сальса: урок і вечірка', meta: 'Завтра, 20:00 300 ₴' },
-        { cat: 'Спорт', tint: '#DCEBE2', title: 'Секція боксу для дорослих', meta: 'Пн, Ср, Пт 1400 ₴/міс' },
-        { cat: 'Ремесла', tint: '#F4E4D4', title: 'Столярка: дошка для подачі', meta: 'Нд, 12:00 900 ₴' }
+        { cat: 'Танці', tint: '#F5DFDF', title: 'Сальса: урок і вечірка', meta: 'Завтра, 20:00, 300 ₴' },
+        { cat: 'Спорт', tint: '#DCEBE2', title: 'Секція боксу для дорослих', meta: 'Пн, Ср, Пт, 1400 ₴/міс' },
+        { cat: 'Ремесла', tint: '#F4E4D4', title: 'Столярка: дошка для подачі', meta: 'Нд, 12:00, 900 ₴' }
       ]
     };
   }

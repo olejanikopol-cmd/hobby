@@ -18,7 +18,7 @@ body{margin:0;background:#FFFFFF}
 
   <div style="display: flex; flex-direction: column; gap: 8px">
     <h1 style="margin: 0; font-family: 'Golos Text', sans-serif; font-size: 44px; font-weight: 700">Шрифти hobbyl</h1>
-    <p style="margin: 0; font-size: 17px; color: #56665D">Три ролі: жирний для заголовків хвилястий для акцентів спокійний для тексту. Усі з українськими літерами ґ ї є і та знаком ₴.</p>
+    <p style="margin: 0; font-size: 17px; color: #56665D">Три ролі: жирний для заголовків, хвилястий для акцентів, спокійний для тексту. Усі з українськими літерами ґ ї є і та знаком ₴.</p>
   </div>
 
   <div style="display: flex; gap: 32px; align-items: center; padding: 36px 40px; border-radius: 28px; background: #2F6B4F; color: #FFFFFF">
@@ -30,7 +30,7 @@ body{margin:0;background:#FFFFFF}
     <div style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 22px; background: #FFFFFF; color: #16241D">
       <span style="font-family: 'Comfortaa', cursive; font-size: 20px; font-weight: 700; color: #2F6B4F">Зараз поруч!</span>
       <span style="font-family: 'Golos Text', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Гончарство для новачків</span>
-      <span style="font-size: 15px; color: #56665D">Сьогодні, 19:00 Поділ</span>
+      <span style="font-size: 15px; color: #56665D">Сьогодні, 19:00, Поділ</span>
       <span style="font-size: 22px; font-weight: 800">650 ₴</span>
     </div>
   </div>
@@ -65,7 +65,7 @@ body{margin:0;background:#FFFFFF}
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1560}}'>
 class Component extends DCLogic {
   renderVals() {
-    const S = 'Є їжак, ґречний і щедрий 650 ₴';
+    const S = 'Є їжак, ґречний і щедрий, 650 ₴';
     const WAVE = '\'BNCE\' 50, \'INFM\' 50';
     const mk = (name, css, w, size, badge, fv) => ({
       name, css, w, size, badge: badge || '', fv: fv || 'normal', sample: S,
@@ -73,21 +73,21 @@ class Component extends DCLogic {
     });
     return {
       columns: [
-        { title: 'Жирний заголовки', items: [
+        { title: 'Жирний: заголовки', items: [
           mk('Literata', '\'Literata\', serif', 700, 24),
           mk('Source Serif 4', '\'Source Serif 4\', serif', 700, 24),
           mk('Lora', '\'Lora\', serif', 700, 24),
           mk('Onest 800 (без засічок)', '\'Onest\', sans-serif', 800, 24),
           mk('Golos Text 800 (без засічок)', '\'Golos Text\', sans-serif', 800, 24, '★ обрано')
         ] },
-        { title: 'Хвилястий акценти', items: [
+        { title: 'Хвилястий: акценти', items: [
           mk('Shantell Sans', '\'Shantell Sans\', cursive', 700, 24, '', WAVE),
           mk('Playpen Sans', '\'Playpen Sans\', cursive', 700, 24),
           mk('Comfortaa', '\'Comfortaa\', cursive', 700, 22, '★ обрано'),
           mk('Caveat', '\'Caveat\', cursive', 700, 30),
           mk('Pangolin', '\'Pangolin\', cursive', 400, 24)
         ] },
-        { title: 'Текст картки і форми', items: [
+        { title: 'Текст: картки і форми', items: [
           mk('Onest', '\'Onest\', sans-serif', 400, 19, '★ обрано'),
           mk('Golos Text', '\'Golos Text\', sans-serif', 400, 19),
           mk('Nunito Sans', '\'Nunito Sans\', sans-serif', 400, 19),

@@ -21,7 +21,7 @@ button{cursor:pointer}
 <div style="min-height: 100vh; display: flex; flex-direction: column; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
 
   <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 14px 24px; border-bottom: 1px solid #DCE6DF">
-    <a href="#" aria-label="hobbyl — на головну" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #16241D">
+    <a href="Landing.dc.html" aria-label="hobbyl — на головну" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #16241D">
       <svg aria-hidden="true" width="30" height="30" viewBox="0 0 28 28"><path d="M14 2C8.5 2 4.5 6.2 4.5 11.4c0 6.6 7.6 13.2 8.9 14.3.4.3.9.3 1.2 0 1.3-1.1 8.9-7.7 8.9-14.3C23.5 6.2 19.5 2 14 2z" fill="{{accent}}"></path><circle cx="14" cy="11.5" r="4" fill="#FFFFFF"></circle></svg>
       <span style="font-family: var(--f-wave); font-weight: 800; font-size: 26px">hobbyl</span>
     </a>
@@ -35,8 +35,8 @@ button{cursor:pointer}
       <input type="search" aria-label="Пошук хобі" placeholder="Гончарство, бокс, йога…" style="flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: 15px; color: #16241D">
     </label>
     <div style="margin-left: auto; display: flex; align-items: center; gap: 4px">
-      <a href="#" style="display: flex; align-items: center; height: 44px; padding: 0 14px; font-size: 15px; font-weight: 700; text-decoration: none; color: {{accent}}">Стати ведучим</a>
-      <button type="button" style="height: 44px; padding: 0 22px; border: 0; border-radius: 999px; background: {{accent}}; color: #FFFFFF; font-size: 15px; font-weight: 700">Увійти</button>
+      <a href="CreateClass.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 14px; font-size: 15px; font-weight: 700; text-decoration: none; color: {{accent}}">Стати ведучим</a>
+      <a href="Auth.dc.html" style="display: flex; align-items: center; text-decoration: none; height: 44px; padding: 0 22px; border: 0; border-radius: 999px; background: {{accent}}; color: #FFFFFF; font-size: 15px; font-weight: 700">Увійти</a>
     </div>
   </header>
 
@@ -52,7 +52,7 @@ button{cursor:pointer}
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="3"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg>
         Обрати дату
       </button>
-      <span style="margin-left: auto; font-size: 13px; color: #56665D">Ср, 28 жовтня 17:40 «Зараз» — старт у найближчі 2 години</span>
+      <span style="margin-left: auto; font-size: 13px; color: #56665D">Ср, 28 жовтня, 17:40. «Зараз» — старт у найближчі 2 години</span>
     </div>
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
       <sc-for list="{{catChips}}" as="c" hint-placeholder-count="7">
@@ -91,7 +91,7 @@ button{cursor:pointer}
             </p>
             <p style="margin: 0; display: flex; align-items: center; gap: 6px; font-size: 14px; color: #56665D">
               <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
-              {{it.place}} {{it.host}}
+              {{it.place}}, {{it.host}}
             </p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px">
               <button type="button" onClick="{{it.pick}}" style="height: 44px; padding: 0 16px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; font-size: 14px; font-weight: 700">На карті</button>
@@ -132,9 +132,9 @@ button{cursor:pointer}
         <div style="position: absolute; left: 16px; bottom: 16px; z-index: 5; width: 420px; max-width: calc(100% - 32px); box-sizing: border-box; display: flex; gap: 14px; padding: 14px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 14px 36px rgba(22,36,29,0.20)">
           <div aria-hidden="true" style="flex: 0 0 88px; border-radius: 14px; background: {{sel.tint}}"></div>
           <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-            <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: {{accent}}">{{sel.kind}} {{sel.place}}</span>
+            <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: {{accent}}">{{sel.kind}}, {{sel.place}}</span>
             <h3 style="margin: 0; font-size: 16px; font-weight: 700; line-height: 1.3">{{sel.title}}</h3>
-            <p style="margin: 0; font-size: 14px; color: #56665D">{{sel.time}} веде {{sel.host}}</p>
+            <p style="margin: 0; font-size: 14px; color: #56665D">{{sel.time}}, веде {{sel.host}}</p>
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 4px">
               <span style="padding: 4px 12px; border-radius: 999px; background: {{sel.priceBg}}; color: {{sel.priceFg}}; font-size: 15px; font-weight: 800; white-space: nowrap">{{sel.price}}</span>
               <a href="Event.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 700">Записатися</a>
@@ -155,13 +155,13 @@ class Component extends DCLogic {
     const ITEMS = [
       { id: 'pottery', title: 'Гончарство для новачків: перша чашка на кругу', kind: 'Майстер-клас', cat: 'craft', time: 'Сьогодні, 19:00–21:00', place: 'Поділ', host: 'Олена Ткач', price: '650 ₴', pk: 'paid', x: 41.1, y: 40.9, tags: ['now', 'today', 'week'] },
       { id: 'chess', title: 'Шахи у сквері: грають усі охочі', kind: 'Клуб', cat: 'games', time: 'Щодня, 16:00–20:00', place: 'Золоті ворота', host: 'клуб «Е4»', price: 'Безкоштовно', pk: 'free', x: 40.5, y: 52.3, tags: ['now', 'today', 'tomorrow', 'weekend', 'week', 'always'] },
-      { id: 'boxing', title: 'Секція боксу для дорослих', kind: 'Секція', cat: 'sport', time: 'Пн, Ср, Пт 19:30', place: 'Позняки', host: 'Андрій Мельник', price: '1400 ₴/міс', pk: 'paid', x: 83.6, y: 87.8, tags: ['now', 'today', 'week', 'always'] },
+      { id: 'boxing', title: 'Секція боксу для дорослих', kind: 'Секція', cat: 'sport', time: 'Пн, Ср, Пт, 19:30', place: 'Позняки', host: 'Андрій Мельник', price: '1400 ₴/міс', pk: 'paid', x: 83.6, y: 87.8, tags: ['now', 'today', 'week', 'always'] },
       { id: 'games', title: 'Вечір настільних ігор', kind: 'Клуб', cat: 'games', time: 'Щосереди, 18:30', place: 'Лук’янівка', host: 'клуб «Кубик»', price: '150 ₴', pk: 'paid', x: 29.3, y: 43.0, tags: ['now', 'today', 'week', 'always'] },
       { id: 'salsa', title: 'Сальса: урок і вечірка', kind: 'Майстер-клас', cat: 'dance', time: 'Завтра, 20:00', place: 'Лівобережна', host: 'Ірина Бондар', price: '300 ₴', pk: 'paid', x: 70.7, y: 50.0, tags: ['tomorrow', 'week'] },
-      { id: 'yoga', title: 'Йога на світанку біля води', kind: 'Секція', cat: 'nature', time: 'Вт, Чт, Сб 07:00', place: 'Оболонь', host: 'Марта Лисенко', price: 'Донат', pk: 'donate', x: 41.8, y: 15.6, tags: ['tomorrow', 'weekend', 'week', 'always'] },
+      { id: 'yoga', title: 'Йога на світанку біля води', kind: 'Секція', cat: 'nature', time: 'Вт, Чт, Сб, 07:00', place: 'Оболонь', host: 'Марта Лисенко', price: 'Донат', pk: 'donate', x: 41.8, y: 15.6, tags: ['tomorrow', 'weekend', 'week', 'always'] },
       { id: 'run', title: 'Біговий клуб: 5 км островом', kind: 'Клуб', cat: 'nature', time: 'Щосуботи, 08:00', place: 'Труханів острів', host: 'клуб «Острів»', price: 'Безкоштовно', pk: 'free', x: 51.8, y: 43.0, tags: ['weekend', 'week', 'always'] },
-      { id: 'wood', title: 'Столярка: дошка для подачі своїми руками', kind: 'Майстер-клас', cat: 'craft', time: 'Нд, 1 листопада 12:00', place: 'Видубичі', host: 'майстерня «Стружка»', price: '900 ₴', pk: 'paid', x: 57.9, y: 82.2, tags: ['weekend', 'week'] },
-      { id: 'watercolor', title: 'Акварель з нуля: курс на 8 занять', kind: 'Курс', cat: 'art', time: 'Старт 3 листопада вт, 18:30', place: 'Печерськ', host: 'Софія Гнатюк', price: '3200 ₴ за курс', pin: '3200 ₴', pk: 'paid', x: 51.8, y: 63.3, tags: ['week'] }
+      { id: 'wood', title: 'Столярка: дошка для подачі своїми руками', kind: 'Майстер-клас', cat: 'craft', time: 'Нд, 1 листопада, 12:00', place: 'Видубичі', host: 'майстерня «Стружка»', price: '900 ₴', pk: 'paid', x: 57.9, y: 82.2, tags: ['weekend', 'week'] },
+      { id: 'watercolor', title: 'Акварель з нуля: курс на 8 занять', kind: 'Курс', cat: 'art', time: 'Старт 3 листопада, вт, 18:30', place: 'Печерськ', host: 'Софія Гнатюк', price: '3200 ₴ за курс', pin: '3200 ₴', pk: 'paid', x: 51.8, y: 63.3, tags: ['week'] }
     ];
     const CATS = [['all', 'Усі'], ['craft', 'Ремесла'], ['sport', 'Спорт'], ['art', 'Мистецтво'], ['dance', 'Танці'], ['games', 'Ігри'], ['nature', 'На природі']];
     const CAT_LABEL = {};

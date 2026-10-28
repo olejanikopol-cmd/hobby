@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<style>html,body,#m{margin:0;width:1000px;height:800px;overflow:hidden}</style>
+</head>
+<body>
+<div id="m"></div>
+<script>
+const q = new URLSearchParams(location.search);
+const el = document.getElementById('m');
+el.style.width = (q.get('w') || 1000) + 'px';
+el.style.height = (q.get('h') || 800) + 'px';
+const map = new maplibregl.Map({
+  container: 'm',
+  style: 'https://tiles.openfreemap.org/styles/positron',
+  center: [+(q.get('lon') || 30.54), +(q.get('lat') || 50.452)],
+  zoom: +(q.get('z') || 11.294),
+  attributionControl: false,
+  interactive: false,
+  fadeDuration: 0,
+  preserveDrawingBuffer: true
+});
+map.once('style.load', () => {
+  for (const l of map.getStyle().layers) {
+    const id = l.id;
+    if (l.type === 'background') map.setPaintProperty(id, 'background-color', '#F6F8F6');
+    else if (l.type === 'fill' && /water/.test(id)) map.setPaintProperty(id, 'fill-color', '#CBE3E6');
+    else if (l.type === 'fill' && /(park|wood|grass|forest|cemetery|landcover)/.test(id)) map.setPaintProperty(id, 'fill-color', '#DCEBDF');
+    else if (l.type === 'symbol' && l.layout && JSON.stringify(l.layout['text-field'] || '').includes('name')) {
+      map.setLayoutProperty(id, 'text-field', ['coalesce', ['get', 'name:uk'], ['get', 'name']]);
+    }
+  }
+});
+</script>
+</body>
+</html>

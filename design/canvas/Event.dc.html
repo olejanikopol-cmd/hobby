@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>hobbyl — сторінка заняття</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@500;600;700;800&amp;family=Onest:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght,BNCE,INFM@400..800,-100..100,0..100&amp;display=swap" rel="stylesheet">
+<style>
+:root{--f-head:'Literata',Georgia,serif;--f-wave:'Shantell Sans',cursive;--f-body:'Onest',system-ui,sans-serif}
+[style*="--f-wave"]{font-variation-settings:'BNCE' 50,'INFM' 50}
+body{margin:0;background:#FFFFFF}
+a{color:#2F6B4F}a:hover{color:#1F4D38}
+button,input{font-family:inherit}
+button{cursor:pointer}
+</style>
+</helmet>
+<div style="min-height: 100vh; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
+
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 14px 24px; border-bottom: 1px solid #DCE6DF">
+    <a href="Main.dc.html" aria-label="hobbyl — на карту" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #16241D">
+      <svg aria-hidden="true" width="30" height="30" viewBox="0 0 28 28"><path d="M14 2C8.5 2 4.5 6.2 4.5 11.4c0 6.6 7.6 13.2 8.9 14.3.4.3.9.3 1.2 0 1.3-1.1 8.9-7.7 8.9-14.3C23.5 6.2 19.5 2 14 2z" fill="#2F6B4F"></path><circle cx="14" cy="11.5" r="4" fill="#FFFFFF"></circle></svg>
+      <span style="font-family: var(--f-wave); font-weight: 800; font-size: 26px">hobbyl</span>
+    </a>
+    <label style="flex: 1 1 260px; max-width: 520px; display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 16px; border: 1px solid #D3DED7; border-radius: 999px; background: #F5F8F6; box-sizing: border-box">
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#56665D" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <input type="search" aria-label="Пошук хобі" placeholder="Гончарство, бокс, йога…" style="flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: 15px; color: #16241D">
+    </label>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 4px">
+      <a href="#" style="display: flex; align-items: center; height: 44px; padding: 0 14px; font-size: 15px; font-weight: 700; text-decoration: none; color: #2F6B4F">Стати ведучим</a>
+      <button type="button" style="height: 44px; padding: 0 22px; border: 0; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; font-size: 15px; font-weight: 700">Увійти</button>
+    </div>
+  </header>
+
+  <main style="max-width: 1200px; margin: 0 auto; padding: 20px 24px 64px; display: flex; flex-direction: column; gap: 24px">
+
+    <nav aria-label="Ви тут" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; color: #56665D">
+      <a href="Main.dc.html" style="font-weight: 600">Карта Києва</a>
+      <span aria-hidden="true">›</span>
+      <a href="#" style="font-weight: 600">Ремесла</a>
+      <span aria-hidden="true">›</span>
+      <span>Гончарство</span>
+    </nav>
+
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="padding: 6px 12px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; font-size: 13px; font-weight: 800">Майстер-клас</span>
+        <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">Ремесла</span>
+        <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">Поділ</span>
+        <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">2 години</span>
+        <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">Без досвіду</span>
+      </div>
+      <h1 style="margin: 0; max-width: 860px; font-family: var(--f-head); font-size: 40px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em">Гончарство для новачків: перша чашка на кругу</h1>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 15px; color: #56665D">
+        <span aria-hidden="true" style="width: 32px; height: 32px; border-radius: 50%; background: #F4E4D4; color: #16241D; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800">ОТ</span>
+        <span>веде <a href="Host.dc.html" style="font-weight: 700">Олена Ткач</a></span>
+        <span aria-hidden="true">·</span>
+        <span>Сьогодні, 19:00</span>
+        <span aria-hidden="true">·</span>
+        <span>Поділ</span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 12px">
+      <div style="flex: 2 1 480px; height: 400px; border-radius: 24px; background: #F4E4D4; display: flex; align-items: flex-end; padding: 20px; box-sizing: border-box">
+        <span style="padding: 6px 12px; border-radius: 999px; background: #FFFFFF; font-size: 13px; font-weight: 700; color: #56665D">[Фото з заняття: руки на кругу]</span>
+      </div>
+      <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 12px">
+        <div style="flex: 1; min-height: 194px; border-radius: 24px; background: #EADBC8; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box">
+          <span style="padding: 5px 10px; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 700; color: #56665D">[Фото: готові чашки]</span>
+        </div>
+        <div style="flex: 1; min-height: 194px; border-radius: 24px; background: #DCEBE2; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box">
+          <span style="padding: 5px 10px; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 700; color: #56665D">[Фото: студія]</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 48px">
+
+      <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 36px">
+
+        <section style="display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Про заняття</h2>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6">Сядете за гончарний круг уперше — і підете додому з відчуттям, що глина слухається. Олена покаже, як центрувати глину, витягнути стінки і зробити ручку. Досвід не потрібен, тільки одяг, який не шкода забруднити.</p>
+        </section>
+
+        <section style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Що буде</h2>
+          <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+            <li style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 16px; background: #F5F8F6">
+              <span aria-hidden="true" style="flex: 0 0 36px; height: 36px; border-radius: 50%; background: #2F6B4F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: var(--f-head); font-size: 14px; font-weight: 700">1</span>
+              <span style="flex: 1; font-size: 16px; font-weight: 600">Знайомство з глиною і кругом</span>
+              <span style="font-size: 14px; color: #56665D">20 хв</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 16px; background: #F5F8F6">
+              <span aria-hidden="true" style="flex: 0 0 36px; height: 36px; border-radius: 50%; background: #2F6B4F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: var(--f-head); font-size: 14px; font-weight: 700">2</span>
+              <span style="flex: 1; font-size: 16px; font-weight: 600">Робота на кругу: чашка або піала</span>
+              <span style="font-size: 14px; color: #56665D">70 хв</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 16px; background: #F5F8F6">
+              <span aria-hidden="true" style="flex: 0 0 36px; height: 36px; border-radius: 50%; background: #2F6B4F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: var(--f-head); font-size: 14px; font-weight: 700">3</span>
+              <span style="flex: 1; font-size: 16px; font-weight: 600">Чай, оздоблення і фото на згадку</span>
+              <span style="font-size: 14px; color: #56665D">30 хв</span>
+            </li>
+          </ol>
+        </section>
+
+        <section style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Що включено</h2>
+          <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; font-size: 16px">
+            <li style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Глина, фартух, інструменти</li>
+            <li style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Випал і глазурування</li>
+            <li style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Чай і печиво</li>
+            <li style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Готова чашка — через 2 тижні</li>
+          </ul>
+        </section>
+
+        <section style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Де</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; padding: 14px; border: 1px solid #DCE6DF; border-radius: 20px">
+            <div style="flex: 0 1 260px; height: 160px; position: relative; border-radius: 14px; overflow: hidden; background: #EEF4EF">
+              <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%">
+                <path d="M0 55C30 52 60 50 100 54" fill="none" stroke="#FFFFFF" stroke-width="6" vector-effect="non-scaling-stroke"></path>
+                <path d="M30 0C34 40 38 70 40 100" fill="none" stroke="#FFFFFF" stroke-width="5" vector-effect="non-scaling-stroke"></path>
+                <path d="M68 0C72 30 70 60 76 100L100 100L100 0Z" fill="#CBE2E4"></path>
+              </svg>
+              <span aria-hidden="true" style="position: absolute; left: 48%; top: 44%; transform: translate(-50%, -50%); width: 56px; height: 56px; border-radius: 50%; background: rgba(47,107,79,0.18); display: flex; align-items: center; justify-content: center">
+                <span style="width: 18px; height: 18px; border-radius: 50%; background: #2F6B4F; border: 3px solid #FFFFFF"></span>
+              </span>
+            </div>
+            <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 6px">
+              <span style="font-size: 17px; font-weight: 700">Поділ, 5 хв пішки від м. Контрактова площа</span>
+              <span style="font-size: 15px; color: #56665D">Точну адресу студії надішлемо після запису.</span>
+              <a href="Main.dc.html" style="margin-top: 4px; font-size: 15px; font-weight: 700">Показати на карті</a>
+            </div>
+          </div>
+        </section>
+
+        <section style="display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Ведуча</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 18px; align-items: center; padding: 20px; border-radius: 20px; background: #F5F8F6">
+            <span aria-hidden="true" style="flex: 0 0 72px; height: 72px; border-radius: 50%; background: #F4E4D4; display: flex; align-items: center; justify-content: center; font-family: var(--f-head); font-size: 20px; font-weight: 700">ОТ</span>
+            <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 18px; font-weight: 800">Олена Ткач</span>
+              <span style="font-size: 15px; color: #56665D">Керамістка · своя студія на Подолі</span>
+              <span style="font-size: 15px; line-height: 1.5">Вчить працювати з глиною без поспіху — у групах до 8 людей.</span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <a href="Host.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 700">Профіль ведучої</a>
+              <button type="button" style="height: 44px; padding: 0 18px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; font-size: 15px; font-weight: 700">Написати</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside aria-label="Запис на заняття" style="flex: 1 1 340px; min-width: 0">
+        <div style="display: flex; flex-direction: column; gap: 18px; padding: 24px; border: 1px solid #DCE6DF; border-radius: 24px; background: #FFFFFF; box-shadow: 0 12px 32px rgba(22,36,29,0.08)">
+          <div style="display: flex; align-items: baseline; gap: 8px">
+            <span style="font-family: var(--f-head); font-size: 30px; font-weight: 700">650 ₴</span>
+            <span style="font-size: 15px; color: #56665D">за людину</span>
+          </div>
+          <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px">
+            <legend style="padding: 0; margin-bottom: 8px; font-size: 14px; font-weight: 800">Оберіть дату</legend>
+            <label style="display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 10px 14px; border: 1.5px solid #2F6B4F; border-radius: 14px; background: #F5F8F6; box-sizing: border-box">
+              <input type="radio" name="session" checked="checked" style="width: 18px; height: 18px; margin: 0; accent-color: #2F6B4F">
+              <span style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 700">Сьогодні, ср 28.10</span><span style="font-size: 13px; color: #56665D">19:00–21:00</span></span>
+              <span style="font-size: 13px; font-weight: 700; color: #1F4D38">4 місця</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 10px 14px; border: 1.5px solid #DCE6DF; border-radius: 14px; box-sizing: border-box">
+              <input type="radio" name="session" style="width: 18px; height: 18px; margin: 0; accent-color: #2F6B4F">
+              <span style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 700">Пт, 30.10</span><span style="font-size: 13px; color: #56665D">19:00–21:00</span></span>
+              <span style="font-size: 13px; font-weight: 700; color: #1F4D38">6 місць</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 10px 14px; border: 1.5px solid #DCE6DF; border-radius: 14px; box-sizing: border-box">
+              <input type="radio" name="session" style="width: 18px; height: 18px; margin: 0; accent-color: #2F6B4F">
+              <span style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 700">Нд, 01.11</span><span style="font-size: 13px; color: #56665D">12:00–14:00</span></span>
+              <span style="font-size: 13px; font-weight: 700; color: #8A5A00">Останнє місце</span>
+            </label>
+          </fieldset>
+          <button type="button" style="height: 56px; border: 0; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; font-size: 17px; font-weight: 800">Записатися</button>
+          <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #56665D">Оплата на місці — готівкою або карткою. Скасувати запис можна за 24 години до початку.</p>
+          <div style="display: flex; gap: 8px">
+            <button type="button" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; height: 44px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; font-size: 14px; font-weight: 700">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>
+              В обране
+            </button>
+            <button type="button" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; height: 44px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; font-size: 14px; font-weight: 700">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"></path></svg>
+              Поділитися
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1880}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

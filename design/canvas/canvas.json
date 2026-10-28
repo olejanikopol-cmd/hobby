@@ -1,0 +1,27 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-28T17:40:00Z"},
+  "title": "hobbyl — дизайн",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Landing.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 2360, "title": "Лендинг (перша сторінка)", "expand": "fill"},
+    "Fonts.dc.html": {"x": 1520, "y": 0, "w": 1200, "h": 1560, "title": "Шрифти: варіанти"},
+    "Main.dc.html": {"x": 0, "y": 2780, "w": 1440, "h": 1000, "title": "Головна · карта (комп'ютер)", "expand": "fill", "is_interactive": true},
+    "Mobile.dc.html": {"x": 1520, "y": 2780, "w": 390, "h": 844, "title": "Головна · телефон"},
+    "Auth.dc.html": {"x": 1990, "y": 2780, "w": 390, "h": 844, "title": "Вхід і реєстрація", "is_interactive": true},
+    "Onboarding.dc.html": {"x": 2460, "y": 2780, "w": 390, "h": 844, "title": "Онбординг: інтереси", "is_interactive": true},
+    "Event.dc.html": {"x": 0, "y": 4200, "w": 1440, "h": 1880, "title": "Сторінка заняття", "expand": "fill"},
+    "Host.dc.html": {"x": 1520, "y": 4200, "w": 1440, "h": 1400, "title": "Профіль ведучого", "expand": "fill"},
+    "Cabinet.dc.html": {"x": 0, "y": 6500, "w": 1440, "h": 1100, "title": "Мій кабінет", "expand": "fill"},
+    "CreateClass.dc.html": {"x": 1520, "y": 6500, "w": 1440, "h": 2000, "title": "Ведучий: створити заняття", "expand": "fill"}
+  },
+  "order": ["Landing.dc.html", "Fonts.dc.html", "Main.dc.html", "Mobile.dc.html", "Auth.dc.html", "Onboarding.dc.html", "Event.dc.html", "Host.dc.html", "Cabinet.dc.html", "CreateClass.dc.html"],
+  "notes": {
+    "t0": {"x": 0, "y": -300, "text": "hobbyl · лендинг і шрифти", "kind": "title1", "maxW": 2720},
+    "t1": {"x": 0, "y": 2480, "text": "Карта · вхід · онбординг", "kind": "title1", "maxW": 2850},
+    "t2": {"x": 0, "y": 3900, "text": "Заняття і ведучий", "kind": "title1", "maxW": 2960},
+    "t3": {"x": 0, "y": 6200, "text": "Кабінети", "kind": "title1", "maxW": 2960}
+  },
+  "designSystems": []
+}

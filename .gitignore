@@ -1,1 +1,10 @@
 .DS_Store
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+.vercel
+public/maplibre-gl-worker.mjs

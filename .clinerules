@@ -1,0 +1,2 @@
+Читай и соблюдай docs/RULES.md — там все правила кода. Архитектура: docs/ARCHITECTURE.md.
+Запуск: npm install, npm run dev. Проверка перед коммитом: npm run check.

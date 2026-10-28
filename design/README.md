@@ -11,4 +11,4 @@
 Шрифты: Unbounded 800 — логотип (только латиница), Golos Text 800 — заголовки, Comfortaa — волнистые акценты, Onest — текст.
 Цвета: зелёный `#2F6B4F`, тёмный текст `#16241D`, фон `#FFFFFF` / `#F5F8F6`.
 
-Прототип: все экраны связаны ссылками, кнопка Play на холсте. Каталог категорий — `categories.json` и экран `canvas/Categories.dc.html`. Оформление страницы ведущим — `canvas/PageBuilder.dc.html`. UX-ревью — `docs/UX-REVIEW.md`.
+Прототип: все экраны связаны ссылками, кнопка Play на холсте. Каталог категорий — `src/data/categories.json` и экран `canvas/Categories.dc.html`. Оформление страницы ведущим — `canvas/PageBuilder.dc.html`. UX-ревью — `docs/UX-REVIEW.md`.

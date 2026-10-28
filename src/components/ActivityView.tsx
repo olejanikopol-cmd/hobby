@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Cover, FavoriteButton } from './ActivityBits';
 import { Icon } from './Icon';
 import { getHost } from '@/data/hosts';
@@ -16,6 +16,29 @@ import { dayLabel, scheduleLabel, sessionLabel, timeLabel, upcomingSessions } fr
 import type { Activity, Session } from '@/lib/types';
 
 const KyivMap = dynamic(() => import('./KyivMap'), { ssr: false, loading: () => <div className="h-full w-full animate-pulse bg-[#EEF2EE]" /> });
+const MINI_MAP = 'relative h-[180px] min-w-[220px] flex-[1_1_260px] rounded-[14px]';
+
+/** Міні-карта нижче першого екрана: MapLibre (~300 КБ) вантажимо, лише коли блок наближається до видимої області. */
+function WhenVisible({ className, children }: { className: string; children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: '400px' },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return shown ? <>{children}</> : <div ref={ref} className={`${className} bg-[#EEF2EE]`} />;
+}
 
 export function ActivityView({ slug, initial }: { slug: string; initial?: Activity }) {
   const all = useActivities();
@@ -172,12 +195,14 @@ function ActivityPage({ activity: a }: { activity: Activity }) {
           <section className="flex flex-col gap-3.5">
             <h2 className="font-head text-[22px] font-bold">Де</h2>
             <div className="flex flex-wrap items-center gap-5 rounded-card border border-line p-3.5">
-              <KyivMap
-                compact
-                pins={[{ id: a.slug, lat: a.lat, lng: a.lng, label: pinLabel(a), title: a.title, tone: a.priceType }]}
-                selectedId={a.slug}
-                className="relative h-[180px] min-w-[220px] flex-[1_1_260px] rounded-[14px]"
-              />
+              <WhenVisible className={MINI_MAP}>
+                <KyivMap
+                  compact
+                  pins={[{ id: a.slug, lat: a.lat, lng: a.lng, label: pinLabel(a), title: a.title, tone: a.priceType }]}
+                  selectedId={a.slug}
+                  className={MINI_MAP}
+                />
+              </WhenVisible>
               <div className="flex flex-[1_1_220px] flex-col gap-1.5">
                 <span className="text-[17px] font-bold">{a.district}</span>
                 {anyBooking ? (

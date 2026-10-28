@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>hobbyl — правила і конфіденційність</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700;800&amp;family=Onest:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
+body{margin:0;background:#FFFFFF}
+a{color:#2F6B4F}a:hover{color:#1F4D38}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="min-height: 100vh; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
+
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 14px 24px; border-bottom: 1px solid #DCE6DF">
+    <a href="Landing.dc.html" aria-label="hobbyl — на головну" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #16241D">
+      <svg aria-hidden="true" width="30" height="30" viewBox="0 0 28 28"><path d="M14 2C8.5 2 4.5 6.2 4.5 11.4c0 6.6 7.6 13.2 8.9 14.3.4.3.9.3 1.2 0 1.3-1.1 8.9-7.7 8.9-14.3C23.5 6.2 19.5 2 14 2z" fill="#2F6B4F"></path><circle cx="14" cy="11.5" r="4" fill="#FFFFFF"></circle></svg>
+      <span style="font-family: var(--f-wave); font-weight: 800; font-size: 26px">hobbyl</span>
+    </a>
+    <a href="Main.dc.html" style="margin-left: auto; font-size: 15px; font-weight: 700; text-decoration: none">До карти</a>
+  </header>
+
+  <main style="max-width: 820px; margin: 0 auto; padding: 40px 24px 72px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <div role="tablist" aria-label="Документи" style="display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: #F0F5F2; align-self: flex-start">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="2">
+        <button type="button" role="tab" aria-selected="{{t.on}}" onClick="{{t.pick}}" style="height: 44px; padding: 0 20px; border: 0; border-radius: 999px; background: {{t.bg}}; color: {{t.fg}}; font-size: 15px; font-weight: 700">{{t.label}}</button>
+      </sc-for>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h1 style="margin: 0; font-family: var(--f-head); font-size: 40px; font-weight: 800; line-height: 1.1">{{doc.title}}</h1>
+      <span style="font-size: 14px; color: #56665D">Редакція від 28 жовтня 2026. [Чернетка — перед запуском перевірити з юристом]</span>
+    </div>
+
+    <sc-for list="{{doc.sections}}" as="sec" hint-placeholder-count="5">
+      <section style="display: flex; flex-direction: column; gap: 8px">
+        <h2 style="margin: 0; font-family: var(--f-head); font-size: 21px; font-weight: 700">{{sec.h}}</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3D4C44">{{sec.p}}</p>
+      </section>
+    </sc-for>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 18px 20px; border-radius: 20px; background: #F5F8F6; font-size: 15px">
+      Питання щодо правил чи даних? Пишіть на <b>[пошта підтримки]</b>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+  state = { tab: 'terms' };
+
+  renderVals() {
+    const DOCS = {
+      terms: { label: 'Правила', title: 'Правила користування', sections: [
+        { h: '1. Що таке hobbyl', p: 'hobbyl — карта хобі Києва. Ми показуємо заняття, які публікують ведучі, і допомагаємо на них записатися. Ми не організовуємо заняття самі.' },
+        { h: '2. Запис і оплата', p: 'Запис безкоштовний. Оплата — на місці, ведучому: готівкою або карткою. Скасувати запис можна за 24 години до початку.' },
+        { h: '3. Для ведучих', p: 'Ведучий відповідає за опис, ціну, розклад і безпеку заняття. Фото, відео, посилання і стікери на сторінці мають відповідати заняттю.' },
+        { h: '4. Перенесення і тривоги', p: 'Під час повітряної тривоги заняття переносять. Ведучий натискає «Перенести», і всі учасники отримують сповіщення.' },
+        { h: '5. Скарги і модерація', p: 'Кнопка «Поскаржитися» є на кожній сторінці заняття. Ми можемо приховати заняття, яке порушує ці правила.' }
+      ] },
+      privacy: { label: 'Конфіденційність', title: 'Політика конфіденційності', sections: [
+        { h: '1. Які дані збираємо', p: 'Імʼя, email або Telegram для входу, район та інтереси з онбордингу, ваші записи й обране.' },
+        { h: '2. Навіщо', p: 'Щоб ви могли записуватися, отримувати нагадування і бачити заняття поруч. Ми не продаємо дані.' },
+        { h: '3. Хто бачить', p: 'Ведучий бачить імʼя тих, хто записався на його заняття. Точну адресу студії бачать лише записані учасники.' },
+        { h: '4. Де зберігаються', p: 'На серверах нашого постачальника бази даних. Доступ мають лише ті, кому він потрібен для роботи сервісу.' },
+        { h: '5. Ваші права', p: 'Ви можете змінити або видалити свої дані в «Налаштуваннях» кабінету чи написати нам. Ми діємо згідно із Законом України «Про захист персональних даних».' }
+      ] }
+    };
+    const s = this.state;
+    return {
+      doc: DOCS[s.tab],
+      tabs: Object.keys(DOCS).map((id) => ({ label: DOCS[id].label, on: id === s.tab, bg: id === s.tab ? '#16241D' : 'transparent', fg: id === s.tab ? '#FFFFFF' : '#16241D', pick: () => this.setState({ tab: id }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

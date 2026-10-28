@@ -60,7 +60,8 @@ profiles      id, name, avatar_url, bio, district, interests[], is_host, slug, t
 categories    id, slug, name_uk, color
 places        id, host_id, title, address_text, district, location (точка на карте), exact_address_private
 activities    id, host_id, place_id, category_id, kind, title, description, photos[],
-              price_type, price_uah, price_unit, capacity, age_min, status, has_shelter_nearby
+              price_type, price_uah, price_unit, capacity, age_min, status, has_shelter_nearby,
+              page_stickers (jsonb), page_blocks (jsonb)   ← оформление страницы ведущим
 schedules     activity_id, rule (повтор: «пн/ср/пт 19:00»), starts_on, ends_on
 sessions      id, activity_id, starts_at, ends_at, status        ← конкретные даты занятий
 bookings      id, session_id, user_id, status, created_at        ← записи (один человек = одна запись на дату)
@@ -75,6 +76,11 @@ reports       id, activity_id, user_id, reason                   ← жалоб�
 - `price_unit`: `per_visit` · `per_month` · `per_course`;
 - `status` у занятия: `draft` · `published` · `hidden`;
 - `status` у записи: `booked` · `cancelled` · `attended` · `no_show`.
+
+- `page_stickers`: `{ "show": true, "anim": true, "layout": "both|left|right", "kinds": ["jug", "wheel", …] }`, до 8 стикеров из библиотеки;
+- `page_blocks`: массив блоков `{ "type": "text|video|link|photo", "style": "normal|bold|heavy|wavy", "text", "title", "url" }`. Видео — только ссылки YouTube/TikTok/Instagram, сервер проверяет домен.
+
+Стикеры — наша библиотека SVG (дизайн: доска «Бібліотека стікерів», 38 штук, 9 категорий). Картинки с Pinterest не используем: у них есть авторы.
 
 Регулярные занятия: правило хранится в `schedules`. Сервер заранее создаёт `sessions` на 8 недель вперёд.
 

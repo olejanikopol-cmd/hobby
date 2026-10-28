@@ -36,10 +36,11 @@ button{font-family:inherit;cursor:pointer}
         <span style="display: flex; flex-direction: column"><span style="font-size: 16px; font-weight: 800">Оксана Коваль</span><span style="font-size: 13px; color: #56665D">Учасниця, Київ</span></span>
       </div>
       <sc-for list="{{menu}}" as="m" hint-placeholder-count="4">
-        <a href="#" aria-current="{{m.current}}" style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 12px; border-radius: 12px; background: {{m.bg}}; color: {{m.fg}}; text-decoration: none; font-size: 15px; font-weight: 700">{{m.label}}<span style="font-size: 13px; color: #56665D">{{m.count}}</span></a>
+        <button type="button" onClick="{{m.pick}}" aria-current="{{m.current}}" style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 12px; border: 0; border-radius: 12px; background: {{m.bg}}; color: {{m.fg}}; font-size: 15px; font-weight: 700; text-align: left">{{m.label}}<span style="font-size: 13px; color: #56665D">{{m.count}}</span></button>
       </sc-for>
+      <a href="Chat.dc.html" style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 12px; border-radius: 12px; color: #16241D; text-decoration: none; font-size: 15px; font-weight: 700">Повідомлення<span style="min-width: 22px; height: 22px; padding: 0 6px; box-sizing: border-box; border-radius: 999px; background: #F0B23E; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800">2</span></a>
       <span aria-hidden="true" style="height: 1px; margin: 10px 0; background: #DCE6DF"></span>
-      <a href="CreateClass.dc.html" style="display: flex; flex-direction: column; gap: 4px; padding: 14px; border-radius: 16px; background: #2F6B4F; color: #FFFFFF; text-decoration: none">
+      <a href="HostDashboard.dc.html" style="display: flex; flex-direction: column; gap: 4px; padding: 14px; border-radius: 16px; background: #2F6B4F; color: #FFFFFF; text-decoration: none">
         <span style="font-family: var(--f-wave); font-size: 18px; font-weight: 700; color: #F0B23E">Режим ведучого</span>
         <span style="font-size: 14px; line-height: 1.4; color: #E4EFE8">Створи заняття і з’явись на карті</span>
       </a>
@@ -47,6 +48,8 @@ button{font-family:inherit;cursor:pointer}
     </nav>
 
     <main style="flex: 999 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+     <sc-if value="{{isBookings}}" hint-placeholder-val="{{true}}">
+     <div style="display: flex; flex-direction: column; gap: 24px">
       <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
         <h1 style="margin: 0; font-family: var(--f-head); font-size: 36px; font-weight: 800">Мої записи</h1>
         <div role="tablist" aria-label="Фільтр записів" style="display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: #FFFFFF">
@@ -79,14 +82,18 @@ button{font-family:inherit;cursor:pointer}
           </div>
           <div style="display: flex; flex-wrap: wrap; gap: 8px">
             <a href="Main.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 16px; border: 1.5px solid #D3DED7; border-radius: 999px; color: #16241D; text-decoration: none; font-size: 14px; font-weight: 700">Маршрут</a>
-            <button type="button" style="height: 44px; padding: 0 16px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; font-size: 14px; font-weight: 700">Написати</button>
-            <button type="button" style="height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: #A33A2B; font-size: 14px; font-weight: 700">Скасувати</button>
+            <a href="Chat.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 16px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; text-decoration: none; font-size: 14px; font-weight: 700">Написати</a>
+            <button type="button" onClick="{{b.cancel}}" style="height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: #A33A2B; font-size: 14px; font-weight: 700">{{b.cancelLabel}}</button>
           </div>
         </article>
       </sc-for>
 
-      <section style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px">
-        <h2 style="margin: 0; font-family: var(--f-head); font-size: 24px; font-weight: 700">Обране</h2>
+     </div>
+     </sc-if>
+
+     <sc-if value="{{isFavs}}" hint-placeholder-val="{{false}}">
+      <section style="display: flex; flex-direction: column; gap: 14px">
+        <h1 style="margin: 0; font-family: var(--f-head); font-size: 36px; font-weight: 800">Обране</h1>
         <div style="display: flex; flex-wrap: wrap; gap: 14px">
           <sc-for list="{{favs}}" as="f" hint-placeholder-count="3">
             <a href="Event.dc.html" style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px; padding: 14px; border-radius: 20px; background: #FFFFFF; color: #16241D; text-decoration: none">
@@ -96,32 +103,108 @@ button{font-family:inherit;cursor:pointer}
             </a>
           </sc-for>
         </div>
+        <a href="Main.dc.html" style="align-self: flex-start; display: flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 700">Знайти ще на карті</a>
       </section>
+     </sc-if>
+
+     <sc-if value="{{isFollows}}" hint-placeholder-val="{{false}}">
+      <section style="display: flex; flex-direction: column; gap: 14px">
+        <h1 style="margin: 0; font-family: var(--f-head); font-size: 36px; font-weight: 800">Підписки на ведучих</h1>
+        <p style="margin: 0; font-size: 15px; color: #56665D">Коли ведучий додає нове заняття, ми надсилаємо сповіщення.</p>
+        <sc-for list="{{follows}}" as="h" hint-placeholder-count="2">
+          <article style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 16px; border-radius: 22px; background: #FFFFFF">
+            <span aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; background: {{h.tint}}; display: flex; align-items: center; justify-content: center; font-family: var(--f-head); font-size: 18px; font-weight: 700">{{h.ini}}</span>
+            <span style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px"><a href="Host.dc.html" style="font-size: 17px; font-weight: 800; color: #16241D; text-decoration: none">{{h.name}}</a><span style="font-size: 14px; color: #56665D">{{h.meta}}</span></span>
+            <button type="button" onClick="{{h.toggle}}" aria-pressed="{{h.on}}" style="height: 44px; padding: 0 18px; border: 1.5px solid {{h.bd}}; border-radius: 999px; background: {{h.bg}}; color: {{h.fg}}; font-size: 14px; font-weight: 700">{{h.label}}</button>
+          </article>
+        </sc-for>
+      </section>
+     </sc-if>
+
+     <sc-if value="{{isSettings}}" hint-placeholder-val="{{false}}">
+      <section style="display: flex; flex-direction: column; gap: 16px">
+        <h1 style="margin: 0; font-family: var(--f-head); font-size: 36px; font-weight: 800">Налаштування</h1>
+        <div style="display: flex; flex-direction: column; gap: 16px; padding: 22px; border-radius: 24px; background: #FFFFFF">
+          <div style="display: flex; flex-wrap: wrap; gap: 16px">
+            <label style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700">Імʼя<input type="text" value="Оксана Коваль" style="height: 48px; padding: 0 14px; border: 1.5px solid #D3DED7; border-radius: 14px; font-family: inherit; font-size: 16px; color: #16241D"></label>
+            <label style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700">Район
+              <select style="height: 48px; padding: 0 12px; border: 1.5px solid #D3DED7; border-radius: 14px; background: #FFFFFF; font-family: inherit; font-size: 16px; color: #16241D"><option>Поділ</option><option>Печерськ</option><option>Оболонь</option><option>Позняки</option><option>Увесь Київ</option></select>
+            </label>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 14px; font-weight: 700">Мої інтереси</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px">
+              <sc-for list="{{interests}}" as="i" hint-placeholder-count="6">
+                <button type="button" onClick="{{i.toggle}}" aria-pressed="{{i.on}}" style="height: 40px; padding: 0 14px; border: 1.5px solid {{i.bd}}; border-radius: 999px; background: {{i.bg}}; color: {{i.fg}}; font-size: 14px; font-weight: 700">{{i.label}}</button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 22px; border-radius: 24px; background: #FFFFFF">
+          <sc-for list="{{notify}}" as="n" hint-placeholder-count="3">
+            <button type="button" onClick="{{n.toggle}}" aria-pressed="{{n.on}}" style="display: flex; align-items: center; gap: 14px; min-height: 56px; padding: 0; border: 0; background: transparent; color: #16241D; font-size: 15px; font-weight: 600; text-align: left">
+              <span style="flex: 1">{{n.label}}</span>
+              <span aria-hidden="true" style="display: flex; justify-content: {{n.justify}}; width: 44px; height: 24px; padding: 2px; box-sizing: border-box; border-radius: 999px; background: {{n.track}}"><span style="width: 20px; height: 20px; border-radius: 50%; background: #FFFFFF"></span></span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px">
+          <a href="Legal.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 16px; border: 1.5px solid #D3DED7; border-radius: 999px; color: #16241D; text-decoration: none; font-size: 14px; font-weight: 700">Правила і конфіденційність</a>
+          <button type="button" style="height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: #A33A2B; font-size: 14px; font-weight: 700">Видалити акаунт</button>
+        </div>
+      </section>
+     </sc-if>
     </main>
   </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
 class Component extends DCLogic {
+  state = { view: 'bookings', cancelled: {}, unfollowed: {}, interests: ['Гончарство', 'Йога', 'Настільні ігри'], notify: { remind: true, changes: true, news: false } };
+
   renderVals() {
+    const s = this.state;
     const OK = { statusBg: '#E4EFE8', statusFg: '#1F4D38' };
+    const MENU = [['bookings', 'Мої записи', '3'], ['favs', 'Обране', '3'], ['follows', 'Підписки на ведучих', '2'], ['settings', 'Налаштування', '']];
+    const BOOKINGS = [
+      Object.assign({ id: 1, dow: 'Ср', day: '28', month: 'жовт', tint: '#F4E4D4', status: 'Сьогодні, підтверджено', kind: 'Майстер-клас', title: 'Гончарство для новачків', meta: '19:00–21:00, Поділ, 650 ₴ на місці, веде Олена Ткач' }, OK),
+      Object.assign({ id: 2, dow: 'Сб', day: '31', month: 'жовт', tint: '#D6EBE4', status: 'Підтверджено', kind: 'Клуб', title: 'Біговий клуб: 5 км островом', meta: '08:00, Труханів острів, безкоштовно' }, OK),
+      { id: 3, dow: 'Вт', day: '03', month: 'лист', tint: '#E3E6F4', status: 'Очікує підтвердження', statusBg: '#FFF1D6', statusFg: '#6B4A0E', kind: 'Курс, 8 занять', title: 'Акварель з нуля', meta: 'Старт о 18:30, Печерськ, 3200 ₴ за курс' }
+    ];
+    const FOLLOWS = [
+      { id: 'olena', name: 'Олена Ткач', ini: 'ОТ', tint: '#F4E4D4', meta: 'Гончарство, 3 заняття на карті' },
+      { id: 'e4', name: 'клуб «Е4»', ini: 'Е4', tint: '#ECEED6', meta: 'Шахи у сквері, щодня' }
+    ];
+    const INTERESTS = ['Гончарство', 'Йога', 'Настільні ігри', 'Бокс', 'Сальса', 'Акварель', 'Біг', 'Шахи', 'Кулінарія'];
+    const NOTIFY = [['remind', 'Нагадування за 3 години до заняття'], ['changes', 'Якщо ведучий переніс або скасував'], ['news', 'Нові заняття від підписок']];
+    const sw = (on) => ({ track: on ? '#2F6B4F' : '#C9D6CE', justify: on ? 'flex-end' : 'flex-start' });
     return {
-      menu: [
-        { label: 'Мої записи', count: '3', current: 'page', bg: '#E4EFE8', fg: '#1F4D38' },
-        { label: 'Обране', count: '5', current: 'false', bg: 'transparent', fg: '#16241D' },
-        { label: 'Підписки на ведучих', count: '2', current: 'false', bg: 'transparent', fg: '#16241D' },
-        { label: 'Налаштування', count: '', current: 'false', bg: 'transparent', fg: '#16241D' }
-      ],
-      bookings: [
-        Object.assign({ dow: 'Ср', day: '28', month: 'жовт', tint: '#F4E4D4', status: 'Сьогодні, підтверджено', kind: 'Майстер-клас', title: 'Гончарство для новачків', meta: '19:00–21:00, Поділ, 650 ₴ на місці, веде Олена Ткач' }, OK),
-        Object.assign({ dow: 'Сб', day: '31', month: 'жовт', tint: '#D6EBE4', status: 'Підтверджено', kind: 'Клуб', title: 'Біговий клуб: 5 км островом', meta: '08:00, Труханів острів, безкоштовно' }, OK),
-        { dow: 'Вт', day: '03', month: 'лист', tint: '#E3E6F4', status: 'Очікує підтвердження', statusBg: '#FFF1D6', statusFg: '#6B4A0E', kind: 'Курс, 8 занять', title: 'Акварель з нуля', meta: 'Старт о 18:30, Печерськ, 3200 ₴ за курс' }
-      ],
+      isBookings: s.view === 'bookings', isFavs: s.view === 'favs', isFollows: s.view === 'follows', isSettings: s.view === 'settings',
+      menu: MENU.map(([id, label, count]) => {
+        const on = s.view === id;
+        return { label, count, current: on ? 'page' : 'false', bg: on ? '#E4EFE8' : 'transparent', fg: on ? '#1F4D38' : '#16241D', pick: () => this.setState({ view: id }) };
+      }),
+      bookings: BOOKINGS.map((b) => {
+        const off = !!s.cancelled[b.id];
+        return Object.assign({}, b, off ? { status: 'Скасовано', statusBg: '#FDECEA', statusFg: '#A33A2B' } : {}, {
+          cancelLabel: off ? 'Повернути' : 'Скасувати',
+          cancel: () => this.setState({ cancelled: Object.assign({}, s.cancelled, { [b.id]: !off }) })
+        });
+      }),
       favs: [
         { cat: 'Танці', tint: '#F5DFDF', title: 'Сальса: урок і вечірка', meta: 'Завтра, 20:00, 300 ₴' },
         { cat: 'Спорт', tint: '#DCEBE2', title: 'Секція боксу для дорослих', meta: 'Пн, Ср, Пт, 1400 ₴/міс' },
         { cat: 'Ремесла', tint: '#F4E4D4', title: 'Столярка: дошка для подачі', meta: 'Нд, 12:00, 900 ₴' }
-      ]
+      ],
+      follows: FOLLOWS.map((h) => {
+        const on = !s.unfollowed[h.id];
+        return Object.assign({}, h, { on, label: on ? 'Ви підписані' : 'Підписатися', bg: on ? '#FFFFFF' : '#2F6B4F', fg: on ? '#16241D' : '#FFFFFF', bd: on ? '#D3DED7' : '#2F6B4F', toggle: () => this.setState({ unfollowed: Object.assign({}, s.unfollowed, { [h.id]: on }) }) });
+      }),
+      interests: INTERESTS.map((label) => {
+        const on = s.interests.indexOf(label) !== -1;
+        return { label, on, bd: on ? '#2F6B4F' : '#D3DED7', bg: on ? '#2F6B4F' : '#FFFFFF', fg: on ? '#FFFFFF' : '#16241D', toggle: () => this.setState({ interests: on ? s.interests.filter((x) => x !== label) : s.interests.concat([label]) }) };
+      }),
+      notify: NOTIFY.map(([id, label]) => Object.assign({ label, on: !!s.notify[id], toggle: () => this.setState({ notify: Object.assign({}, s.notify, { [id]: !s.notify[id] }) }) }, sw(!!s.notify[id])))
     };
   }
 }

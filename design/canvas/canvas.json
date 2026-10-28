@@ -94,6 +94,57 @@
       "title": "Ведучий: створити заняття",
       "expand": "fill",
       "is_interactive": true
+    },
+    "StickerLibrary.dc.html": {
+      "x": 0,
+      "y": 8920,
+      "w": 1440,
+      "h": 1400,
+      "title": "Бібліотека стікерів",
+      "expand": "fill"
+    },
+    "Sticker.dc.html": {
+      "x": 3040,
+      "y": 8920,
+      "w": 200,
+      "h": 200,
+      "title": "Стікер (компонент)"
+    },
+    "PageBuilder.dc.html": {
+      "x": 1520,
+      "y": 8920,
+      "w": 1440,
+      "h": 2100,
+      "title": "Ведучий: оформлення сторінки",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "HostDashboard.dc.html": {
+      "x": 0,
+      "y": 11140,
+      "w": 1440,
+      "h": 1500,
+      "title": "Кабінет ведучого",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Chat.dc.html": {
+      "x": 1520,
+      "y": 11140,
+      "w": 1440,
+      "h": 900,
+      "title": "Повідомлення",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Legal.dc.html": {
+      "x": 3040,
+      "y": 11140,
+      "w": 1440,
+      "h": 1400,
+      "title": "Правила і конфіденційність",
+      "expand": "fill",
+      "is_interactive": true
     }
   },
   "order": [
@@ -106,7 +157,13 @@
     "Event.dc.html",
     "Host.dc.html",
     "Cabinet.dc.html",
-    "CreateClass.dc.html"
+    "CreateClass.dc.html",
+    "StickerLibrary.dc.html",
+    "PageBuilder.dc.html",
+    "Sticker.dc.html",
+    "HostDashboard.dc.html",
+    "Chat.dc.html",
+    "Legal.dc.html"
   ],
   "notes": {
     "t0": {
@@ -136,6 +193,20 @@
       "text": "Кабінети",
       "kind": "title1",
       "maxW": 2960
+    },
+    "t4": {
+      "x": 0,
+      "y": 8640,
+      "text": "Стікери і оформлення сторінки",
+      "kind": "title1",
+      "maxW": 3240
+    },
+    "t5": {
+      "x": 0,
+      "y": 10860,
+      "text": "Ведучий, повідомлення, правила",
+      "kind": "title1",
+      "maxW": 4480
     }
   },
   "designSystems": []

@@ -8,5 +8,5 @@
 
 Атрибуция карты обязательна: © OpenFreeMap © OpenMapTiles © OpenStreetMap.
 
-Шрифты (комбинация A): Literata — заголовки, Shantell Sans — волнистые акценты, Onest — текст.
+Шрифты: Golos Text 800 — заголовки, Comfortaa — волнистые акценты, Onest — текст.
 Цвета: зелёный `#2F6B4F`, тёмный текст `#16241D`, фон `#FFFFFF` / `#F5F8F6`.

@@ -8,11 +8,10 @@
 <body>
 <x-dc>
 <helmet>
-<link href="https://fonts.googleapis.com/css2?family=Literata:wght@500;600;700;800&amp;family=Onest:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght,BNCE,INFM@400..800,-100..100,0..100&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700;800&amp;family=Onest:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
-:root{--f-head:'Literata',Georgia,serif;--f-wave:'Shantell Sans',cursive;--f-body:'Onest',system-ui,sans-serif}
-[style*="--f-wave"]{font-variation-settings:'BNCE' 50,'INFM' 50}
+:root{--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
 body{margin:0;background:#FFFFFF}
 a{color:#2F6B4F}a:hover{color:#1F4D38}
 button,input{font-family:inherit}
@@ -48,7 +47,7 @@ button{cursor:pointer}
       <span aria-hidden="true" style="flex: 0 0 136px; height: 136px; border-radius: 50%; background: #F4E4D4; border: 6px solid #FFFFFF; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: var(--f-head); font-size: 40px; font-weight: 700">ОТ</span>
       <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px; padding-bottom: 4px">
         <h1 style="margin: 0; font-family: var(--f-head); font-size: 36px; font-weight: 700; letter-spacing: -0.01em">Олена Ткач</h1>
-        <span style="font-size: 16px; color: #56665D">Керамістка · Поділ, Київ</span>
+        <span style="font-size: 16px; color: #56665D">Керамістка Поділ, Київ</span>
         <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px">
           <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">Гончарство</span>
           <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">Ліплення</span>
@@ -148,15 +147,15 @@ class Component extends DCLogic {
   renderVals() {
     return {
       classes: [
-        { title: 'Гончарство для новачків: перша чашка на кругу', kind: 'Майстер-клас', time: 'Ср, Пт, Нд · 2 години', price: '650 ₴', priceFg: '#16241D', tint: '#F4E4D4' },
+        { title: 'Гончарство для новачків: перша чашка на кругу', kind: 'Майстер-клас', time: 'Ср, Пт, Нд 2 години', price: '650 ₴', priceFg: '#16241D', tint: '#F4E4D4' },
         { title: 'Гончарний клуб: вільна практика', kind: 'Секція', time: 'Щочетверга, 18:00', price: '1800 ₴/міс', priceFg: '#16241D', tint: '#DCEBE2' },
-        { title: 'Розпис чашок для пар', kind: 'Майстер-клас', time: 'Сб, 31 жовтня · 15:00', price: '1100 ₴ за двох', priceFg: '#16241D', tint: '#EADBC8' }
+        { title: 'Розпис чашок для пар', kind: 'Майстер-клас', time: 'Сб, 31 жовтня 15:00', price: '1100 ₴ за двох', priceFg: '#16241D', tint: '#EADBC8' }
       ],
       schedule: [
-        { dow: 'Ср', day: '28', title: 'Гончарство для новачків', time: '19:00–21:00 · 4 місця' },
-        { dow: 'Чт', day: '29', title: 'Гончарний клуб', time: '18:00–20:30 · для абонементу' },
-        { dow: 'Сб', day: '31', title: 'Розпис чашок для пар', time: '15:00–17:00 · 3 пари' },
-        { dow: 'Нд', day: '01', title: 'Гончарство для новачків', time: '12:00–14:00 · останнє місце' }
+        { dow: 'Ср', day: '28', title: 'Гончарство для новачків', time: '19:00–21:00 4 місця' },
+        { dow: 'Чт', day: '29', title: 'Гончарний клуб', time: '18:00–20:30 для абонементу' },
+        { dow: 'Сб', day: '31', title: 'Розпис чашок для пар', time: '15:00–17:00 3 пари' },
+        { dow: 'Нд', day: '01', title: 'Гончарство для новачків', time: '12:00–14:00 останнє місце' }
       ]
     };
   }

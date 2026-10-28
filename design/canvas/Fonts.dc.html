@@ -17,20 +17,20 @@ body{margin:0;background:#FFFFFF}
 <div style="width: 1200px; height: 1560px; box-sizing: border-box; padding: 56px; display: flex; flex-direction: column; gap: 36px; font-family: 'Onest', system-ui, sans-serif; color: #16241D; background: #FFFFFF">
 
   <div style="display: flex; flex-direction: column; gap: 8px">
-    <h1 style="margin: 0; font-family: 'Literata', Georgia, serif; font-size: 44px; font-weight: 700">Шрифти hobbyl</h1>
-    <p style="margin: 0; font-size: 17px; color: #56665D">Три ролі: жирний для заголовків · хвилястий для акцентів · спокійний для тексту. Усі з українськими літерами ґ ї є і та знаком ₴.</p>
+    <h1 style="margin: 0; font-family: 'Golos Text', sans-serif; font-size: 44px; font-weight: 700">Шрифти hobbyl</h1>
+    <p style="margin: 0; font-size: 17px; color: #56665D">Три ролі: жирний для заголовків хвилястий для акцентів спокійний для тексту. Усі з українськими літерами ґ ї є і та знаком ₴.</p>
   </div>
 
   <div style="display: flex; gap: 32px; align-items: center; padding: 36px 40px; border-radius: 28px; background: #2F6B4F; color: #FFFFFF">
     <div style="flex: 1; display: flex; flex-direction: column; gap: 14px">
-      <span style="align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: #F0B23E; color: #16241D; font-family: 'Shantell Sans', cursive; font-variation-settings: 'BNCE' 50, 'INFM' 50; font-size: 18px; font-weight: 700">Рекомендую · комбінація A</span>
-      <span style="font-family: 'Literata', Georgia, serif; font-size: 54px; font-weight: 700; line-height: 1.08">Знайди своє хобі<br>поруч із домом</span>
+      <span style="align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: #F0B23E; color: #16241D; font-family: 'Comfortaa', cursive; font-size: 18px; font-weight: 700">Обраний варіант</span>
+      <span style="font-family: 'Golos Text', sans-serif; font-size: 54px; font-weight: 700; line-height: 1.08">Знайди своє хобі<br>поруч із домом</span>
       <span style="max-width: 560px; font-size: 18px; line-height: 1.55; color: #E4EFE8">Гончарство на Подолі, бокс на Позняках, шахи біля Золотих воріт. Дивись на карті, що відбувається сьогодні, і записуйся в один клік.</span>
     </div>
     <div style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 22px; background: #FFFFFF; color: #16241D">
-      <span style="font-family: 'Shantell Sans', cursive; font-variation-settings: 'BNCE' 50, 'INFM' 50; font-size: 20px; font-weight: 700; color: #2F6B4F">Зараз поруч!</span>
-      <span style="font-family: 'Literata', Georgia, serif; font-size: 22px; font-weight: 700; line-height: 1.2">Гончарство для новачків</span>
-      <span style="font-size: 15px; color: #56665D">Сьогодні, 19:00 · Поділ</span>
+      <span style="font-family: 'Comfortaa', cursive; font-size: 20px; font-weight: 700; color: #2F6B4F">Зараз поруч!</span>
+      <span style="font-family: 'Golos Text', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Гончарство для новачків</span>
+      <span style="font-size: 15px; color: #56665D">Сьогодні, 19:00 Поділ</span>
       <span style="font-size: 22px; font-weight: 800">650 ₴</span>
     </div>
   </div>
@@ -49,8 +49,8 @@ body{margin:0;background:#FFFFFF}
     </sc-for>
   </div>
 
-  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
-    <sc-for list="{{pairs}}" as="p" hint-placeholder-count="3">
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px">
+    <sc-for list="{{pairs}}" as="p" hint-placeholder-count="1">
       <div style="display: flex; flex-direction: column; gap: 8px; padding: 20px; border-radius: 20px; background: #F5F8F6">
         <span style="font-size: 13px; font-weight: 800; color: #2F6B4F">{{p.label}}</span>
         <span style="font-family: {{p.head}}; font-size: 28px; font-weight: 700; line-height: 1.15">Хобі на карті Києва</span>
@@ -65,7 +65,7 @@ body{margin:0;background:#FFFFFF}
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1560}}'>
 class Component extends DCLogic {
   renderVals() {
-    const S = 'Є їжак, ґречний і щедрий · 650 ₴';
+    const S = 'Є їжак, ґречний і щедрий 650 ₴';
     const WAVE = '\'BNCE\' 50, \'INFM\' 50';
     const mk = (name, css, w, size, badge, fv) => ({
       name, css, w, size, badge: badge || '', fv: fv || 'normal', sample: S,
@@ -73,22 +73,22 @@ class Component extends DCLogic {
     });
     return {
       columns: [
-        { title: 'Жирний · заголовки', items: [
-          mk('Literata', '\'Literata\', serif', 700, 24, '★ рекомендую'),
+        { title: 'Жирний заголовки', items: [
+          mk('Literata', '\'Literata\', serif', 700, 24),
           mk('Source Serif 4', '\'Source Serif 4\', serif', 700, 24),
           mk('Lora', '\'Lora\', serif', 700, 24),
           mk('Onest 800 (без засічок)', '\'Onest\', sans-serif', 800, 24),
-          mk('Golos Text 800 (без засічок)', '\'Golos Text\', sans-serif', 800, 24)
+          mk('Golos Text 800 (без засічок)', '\'Golos Text\', sans-serif', 800, 24, '★ обрано')
         ] },
-        { title: 'Хвилястий · акценти', items: [
-          mk('Shantell Sans', '\'Shantell Sans\', cursive', 700, 24, '★ рекомендую', WAVE),
+        { title: 'Хвилястий акценти', items: [
+          mk('Shantell Sans', '\'Shantell Sans\', cursive', 700, 24, '', WAVE),
           mk('Playpen Sans', '\'Playpen Sans\', cursive', 700, 24),
-          mk('Comfortaa', '\'Comfortaa\', cursive', 700, 22),
+          mk('Comfortaa', '\'Comfortaa\', cursive', 700, 22, '★ обрано'),
           mk('Caveat', '\'Caveat\', cursive', 700, 30),
           mk('Pangolin', '\'Pangolin\', cursive', 400, 24)
         ] },
-        { title: 'Текст · картки і форми', items: [
-          mk('Onest', '\'Onest\', sans-serif', 400, 19, '★ рекомендую'),
+        { title: 'Текст картки і форми', items: [
+          mk('Onest', '\'Onest\', sans-serif', 400, 19, '★ обрано'),
           mk('Golos Text', '\'Golos Text\', sans-serif', 400, 19),
           mk('Nunito Sans', '\'Nunito Sans\', sans-serif', 400, 19),
           mk('Manrope', '\'Manrope\', sans-serif', 400, 19),
@@ -96,9 +96,7 @@ class Component extends DCLogic {
         ] }
       ],
       pairs: [
-        { label: 'A · тепло, як у Claude (рекомендую)', head: '\'Literata\', serif', wave: '\'Shantell Sans\', cursive', fv: WAVE, body: '\'Onest\', sans-serif', names: 'Literata + Shantell Sans + Onest' },
-        { label: 'B · спокійно, журнально', head: '\'Source Serif 4\', serif', wave: '\'Caveat\', cursive', fv: 'normal', body: '\'Golos Text\', sans-serif', names: 'Source Serif 4 + Caveat + Golos Text' },
-        { label: 'C · сучасно, без засічок', head: '\'Onest\', sans-serif', wave: '\'Comfortaa\', cursive', fv: 'normal', body: '\'Nunito Sans\', sans-serif', names: 'Onest 800 + Comfortaa + Nunito Sans' }
+        { label: 'Обрано — фінальний вибір', head: '\'Golos Text\', sans-serif', wave: '\'Comfortaa\', cursive', fv: 'normal', body: '\'Onest\', sans-serif', names: 'Golos Text 800 + Comfortaa + Onest' }
       ]
     };
   }

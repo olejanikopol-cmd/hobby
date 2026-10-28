@@ -60,7 +60,7 @@ profiles      id, name, avatar_url, bio, district, interests[], is_host, slug, t
 categories    id, parent_id, slug, name_uk, color, icon, sort   ← 2 уровня: категория → направление
 places        id, host_id, title, address_text, district, location (точка на карте), exact_address_private
 activities    id, host_id, place_id, category_id, kind, title, description, photos[],
-              price_type, price_uah, price_unit, capacity, age_min, status, has_shelter_nearby,
+              price_type, price_uah, price_unit, capacity, age_min, status,
               audience[], cover_color, page_blocks (jsonb)   ← category_id = направление (нижний уровень)
 schedules     activity_id, rule (повтор: «пн/ср/пт 19:00»), starts_on, ends_on
 sessions      id, activity_id, starts_at, ends_at, status        ← конкретные даты занятий
@@ -143,7 +143,6 @@ reports       id, activity_id, user_id, reason                   ← жалоб�
 - **Пустая карта на старте.** Без занятий сайт бесполезен. До запуска вручную заполнить 30–50 реальных занятий с согласия ведущих. Это главный риск проекта, не код.
 - **Записались и не пришли.** Напоминание за 3 часа; ведущий отмечает «не прийшов».
 - **Ведущий отменил занятие.** Всем записавшимся — уведомление.
-- **Воздушные тревоги.** Занятия переносятся. Поле «укриття поруч» и быстрая кнопка «перенести» у ведущего.
 - **Переход на зимнее/летнее время.** Регулярные занятия хранить в местном времени Киева.
 - **Модерация.** Новые занятия публикуются сразу, но есть кнопка «Поскаржитися» и скрытие админом.
 - **Instagram.** У каждого занятия красивая картинка-превью для ссылок (OG-картинка).

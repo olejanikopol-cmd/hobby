@@ -1,144 +1,228 @@
 {
   "v": 3,
-  "createdOnFiles": {
-    "v": 1,
-    "at": "2026-10-28T17:40:00Z"
+  "attachments": {},
+  "boards": {
+    "Auth.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Вхід і реєстрація",
+      "w": 390,
+      "x": 1990,
+      "y": 2780
+    },
+    "Cabinet.dc.html": {
+      "expand": "fill",
+      "h": 1100,
+      "is_interactive": true,
+      "title": "Мій кабінет",
+      "w": 1440,
+      "x": 0,
+      "y": 6500
+    },
+    "Categories.dc.html": {
+      "expand": "fill",
+      "h": 3400,
+      "is_interactive": true,
+      "title": "Усі категорії (каталог)",
+      "w": 1440,
+      "x": 2960,
+      "y": 0
+    },
+    "Chat.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "is_interactive": true,
+      "title": "Повідомлення",
+      "w": 1440,
+      "x": 1520,
+      "y": 11140
+    },
+    "CreateClass.dc.html": {
+      "expand": "fill",
+      "h": 2100,
+      "is_interactive": true,
+      "title": "Ведучий: створити заняття",
+      "w": 1440,
+      "x": 1520,
+      "y": 6500
+    },
+    "Event.dc.html": {
+      "expand": "fill",
+      "h": 1953,
+      "is_interactive": true,
+      "title": "Сторінка заняття",
+      "w": 1379,
+      "x": 0,
+      "y": 4200
+    },
+    "Fonts.dc.html": {
+      "h": 1560,
+      "title": "Шрифти: варіанти",
+      "w": 1200,
+      "x": 1520,
+      "y": 0
+    },
+    "Host.dc.html": {
+      "expand": "fill",
+      "h": 1400,
+      "is_interactive": true,
+      "title": "Профіль ведучого",
+      "w": 1440,
+      "x": 1520,
+      "y": 4200
+    },
+    "HostDashboard.dc.html": {
+      "expand": "fill",
+      "h": 1500,
+      "is_interactive": true,
+      "title": "Кабінет ведучого",
+      "w": 1440,
+      "x": 0,
+      "y": 11140
+    },
+    "Landing.dc.html": {
+      "expand": "fill",
+      "h": 2360,
+      "is_interactive": true,
+      "title": "Лендинг (перша сторінка)",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Legal.dc.html": {
+      "expand": "fill",
+      "h": 1400,
+      "is_interactive": true,
+      "title": "Правила і конфіденційність",
+      "w": 1440,
+      "x": 3040,
+      "y": 11140
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Головна: карта (комп'ютер)",
+      "w": 1440,
+      "x": 0,
+      "y": 2780
+    },
+    "Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Головна: телефон",
+      "w": 390,
+      "x": 1520,
+      "y": 2780
+    },
+    "Onboarding.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Онбординг: інтереси",
+      "w": 390,
+      "x": 2460,
+      "y": 2780
+    },
+    "PageBuilder.dc.html": {
+      "expand": "fill",
+      "h": 1400,
+      "is_interactive": true,
+      "title": "Ведучий: оформлення сторінки",
+      "w": 1440,
+      "x": 0,
+      "y": 8920
+    },
+    "VariantGlass.dc.html": {
+      "x": 0,
+      "y": 13020,
+      "w": 1440,
+      "h": 4420,
+      "title": "Варіант 1 — «Скло»",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "VariantNight.dc.html": {
+      "x": 1520,
+      "y": 13020,
+      "w": 1440,
+      "h": 3340,
+      "title": "Варіант 2 — «Нічний Київ»",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "VariantSpin.dc.html": {
+      "x": 3040,
+      "y": 13020,
+      "w": 1440,
+      "h": 4260,
+      "title": "Варіант 3 — «Крутилка»",
+      "expand": "fill",
+      "is_interactive": true
+    }
   },
-  "title": "hobbyl — дизайн",
+  "createdOnFiles": {
+    "at": "2026-10-28T17:40:00Z",
+    "v": 1
+  },
+  "designSystems": [],
   "launch": {
     "view": "canvas"
   },
-  "pages": [],
-  "boards": {
-    "Landing.dc.html": {
+  "notes": {
+    "t0": {
+      "kind": "title1",
+      "maxW": 4400,
+      "text": "hobbyl: лендинг, шрифти, каталог категорій",
+      "w": 240,
       "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 2360,
-      "title": "Лендинг (перша сторінка)",
-      "expand": "fill",
-      "is_interactive": true
+      "y": -300
     },
-    "Fonts.dc.html": {
-      "x": 1520,
-      "y": 0,
-      "w": 1200,
-      "h": 1560,
-      "title": "Шрифти: варіанти"
-    },
-    "Main.dc.html": {
+    "t1": {
+      "kind": "title1",
+      "maxW": 2850,
+      "text": "Карта, вхід, онбординг",
+      "w": 240,
       "x": 0,
-      "y": 2780,
-      "w": 1440,
-      "h": 1000,
-      "title": "Головна: карта (комп'ютер)",
-      "expand": "fill",
-      "is_interactive": true
+      "y": 2480
     },
-    "Mobile.dc.html": {
-      "x": 1520,
-      "y": 2780,
-      "w": 390,
-      "h": 844,
-      "title": "Головна: телефон",
-      "is_interactive": true
-    },
-    "Auth.dc.html": {
-      "x": 1990,
-      "y": 2780,
-      "w": 390,
-      "h": 844,
-      "title": "Вхід і реєстрація",
-      "is_interactive": true
-    },
-    "Onboarding.dc.html": {
-      "x": 2460,
-      "y": 2780,
-      "w": 390,
-      "h": 844,
-      "title": "Онбординг: інтереси",
-      "is_interactive": true
-    },
-    "Event.dc.html": {
+    "t2": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Заняття і ведучий",
+      "w": 240,
       "x": 0,
-      "y": 4200,
-      "w": 1440,
-      "h": 1880,
-      "title": "Сторінка заняття",
-      "expand": "fill",
-      "is_interactive": true
+      "y": 3900
     },
-    "Host.dc.html": {
-      "x": 1520,
-      "y": 4200,
-      "w": 1440,
-      "h": 1400,
-      "title": "Профіль ведучого",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Cabinet.dc.html": {
+    "t3": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Кабінети",
+      "w": 240,
       "x": 0,
-      "y": 6500,
-      "w": 1440,
-      "h": 1100,
-      "title": "Мій кабінет",
-      "expand": "fill",
-      "is_interactive": true
+      "y": 6200
     },
-    "CreateClass.dc.html": {
-      "x": 1520,
-      "y": 6500,
-      "w": 1440,
-      "h": 2100,
-      "title": "Ведучий: створити заняття",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "PageBuilder.dc.html": {
+    "t4": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "Оформлення сторінки ведучим",
+      "w": 240,
       "x": 0,
-      "y": 8920,
-      "w": 1440,
-      "h": 1900,
-      "title": "Ведучий: оформлення сторінки",
-      "expand": "fill",
-      "is_interactive": true
+      "y": 8640
     },
-    "HostDashboard.dc.html": {
+    "t5": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "Ведучий, повідомлення, правила",
+      "w": 240,
       "x": 0,
-      "y": 11140,
-      "w": 1440,
-      "h": 1500,
-      "title": "Кабінет ведучого",
-      "expand": "fill",
-      "is_interactive": true
+      "y": 10860
     },
-    "Chat.dc.html": {
-      "x": 1520,
-      "y": 11140,
-      "w": 1440,
-      "h": 900,
-      "title": "Повідомлення",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Legal.dc.html": {
-      "x": 3040,
-      "y": 11140,
-      "w": 1440,
-      "h": 1400,
-      "title": "Правила і конфіденційність",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Categories.dc.html": {
-      "x": 2960,
-      "y": 0,
-      "w": 1440,
-      "h": 3400,
-      "title": "Усі категорії (каталог)",
-      "expand": "fill",
-      "is_interactive": true
+    "t6": {
+      "x": 0,
+      "y": 12740,
+      "text": "Три варіанти нового дизайну — обери напрям",
+      "kind": "title1",
+      "maxW": 4480
     }
   },
   "order": [
@@ -156,51 +240,11 @@
     "PageBuilder.dc.html",
     "HostDashboard.dc.html",
     "Chat.dc.html",
-    "Legal.dc.html"
+    "Legal.dc.html",
+    "VariantGlass.dc.html",
+    "VariantNight.dc.html",
+    "VariantSpin.dc.html"
   ],
-  "notes": {
-    "t0": {
-      "x": 0,
-      "y": -300,
-      "text": "hobbyl: лендинг, шрифти, каталог категорій",
-      "kind": "title1",
-      "maxW": 4400
-    },
-    "t1": {
-      "x": 0,
-      "y": 2480,
-      "text": "Карта, вхід, онбординг",
-      "kind": "title1",
-      "maxW": 2850
-    },
-    "t2": {
-      "x": 0,
-      "y": 3900,
-      "text": "Заняття і ведучий",
-      "kind": "title1",
-      "maxW": 2960
-    },
-    "t3": {
-      "x": 0,
-      "y": 6200,
-      "text": "Кабінети",
-      "kind": "title1",
-      "maxW": 2960
-    },
-    "t4": {
-      "x": 0,
-      "y": 8640,
-      "text": "Оформлення сторінки ведучим",
-      "kind": "title1",
-      "maxW": 1440
-    },
-    "t5": {
-      "x": 0,
-      "y": 10860,
-      "text": "Ведучий, повідомлення, правила",
-      "kind": "title1",
-      "maxW": 4480
-    }
-  },
-  "designSystems": []
+  "pages": [],
+  "title": "hobbyl — дизайн"
 }

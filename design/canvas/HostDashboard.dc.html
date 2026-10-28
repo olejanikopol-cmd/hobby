@@ -74,20 +74,11 @@ article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
         </sc-for>
       </div>
 
-      <sc-if value="{{moved}}" hint-placeholder-val="{{false}}">
-        <div role="status" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 18px; background: #FFF1D6; color: #4A3408; font-size: 15px">
-          <b>Заняття о 19:00 перенесено на п’ятницю.</b> Усім 4 учасникам надіслали сповіщення в Telegram.
-          <button type="button" onClick="{{undoMove}}" style="margin-left: auto; height: 40px; padding: 0 14px; border: 0; border-radius: 999px; background: #16241D; color: #FFFFFF; font-size: 14px; font-weight: 700">Скасувати</button>
-        </div>
-      </sc-if>
 
       <section style="display: flex; flex-direction: column; gap: 16px; padding: 22px; border-radius: 24px; background: #FFFFFF">
         <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
           <span style="padding: 4px 10px; border-radius: 999px; background: #E4EFE8; color: #1F4D38; font-size: 12px; font-weight: 800">{{todayStatus}}</span>
           <h2 style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Гончарство для новачків, {{todayTime}}</h2>
-          <button type="button" onClick="{{move}}" style="margin-left: auto; display: flex; align-items: center; gap: 6px; height: 44px; padding: 0 16px; border: 1.5px solid #E2BF7A; border-radius: 999px; background: #FFF8EA; color: #6B4A0E; font-size: 14px; font-weight: 700">
-            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2"></path><circle cx="12" cy="12" r="8.5"></circle></svg>Перенести (тривога)
-          </button>
         </div>
         <div style="display: flex; flex-direction: column; gap: 6px">
           <div style="height: 10px; border-radius: 999px; background: #E4EFE8; overflow: hidden"><div style="width: 50%; height: 100%; background: #2F6B4F"></div></div>
@@ -132,7 +123,7 @@ article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
 class Component extends DCLogic {
-  state = { marks: { 1: 'came', 2: 'came' }, moved: false };
+  state = { marks: { 1: 'came', 2: 'came' } };
 
   renderVals() {
     const s = this.state;
@@ -150,11 +141,8 @@ class Component extends DCLogic {
         { value: '78%', label: 'середня заповненість' },
         { value: '3', label: 'заняття на карті' }
       ],
-      moved: s.moved,
-      move: () => this.setState({ moved: true }),
-      undoMove: () => this.setState({ moved: false }),
-      todayStatus: s.moved ? 'Перенесено' : 'Сьогодні',
-      todayTime: s.moved ? 'пт 30.10, 19:00' : '19:00',
+      todayStatus: 'Сьогодні',
+      todayTime: '19:00',
       cameCount: came + ' з 4',
       people: PEOPLE.map((p) => {
         const m = s.marks[p.id];

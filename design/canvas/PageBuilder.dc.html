@@ -17,6 +17,12 @@ body{margin:0;background:#FFFFFF}
 a{color:#2F6B4F}a:hover{color:#1F4D38}
 button,input,select,textarea{font-family:inherit}
 button{cursor:pointer}
+.rte{outline:none}
+.rte:focus{box-shadow:0 0 0 4px rgba(47,107,79,.14);border-color:#2F6B4F !important}
+.rte h3{margin:0 0 10px;font-family:var(--f-head);font-size:28px;font-weight:800;line-height:1.2}
+.rte p{margin:0 0 12px}
+.rte ul,.rte ol{margin:0 0 12px;padding-left:24px}
+.rte a{color:#2F6B4F;font-weight:700}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 a,button,input,select,textarea,label{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
 a:hover,button:hover{transform:translateY(-1px)}
@@ -42,11 +48,11 @@ article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
     <a href="HostDashboard.dc.html" style="margin-left: auto; font-size: 15px; font-weight: 700; text-decoration: none">← До кабінету ведучого</a>
   </header>
 
-  <div style="max-width: 1360px; margin: 0 auto; padding: 32px 24px 64px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 64px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
     <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
       <div style="display: flex; flex-direction: column; gap: 6px">
         <h1 style="margin: 0; font-family: var(--f-head); font-size: 36px; font-weight: 800">Оформлення сторінки</h1>
-        <p style="margin: 0; font-size: 16px; color: #56665D">Гончарство для новачків: перша чашка на кругу. Обкладинка й опис — те, що побачать учасники.</p>
+        <p style="margin: 0; max-width: 620px; font-size: 16px; line-height: 1.5; color: #56665D">Пиши прямо на сторінці. Виділи будь-яке слово — і зроби його жирним, закресленим, кольоровим чи хвилястим.</p>
       </div>
       <ol aria-label="Кроки" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
         <li><a href="CreateClass.dc.html" style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 6px; border-radius: 999px; background: #FFFFFF; color: #16241D; text-decoration: none; font-size: 14px; font-weight: 700"><span style="width: 28px; height: 28px; border-radius: 50%; background: #2F6B4F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800">1</span>Основне</a></li>
@@ -55,218 +61,164 @@ article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
       </ol>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px">
 
-      <div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <main style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 28px; background: #FFFFFF; box-shadow: 0 12px 40px rgba(22,36,29,0.06)">
+        <div aria-hidden="true" style="height: 220px; border-radius: 22px; background: {{coverColor}}; transition: background-color .4s ease; display: flex; align-items: flex-end; padding: 18px; box-sizing: border-box">
+          <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.85); font-size: 13px; font-weight: 700; color: #3D4C44">Обкладинка — фото або колір праворуч</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <span style="align-self: flex-start; padding: 4px 10px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; font-size: 12px; font-weight: 800">Майстер-клас</span>
+          <span style="font-family: var(--f-head); font-size: 32px; font-weight: 800; line-height: 1.15">Гончарство для новачків: перша чашка на кругу</span>
+        </div>
 
-        <section aria-labelledby="cov-h" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 24px; background: #FFFFFF">
-          <h2 id="cov-h" style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Обкладинка</h2>
-          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #56665D">Найкраще працює живе фото з заняття. Поки фото немає — обери спокійний колір.</p>
-          <div style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 96px; border: 2px dashed #B9C9BF; border-radius: 18px; color: #3D4C44; font-size: 15px; font-weight: 600">
-            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><circle cx="9" cy="10" r="1.8"></circle><path d="M21 16l-5-5-8 8"></path></svg>
-            Перетягни фото або <a href="#" style="font-weight: 800">обери файл</a>
-          </div>
-          <div role="group" aria-label="Колір обкладинки" style="display: flex; flex-wrap: wrap; gap: 10px">
-            <sc-for list="{{covers}}" as="cv" hint-placeholder-count="6">
-              <button type="button" onClick="{{cv.pick}}" aria-pressed="{{cv.on}}" aria-label="{{cv.label}}" style="width: 48px; height: 48px; padding: 0; border: 3px solid {{cv.ring}}; border-radius: 50%; background: {{cv.color}}; box-shadow: inset 0 0 0 3px #FFFFFF"></button>
-            </sc-for>
-          </div>
-        </section>
-
-        <section aria-labelledby="blk-h" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 24px; background: #FFFFFF">
-          <h2 id="blk-h" style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Опис: блоки сторінки</h2>
-          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #56665D">Пиши як хочеш: звичайним, жирним, товстим або хвилястим текстом. Додавай відео, посилання і фото. Порядок змінюється стрілками.</p>
-
-          <sc-for list="{{blockCards}}" as="b" hint-placeholder-count="5">
-            <div style="display: flex; flex-direction: column; gap: 12px; padding: 16px; border: 1.5px solid #DCE6DF; border-radius: 18px">
-              <div style="display: flex; align-items: center; gap: 8px">
-                <span style="display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-radius: 999px; background: {{b.badgeBg}}; color: {{b.badgeFg}}; font-size: 13px; font-weight: 800">{{b.typeLabel}}</span>
-                <span style="margin-left: auto; display: flex; gap: 4px">
-                  <button type="button" onClick="{{b.up}}" aria-label="Підняти блок" style="width: 36px; height: 36px; border: 0; border-radius: 10px; background: #F0F5F2; color: #16241D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"></path></svg></button>
-                  <button type="button" onClick="{{b.down}}" aria-label="Опустити блок" style="width: 36px; height: 36px; border: 0; border-radius: 10px; background: #F0F5F2; color: #16241D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></button>
-                  <button type="button" onClick="{{b.remove}}" aria-label="Видалити блок" style="width: 36px; height: 36px; border: 0; border-radius: 10px; background: #FDECEA; color: #A33A2B; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
-                </span>
-              </div>
-
-              <sc-if value="{{b.isText}}" hint-placeholder-val="{{true}}">
-                <div style="display: flex; flex-direction: column; gap: 10px">
-                  <div role="group" aria-label="Стиль тексту" style="display: flex; flex-wrap: wrap; gap: 4px">
-                    <sc-for list="{{b.styles}}" as="st" hint-placeholder-count="4">
-                      <button type="button" onClick="{{st.pick}}" aria-pressed="{{st.on}}" style="height: 40px; padding: 0 14px; border: 1.5px solid {{st.bd}}; border-radius: 12px; background: {{st.bg}}; color: {{st.fg}}; font-family: {{st.font}}; font-size: 15px; font-weight: {{st.fw}}">{{st.label}}</button>
-                    </sc-for>
-                  </div>
-                  <textarea aria-label="Текст блоку" rows="3" value="{{b.text}}" onChange="{{b.setText}}" style="padding: 12px 14px; border: 1.5px solid #D3DED7; border-radius: 14px; font-family: {{b.font}}; font-size: 16px; font-weight: {{b.fw}}; line-height: 1.5; color: {{b.color}}; resize: vertical"></textarea>
-                </div>
-              </sc-if>
-
-              <sc-if value="{{b.isVideo}}" hint-placeholder-val="{{false}}">
-                <div style="display: flex; flex-direction: column; gap: 10px">
-                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700">Посилання на відео<input type="url" value="{{b.url}}" onChange="{{b.setUrl}}" placeholder="https://youtu.be/…" style="height: 46px; padding: 0 14px; border: 1.5px solid #D3DED7; border-radius: 14px; font-size: 15px; color: #16241D"></label>
-                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700">Підпис<input type="text" value="{{b.title}}" onChange="{{b.setTitle}}" style="height: 46px; padding: 0 14px; border: 1.5px solid #D3DED7; border-radius: 14px; font-size: 15px; color: #16241D"></label>
-                  <span style="font-size: 13px; color: #56665D">YouTube, TikTok, Instagram Reels або файл до 200 МБ.</span>
-                </div>
-              </sc-if>
-
-              <sc-if value="{{b.isLink}}" hint-placeholder-val="{{false}}">
-                <div style="display: flex; flex-wrap: wrap; gap: 10px">
-                  <label style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700">Текст кнопки<input type="text" value="{{b.title}}" onChange="{{b.setTitle}}" style="height: 46px; padding: 0 14px; border: 1.5px solid #D3DED7; border-radius: 14px; font-size: 15px; color: #16241D"></label>
-                  <label style="flex: 2 1 240px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700">Адреса<input type="url" value="{{b.url}}" onChange="{{b.setUrl}}" placeholder="instagram.com/…" style="height: 46px; padding: 0 14px; border: 1.5px solid #D3DED7; border-radius: 14px; font-size: 15px; color: #16241D"></label>
-                </div>
-              </sc-if>
-
-              <sc-if value="{{b.isPhoto}}" hint-placeholder-val="{{false}}">
-                <div style="display: flex; flex-direction: column; gap: 10px">
-                  <div style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 84px; border: 2px dashed #B9C9BF; border-radius: 16px; color: #3D4C44; font-size: 15px; font-weight: 600">
-                    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><circle cx="9" cy="10" r="1.8"></circle><path d="M21 16l-5-5-8 8"></path></svg>
-                    Перетягни фото або <a href="#" style="font-weight: 800">обери файл</a>
-                  </div>
-                  <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700">Підпис<input type="text" value="{{b.title}}" onChange="{{b.setTitle}}" style="height: 46px; padding: 0 14px; border: 1.5px solid #D3DED7; border-radius: 14px; font-size: 15px; color: #16241D"></label>
-                </div>
-              </sc-if>
-            </div>
+        <div role="toolbar" aria-label="Форматування тексту" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 8px; border-radius: 18px; background: #16241D">
+          <sc-for list="{{blockTools}}" as="t" hint-placeholder-count="3">
+            <button type="button" onMouseDown="{{t.run}}" aria-label="{{t.label}}" style="height: 40px; padding: 0 12px; border: 0; border-radius: 12px; background: rgba(255,255,255,0.08); color: #FFFFFF; font-family: {{t.font}}; font-size: 14px; font-weight: {{t.fw}}">{{t.glyph}}</button>
           </sc-for>
+          <span aria-hidden="true" style="width: 1px; height: 24px; margin: 0 4px; background: rgba(255,255,255,0.2)"></span>
+          <sc-for list="{{inlineTools}}" as="t" hint-placeholder-count="4">
+            <button type="button" onMouseDown="{{t.run}}" aria-label="{{t.label}}" aria-pressed="{{t.on}}" style="width: 40px; height: 40px; padding: 0; border: 0; border-radius: 12px; background: {{t.bg}}; color: {{t.fg}}; font-family: Georgia, serif; font-size: 17px; font-weight: {{t.fw}}; font-style: {{t.fs}}; text-decoration: {{t.td}}">{{t.glyph}}</button>
+          </sc-for>
+          <span aria-hidden="true" style="width: 1px; height: 24px; margin: 0 4px; background: rgba(255,255,255,0.2)"></span>
+          <sc-for list="{{colors}}" as="c" hint-placeholder-count="4">
+            <button type="button" onMouseDown="{{c.run}}" aria-label="{{c.label}}" style="width: 32px; height: 32px; padding: 0; border: 2px solid rgba(255,255,255,0.35); border-radius: 10px; background: {{c.color}}"></button>
+          </sc-for>
+          <sc-for list="{{marks}}" as="m" hint-placeholder-count="2">
+            <button type="button" onMouseDown="{{m.run}}" aria-label="{{m.label}}" style="height: 32px; padding: 0 10px; border: 0; border-radius: 10px; background: {{m.color}}; color: #16241D; font-size: 13px; font-weight: 800">ab</button>
+          </sc-for>
+          <span aria-hidden="true" style="width: 1px; height: 24px; margin: 0 4px; background: rgba(255,255,255,0.2)"></span>
+          <sc-for list="{{listTools}}" as="t" hint-placeholder-count="5">
+            <button type="button" onMouseDown="{{t.run}}" aria-label="{{t.label}}" style="height: 40px; padding: 0 10px; border: 0; border-radius: 12px; background: transparent; color: #FFFFFF; font-size: 14px; font-weight: 700">{{t.glyph}}</button>
+          </sc-for>
+        </div>
 
-          <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px">
-            <sc-for list="{{adders}}" as="ad" hint-placeholder-count="4">
-              <button type="button" onClick="{{ad.add}}" style="display: flex; align-items: center; gap: 6px; height: 44px; padding: 0 16px; border: 1.5px dashed #8FB9A0; border-radius: 999px; background: #F5F8F6; color: #1F4D38; font-size: 14px; font-weight: 700">
-                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>{{ad.label}}
-              </button>
+        <sc-if value="{{linkOpen}}" hint-placeholder-val="{{false}}">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px; border-radius: 16px; background: #E4EFE8">
+            <input type="url" aria-label="Адреса посилання" placeholder="https://instagram.com/…" value="{{linkUrl}}" onChange="{{setLinkUrl}}" style="flex: 1 1 260px; height: 44px; padding: 0 14px; border: 1.5px solid #D3DED7; border-radius: 12px; font-size: 15px; color: #16241D">
+            <button type="button" onMouseDown="{{applyLink}}" style="height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #2F6B4F; color: #FFFFFF; font-size: 14px; font-weight: 800">Додати посилання</button>
+            <button type="button" onClick="{{closeLink}}" style="height: 44px; padding: 0 12px; border: 0; border-radius: 12px; background: transparent; color: #3D4C44; font-size: 14px; font-weight: 700">Скасувати</button>
+          </div>
+        </sc-if>
+
+        <div class="rte" contentEditable="true" suppressContentEditableWarning="{{true}}" role="textbox" aria-multiline="true" aria-label="Опис заняття" spellCheck="true" onKeyUp="{{sync}}" onMouseUp="{{sync}}" style="min-height: 380px; padding: 24px; border: 1.5px solid #DCE6DF; border-radius: 22px; font-size: 17px; line-height: 1.65; color: #16241D; transition: box-shadow .25s ease, border-color .25s ease">
+          <h3>Глина слухається — перевірено!</h3>
+          <p>Сядете за гончарний круг уперше — і підете додому з відчуттям, що <b>глина слухається</b>. Олена покаже, як центрувати глину, витягнути стінки і зробити ручку. <span style="background-color: #FFF1D6">Досвід не потрібен</span>, а боятися <s>забруднитися</s> не варто — фартухи дамо.</p>
+          <p><span style="font-family: Comfortaa, cursive; font-weight: 700; font-size: 22px; color: #2F6B4F">Перша чашка — вже сьогодні</span></p>
+          <ul>
+            <li>Глина, інструменти і <i>випал</i> — включено</li>
+            <li>Чай і печиво — <u>за нами</u></li>
+            <li>Готова чашка — через 2 тижні</li>
+          </ul>
+          <p>Більше робіт — в <a href="#">Instagram студії</a>.</p>
+        </div>
+        <span style="font-size: 13px; color: #56665D">Підказка: Ctrl+B — жирний, Ctrl+I — курсив, Ctrl+U — підкреслення.</span>
+      </main>
+
+      <aside aria-label="Налаштування сторінки" style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <section style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 24px; background: #FFFFFF">
+          <h2 style="margin: 0; font-family: var(--f-head); font-size: 19px; font-weight: 700">Обкладинка</h2>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 84px; border: 2px dashed #B9C9BF; border-radius: 16px; color: #3D4C44; font-size: 14px; font-weight: 600">Перетягни фото або <a href="#" style="font-weight: 800">обери</a></div>
+          <div role="group" aria-label="Колір обкладинки" style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{covers}}" as="cv" hint-placeholder-count="6">
+              <button type="button" onClick="{{cv.pick}}" aria-pressed="{{cv.on}}" aria-label="{{cv.label}}" style="width: 44px; height: 44px; padding: 0; border: 3px solid {{cv.ring}}; border-radius: 14px; background: {{cv.color}}; box-shadow: inset 0 0 0 3px #FFFFFF"></button>
             </sc-for>
           </div>
         </section>
-
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px">
-          <a href="CreateClass.dc.html" style="display: flex; align-items: center; height: 52px; padding: 0 20px; border-radius: 999px; color: #16241D; text-decoration: none; font-size: 16px; font-weight: 700">← Основне</a>
-          <div style="display: flex; flex-wrap: wrap; gap: 10px">
-            <a href="HostDashboard.dc.html" style="display: flex; align-items: center; height: 52px; padding: 0 22px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; text-decoration: none; font-size: 16px; font-weight: 700">Зберегти чернетку</a>
-            <a href="Event.dc.html" style="display: flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 800">Опублікувати на карті</a>
+        <section style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 24px; background: #FFFFFF">
+          <h2 style="margin: 0; font-family: var(--f-head); font-size: 19px; font-weight: 700">Галерея</h2>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+            <div style="aspect-ratio: 1; border-radius: 14px; background: #F4E4D4"></div>
+            <div style="aspect-ratio: 1; border-radius: 14px; background: #EADBC8"></div>
+            <div style="aspect-ratio: 1; border-radius: 14px; border: 2px dashed #B9C9BF; display: flex; align-items: center; justify-content: center; color: #2F6B4F; font-size: 24px; font-weight: 700" aria-label="Додати фото" role="img">+</div>
           </div>
-        </div>
-      </div>
-
-      <aside aria-label="Попередній перегляд сторінки" style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
-          <span style="font-family: var(--f-wave); font-size: 20px; font-weight: 700; color: #2F6B4F">Так побачать учасники</span>
-          <div role="group" aria-label="Пристрій" style="display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: #FFFFFF">
-            <sc-for list="{{devices}}" as="dv" hint-placeholder-count="2">
-              <button type="button" onClick="{{dv.pick}}" aria-pressed="{{dv.on}}" style="height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: {{dv.bg}}; color: {{dv.fg}}; font-size: 13px; font-weight: 700">{{dv.label}}</button>
-            </sc-for>
-          </div>
-        </div>
-
-        <div style="align-self: center; width: {{frameW}}; max-width: 100%; border-radius: 22px; overflow: hidden; background: #FFFFFF; box-shadow: 0 16px 40px rgba(22,36,29,0.12); border: 1px solid #DCE6DF">
-          <div style="display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px; background: #F0F5F2; font-size: 12px; color: #56665D">
-            <span aria-hidden="true" style="display: flex; gap: 5px"><span style="width: 9px; height: 9px; border-radius: 50%; background: #D3DED7"></span><span style="width: 9px; height: 9px; border-radius: 50%; background: #D3DED7"></span><span style="width: 9px; height: 9px; border-radius: 50%; background: #D3DED7"></span></span>
-            <span style="flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center">hobbyl.com.ua/a/goncharstvo-podil</span>
-          </div>
-          <div style="position: relative; min-height: 640px; padding: 22px {{gutter}} 28px; box-sizing: border-box">
-            <div style="display: flex; flex-direction: column; gap: 12px">
-              <span style="align-self: flex-start; padding: 4px 10px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; font-size: 11px; font-weight: 800">Майстер-клас</span>
-              <span style="font-family: var(--f-head); font-size: 22px; font-weight: 700; line-height: 1.2">Гончарство для новачків: перша чашка на кругу</span>
-              <span style="font-size: 12px; color: #56665D">веде Олена Ткач, сьогодні, 19:00, Поділ</span>
-              <div aria-hidden="true" style="height: 120px; border-radius: 14px; background: {{coverColor}}; transition: background-color .3s ease"></div>
-              <span style="font-family: var(--f-head); font-size: 15px; font-weight: 700">Про заняття</span>
-              <sc-for list="{{previewBlocks}}" as="pb" hint-placeholder-count="5">
-                <sc-if value="{{pb.isText}}" hint-placeholder-val="{{true}}">
-                  <p style="margin: 0; font-family: {{pb.font}}; font-size: {{pb.pfs}}; font-weight: {{pb.fw}}; line-height: {{pb.lh}}; color: {{pb.color}}; white-space: pre-line; overflow-wrap: anywhere">{{pb.shown}}</p>
-                </sc-if>
-                <sc-if value="{{pb.isVideo}}" hint-placeholder-val="{{false}}">
-                  <div style="display: flex; flex-direction: column; gap: 4px">
-                    <div style="height: 130px; border-radius: 12px; background: #1F4D38; display: flex; align-items: center; justify-content: center"><span style="width: 40px; height: 40px; border-radius: 50%; background: #FFFFFF; color: #1F4D38; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"></path></svg></span></div>
-                    <span style="font-size: 12px; color: #3D4C44">{{pb.title}}</span>
-                  </div>
-                </sc-if>
-                <sc-if value="{{pb.isLink}}" hint-placeholder-val="{{false}}">
-                  <div style="display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid #DCE6DF; border-radius: 12px"><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 7px; background: #E4EFE8"></span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 12px; font-weight: 700">{{pb.title}}</span><span style="font-size: 11px; color: #56665D; overflow-wrap: anywhere">{{pb.url}}</span></span></div>
-                </sc-if>
-                <sc-if value="{{pb.isPhoto}}" hint-placeholder-val="{{false}}">
-                  <div style="display: flex; flex-direction: column; gap: 4px"><div style="height: 100px; border-radius: 12px; background: #EADBC8"></div><span style="font-size: 12px; color: #3D4C44">{{pb.title}}</span></div>
-                </sc-if>
-              </sc-for>
-            </div>
-          </div>
-        </div>
-        <span style="font-size: 13px; line-height: 1.5; color: #56665D; text-align: center">Попередній перегляд оновлюється одразу, як ти щось змінюєш.</span>
+        </section>
+        <section style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 24px; background: #FFFFFF">
+          <h2 style="margin: 0; font-family: var(--f-head); font-size: 19px; font-weight: 700">Соцмережі</h2>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Instagram<input type="text" placeholder="@назва" style="height: 44px; padding: 0 12px; border: 1.5px solid #D3DED7; border-radius: 12px; font-size: 15px; color: #16241D"></label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Telegram<input type="text" placeholder="@назва" style="height: 44px; padding: 0 12px; border: 1.5px solid #D3DED7; border-radius: 12px; font-size: 15px; color: #16241D"></label>
+        </section>
       </aside>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px">
+      <a href="CreateClass.dc.html" style="display: flex; align-items: center; height: 52px; padding: 0 20px; border-radius: 999px; color: #16241D; text-decoration: none; font-size: 16px; font-weight: 700">← Основне</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <a href="HostDashboard.dc.html" style="display: flex; align-items: center; height: 52px; padding: 0 22px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; text-decoration: none; font-size: 16px; font-weight: 700">Зберегти чернетку</a>
+        <a href="Event.dc.html" style="display: flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 800">Опублікувати на карті</a>
+      </div>
     </div>
   </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1900}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
 class Component extends DCLogic {
-  state = {
-    cover: 'clay',
-    device: 'desktop',
-    nextId: 7,
-    blocks: [
-      { id: 1, type: 'text', style: 'wavy', text: 'Глина слухається — перевірено!' },
-      { id: 2, type: 'text', style: 'normal', text: 'Сядете за гончарний круг уперше — і підете додому з відчуттям, що глина слухається. Олена покаже, як центрувати глину, витягнути стінки і зробити ручку.' },
-      { id: 3, type: 'video', title: 'Як проходить заняття — 1 хвилина', url: 'https://youtu.be/[відео]' },
-      { id: 4, type: 'text', style: 'heavy', text: 'Перша чашка — вже сьогодні' },
-      { id: 5, type: 'text', style: 'bold', text: 'Досвід не потрібен. Візьміть одяг, який не шкода забруднити.' },
-      { id: 6, type: 'link', title: 'Instagram студії', url: 'instagram.com/[студія]' }
-    ]
-  };
+  state = { cover: 'clay', active: {}, linkOpen: false, linkUrl: '' };
 
-  setBlock(id, patch) {
-    this.setState({ blocks: this.state.blocks.map((b) => (b.id === id ? Object.assign({}, b, patch) : b)) });
+  exec(cmd, val, css) {
+    try {
+      document.execCommand('styleWithCSS', false, !!css);
+      document.execCommand(cmd, false, val);
+    } catch (err) { /* старі браузери */ }
+    this.sync();
   }
 
-  moveBlock(id, d) {
-    const list = this.state.blocks.slice();
-    const i = list.findIndex((b) => b.id === id);
-    const j = i + d;
-    if (i < 0 || j < 0 || j >= list.length) return;
-    const t = list[i]; list[i] = list[j]; list[j] = t;
-    this.setState({ blocks: list });
-  }
-
-  addBlock(type) {
-    const id = this.state.nextId;
-    const fresh = { text: { type, style: 'normal', text: '' }, video: { type, title: '', url: '' }, link: { type, title: 'Мій сайт', url: '' }, photo: { type, title: '' } }[type];
-    this.setState({ nextId: id + 1, blocks: this.state.blocks.concat([Object.assign({ id }, fresh)]) });
+  sync() {
+    const q = (c) => { try { return document.queryCommandState(c); } catch (err) { return false; } };
+    const next = { bold: q('bold'), italic: q('italic'), underline: q('underline'), strikeThrough: q('strikeThrough') };
+    const cur = this.state.active;
+    if (Object.keys(next).some((k) => next[k] !== !!cur[k])) this.setState({ active: next });
   }
 
   renderVals() {
     const s = this.state;
+    const run = (cmd, val, css) => (e) => { e.preventDefault(); this.exec(cmd, val, css); };
     const COVERS = [['clay', 'Глина', '#F4E4D4'], ['sage', 'Шавлія', '#DCEBE2'], ['sky', 'Небо', '#DDE8F0'], ['lilac', 'Бузок', '#EDE3F6'], ['rose', 'Троянда', '#F5DFDF'], ['sun', 'Сонце', '#FDF0D5']];
-    const STYLES = [
-      ['normal', 'Звичайний', 'var(--f-body)', '400', '17px', '13px', '1.6', '#16241D'],
-      ['bold', 'Жирний', 'var(--f-body)', '700', '17px', '13px', '1.6', '#16241D'],
-      ['heavy', 'Товстий', 'var(--f-head)', '800', '30px', '19px', '1.15', '#16241D'],
-      ['wavy', 'Хвилястий', 'var(--f-wave)', '700', '24px', '16px', '1.3', '#2F6B4F']
-    ];
-    const ST = {};
-    STYLES.forEach((x) => { ST[x[0]] = { font: x[2], fw: x[3], fs: x[4], pfs: x[5], lh: x[6], color: x[7] }; });
-    const TYPE = { text: ['Текст', '#E4EFE8', '#1F4D38'], video: ['Відео', '#FFF1D6', '#6B4A0E'], link: ['Посилання', '#E3E6F4', '#2B3A6B'], photo: ['Фото', '#F4E4D4', '#6B3A1E'] };
-    const desktop = s.device === 'desktop';
     const cover = COVERS.find((c) => c[0] === s.cover) || COVERS[0];
+    const INLINE = [['bold', 'B', 'Жирний', '800', 'normal', 'none'], ['italic', 'I', 'Курсив', '400', 'italic', 'none'], ['underline', 'U', 'Підкреслений', '400', 'normal', 'underline'], ['strikeThrough', 'S', 'Закреслений', '400', 'normal', 'line-through']];
     return {
+      sync: () => this.sync(),
+      blockTools: [
+        { glyph: 'Текст', label: 'Звичайний текст', font: 'var(--f-body)', fw: '600', run: run('formatBlock', 'p') },
+        { glyph: 'Заголовок', label: 'Великий заголовок', font: 'var(--f-head)', fw: '800', run: run('formatBlock', 'h3') },
+        { glyph: 'Хвилястий', label: 'Хвилястий шрифт для виділеного', font: 'var(--f-wave)', fw: '700', run: run('fontName', 'Comfortaa', true) }
+      ],
+      inlineTools: INLINE.map(([cmd, glyph, label, fw, fs, td]) => {
+        const on = !!s.active[cmd];
+        return { glyph, label, fw, fs, td, on, bg: on ? '#F0B23E' : 'rgba(255,255,255,0.08)', fg: on ? '#16241D' : '#FFFFFF', run: run(cmd) };
+      }),
+      colors: [['#16241D', 'Темний текст'], ['#2F6B4F', 'Зелений текст'], ['#C2410C', 'Помаранчевий текст'], ['#A33A2B', 'Червоний текст']].map(([color, label]) => ({ color, label, run: run('foreColor', color, true) })),
+      marks: [['#FFF1D6', 'Виділити жовтим маркером'], ['#DCEBE2', 'Виділити зеленим маркером']].map(([color, label]) => ({ color, label, run: run('hiliteColor', color, true) })),
+      listTools: [
+        { glyph: '• Список', label: 'Маркований список', run: run('insertUnorderedList') },
+        { glyph: '1. Список', label: 'Нумерований список', run: run('insertOrderedList') },
+        { glyph: 'Посилання', label: 'Додати посилання', run: (e) => {
+          e.preventDefault();
+          const sel = window.getSelection();
+          this.savedRange = sel && sel.rangeCount ? sel.getRangeAt(0).cloneRange() : null;
+          this.setState({ linkOpen: true });
+        } },
+        { glyph: 'Очистити', label: 'Прибрати форматування', run: run('removeFormat') },
+        { glyph: '↶', label: 'Скасувати', run: run('undo') },
+        { glyph: '↷', label: 'Повторити', run: run('redo') }
+      ],
+      linkOpen: s.linkOpen,
+      linkUrl: s.linkUrl,
+      setLinkUrl: (e) => this.setState({ linkUrl: e.target.value }),
+      closeLink: () => this.setState({ linkOpen: false }),
+      applyLink: (e) => {
+        e.preventDefault();
+        const url = s.linkUrl.trim();
+        if (this.savedRange && url) {
+          const sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(this.savedRange);
+          this.exec('createLink', /^https?:\/\//.test(url) ? url : 'https://' + url);
+        }
+        this.setState({ linkOpen: false, linkUrl: '' });
+      },
       covers: COVERS.map(([id, label, color]) => ({ label: 'Колір обкладинки: ' + label, color, on: s.cover === id, ring: s.cover === id ? '#2F6B4F' : '#DCE6DF', pick: () => this.setState({ cover: id }) })),
-      coverColor: cover[2],
-      blockCards: s.blocks.map((b) => Object.assign({}, b, ST[b.style] || {}, {
-        isText: b.type === 'text', isVideo: b.type === 'video', isLink: b.type === 'link', isPhoto: b.type === 'photo',
-        typeLabel: TYPE[b.type][0], badgeBg: TYPE[b.type][1], badgeFg: TYPE[b.type][2],
-        title: b.title || '', url: b.url || '', text: b.text || '',
-        styles: STYLES.map((x) => {
-          const on = b.style === x[0];
-          return { label: x[1], font: x[2], fw: x[3], on, bd: on ? '#2F6B4F' : '#D3DED7', bg: on ? '#E4EFE8' : '#FFFFFF', fg: on ? '#1F4D38' : '#16241D', pick: () => this.setBlock(b.id, { style: x[0] }) };
-        }),
-        setText: (e) => this.setBlock(b.id, { text: e.target.value }),
-        setTitle: (e) => this.setBlock(b.id, { title: e.target.value }),
-        setUrl: (e) => this.setBlock(b.id, { url: e.target.value }),
-        up: () => this.moveBlock(b.id, -1),
-        down: () => this.moveBlock(b.id, 1),
-        remove: () => this.setState({ blocks: s.blocks.filter((x) => x.id !== b.id) })
-      })),
-      adders: [['text', 'Текст'], ['video', 'Відео'], ['link', 'Посилання'], ['photo', 'Фото']].map(([t, label]) => ({ label, add: () => this.addBlock(t) })),
-      devices: [['desktop', 'Комп’ютер'], ['phone', 'Телефон']].map(([id, label]) => ({ label, on: s.device === id, bg: s.device === id ? '#16241D' : 'transparent', fg: s.device === id ? '#FFFFFF' : '#16241D', pick: () => this.setState({ device: id }) })),
-      frameW: desktop ? '100%' : '320px',
-      gutter: desktop ? '32px' : '16px',
-      previewBlocks: s.blocks.map((b) => Object.assign({}, ST[b.style] || {}, b, {
-        isText: b.type === 'text', isVideo: b.type === 'video', isLink: b.type === 'link', isPhoto: b.type === 'photo',
-        shown: b.text || 'Порожній текст', title: b.title || 'Без підпису', url: b.url || 'посилання не вказано'
-      }))
+      coverColor: cover[2]
     };
   }
 }

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>hobbyl — усі категорії</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700;800&amp;family=Onest:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&amp;display=swap" rel="stylesheet">
+<style>
+:root{--f-logo:'Unbounded',sans-serif;--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
+body{margin:0;background:#FFFFFF}
+a{color:#2F6B4F}a:hover{color:#1F4D38}
+button,input{font-family:inherit}
+button{cursor:pointer}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+a,button,input,select,textarea,label{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+a:hover,button:hover{transform:translateY(-1px)}
+a:active,button:active{transform:translateY(0) scale(.98)}
+:focus-visible{outline:3px solid rgba(47,107,79,.45);outline-offset:2px}
+input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,input[type=time]:focus,input[type=date]:focus,select:focus,textarea:focus{outline:none;border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+input[type=search]:focus{outline:none}
+label:has(> input[type=search]:focus){border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+.dc-in{animation:dc-in .55s cubic-bezier(.2,.8,.2,1) both}
+article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes dc-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+<div class="dc-in" style="min-height: 100vh; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
+
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 14px 24px; border-bottom: 1px solid #DCE6DF">
+    <a href="Landing.dc.html" aria-label="hobbyl — на головну" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #16241D">
+      <svg aria-hidden="true" width="30" height="30" viewBox="0 0 28 28"><path d="M14 2C8.5 2 4.5 6.2 4.5 11.4c0 6.6 7.6 13.2 8.9 14.3.4.3.9.3 1.2 0 1.3-1.1 8.9-7.7 8.9-14.3C23.5 6.2 19.5 2 14 2z" fill="#2F6B4F"></path><circle cx="14" cy="11.5" r="4" fill="#FFFFFF"></circle></svg>
+      <span style="font-family: var(--f-logo); font-weight: 800; font-size: 23px; letter-spacing: -0.04em; line-height: 1">hobbyl</span>
+    </a>
+    <nav aria-label="Розділи" style="display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 15px; font-weight: 600">
+      <a href="Main.dc.html" style="color: #16241D; text-decoration: none">Карта</a>
+      <a href="#" aria-current="page" style="color: #2F6B4F; text-decoration: none">Категорії</a>
+    </nav>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 4px">
+      <a href="CreateClass.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 14px; font-size: 15px; font-weight: 700; text-decoration: none; color: #2F6B4F">Стати ведучим</a>
+      <a href="Auth.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 700">Увійти</a>
+    </div>
+  </header>
+
+  <section style="background: #F5F8F6">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+      <span style="font-family: var(--f-wave); font-size: 19px; font-weight: 700; color: #2F6B4F">Каталог hobbyl</span>
+      <h1 style="margin: 0; max-width: 820px; font-family: var(--f-head); font-size: 52px; font-weight: 800; line-height: 1.05; letter-spacing: -0.015em">Усі хобі Києва в одному місці</h1>
+      <p style="margin: 0; max-width: 640px; font-size: 18px; line-height: 1.55; color: #3D4C44">29 категорій і 338 напрямів — від секції боксу до холотропного дихання. Обери напрям, і ми покажемо, де він є поруч.</p>
+      <label style="display: flex; align-items: center; gap: 12px; max-width: 680px; height: 60px; padding: 0 8px 0 22px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; box-sizing: border-box; box-shadow: 0 10px 30px rgba(22,36,29,0.06)">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#56665D" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input type="search" aria-label="Пошук напряму" placeholder="Бокс, кераміка, холотропне дихання…" value="{{q}}" onChange="{{setQ}}" style="flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: 17px; color: #16241D">
+        <sc-if value="{{hasQ}}" hint-placeholder-val="{{false}}">
+          <button type="button" onClick="{{clearQ}}" style="height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: #F0F5F2; color: #16241D; font-size: 14px; font-weight: 700">Очистити</button>
+        </sc-if>
+      </label>
+      <span role="status" style="font-size: 14px; font-weight: 600; color: #56665D">{{resultLabel}}</span>
+      <nav aria-label="Швидкий перехід" style="display: flex; flex-wrap: wrap; gap: 6px">
+        <sc-for list="{{jump}}" as="j" hint-placeholder-count="12">
+          <a href="{{j.href}}" style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE6DF; color: #16241D; text-decoration: none; font-size: 13px; font-weight: 700">{{j.label}}</a>
+        </sc-for>
+      </nav>
+    </div>
+  </section>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 36px 24px 24px; box-sizing: border-box">
+    <sc-if value="{{empty}}" hint-placeholder-val="{{false}}">
+      <div style="padding: 40px 24px; border-radius: 28px; background: #F5F8F6; text-align: center; display: flex; flex-direction: column; gap: 10px; align-items: center">
+        <span style="font-family: var(--f-head); font-size: 22px; font-weight: 700">Такого напряму ще немає</span>
+        <span style="font-size: 16px; color: #56665D">Ведеш таке заняття? Створи його — і категорія зʼявиться.</span>
+        <a href="CreateClass.dc.html" style="display: flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 700">Запропонувати заняття</a>
+      </div>
+    </sc-if>
+    <div style="columns: 340px; column-gap: 20px">
+      <sc-for list="{{cats}}" as="c" hint-placeholder-count="9">
+        <article id="{{c.anchor}}" style="break-inside: avoid; margin: 0 0 20px; padding: 22px; border-radius: 28px; background: {{c.tint}}; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; align-items: center; gap: 12px">
+            <span aria-hidden="true" style="flex: 0 0 46px; height: 46px; border-radius: 16px; background: #FFFFFF; color: #2F6B4F; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="{{c.icon}}"></path></svg></span>
+            <div style="flex: 1; min-width: 0; display: flex; flex-direction: column"><h2 style="margin: 0; font-family: var(--f-head); font-size: 20px; font-weight: 700; line-height: 1.2">{{c.label}}</h2><span style="font-size: 13px; color: #3D4C44">{{c.count}}</span></div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px">
+            <sc-for list="{{c.shown}}" as="s" hint-placeholder-count="10">
+              <a href="Main.dc.html" style="display: flex; align-items: center; min-height: 36px; padding: 0 12px; border-radius: 999px; background: {{s.bg}}; color: {{s.fg}}; text-decoration: none; font-size: 14px; font-weight: 600">{{s.label}}</a>
+            </sc-for>
+          </div>
+          <a href="Main.dc.html" style="align-self: flex-start; font-size: 14px; font-weight: 800; text-decoration: none">Показати все на карті →</a>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 8px 24px 72px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 20px">
+    <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: 28px; border: 1.5px solid #DCE6DF">
+      <h2 style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Формат</h2>
+      <span style="font-size: 15px; line-height: 1.5; color: #56665D">Як проходить заняття. Той самий напрям буває і лекцією, і колом, і курсом.</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px">
+        <sc-for list="{{formats}}" as="f" hint-placeholder-count="10">
+          <span style="display: flex; align-items: center; height: 36px; padding: 0 12px; border-radius: 999px; background: #F0F5F2; font-size: 14px; font-weight: 600">{{f}}</span>
+        </sc-for>
+      </div>
+    </div>
+    <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: 28px; border: 1.5px solid #DCE6DF">
+      <h2 style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Для кого</h2>
+      <span style="font-size: 15px; line-height: 1.5; color: #56665D">Окремий фільтр: діти, пари, 60+, ветерани, інклюзивні заняття.</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px">
+        <sc-for list="{{audience}}" as="a" hint-placeholder-count="8">
+          <span style="display: flex; align-items: center; height: 36px; padding: 0 12px; border-radius: 999px; background: #F0F5F2; font-size: 14px; font-weight: 600">{{a}}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3400}}'>
+class Component extends DCLogic {
+  state = { q: '' };
+
+  renderVals() {
+    const CATS = [{"id": "craft", "label": "Ремесла і рукоділля", "tint": "#F4E4D4", "icon": "M9 3h6M10 3v3c-3 2-5 5-5 9a7 7 0 0 0 14 0c0-4-2-7-5-9V3", "subs": ["Гончарство і кераміка", "Ліплення з глини", "Столярка і різьба по дереву", "В’язання спицями і гачком", "Вишивка", "Шиття і крій", "Макраме", "Свічки і мило", "Ювелірка і біжутерія", "Вироби зі шкіри", "Ковальство", "Скло і вітраж", "Епоксидна смола", "Ляльки та іграшки", "Писанкарство", "Петриківський розпис", "Лозоплетіння", "Квілінг і оригамі", "Реставрація меблів", "Ткацтво"]}, {"id": "art", "label": "Мистецтво", "tint": "#E3E6F4", "icon": "M12 3a9 9 0 1 0 0 18c1.7 0 2-1.2 2-2s-.8-1.6 0-2.6 2-1 3-1a4 4 0 0 0 4-4c0-4.5-4-8.4-9-8.4zM7.5 11.5h.01M10 7.5h.01M15 7.5h.01", "subs": ["Малювання для початківців", "Скетчинг", "Акварель", "Олійний живопис", "Акрил", "Цифрове малювання", "Каліграфія і леттеринг", "Ілюстрація", "Комікси", "Скульптура", "Графіті і стріт-арт", "Гравюра і лінорит", "Мозаїка", "Пленер", "Іконопис", "Історія мистецтва"]}, {"id": "photo", "label": "Фото і відео", "tint": "#DDE8F0", "icon": "M4 8h3l2-3h6l2 3h3v11H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z", "subs": ["Фотографія з нуля", "Мобільна фотографія", "Портретна зйомка", "Плівкова фотографія", "Фотопрогулянки", "Відеозйомка", "Монтаж відео", "Reels і TikTok", "Зйомка дроном", "Анімація", "Кольорокорекція"]}, {"id": "music", "label": "Музика", "tint": "#EDE3F6", "icon": "M9 18V5l11-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM20 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z", "subs": ["Вокал", "Гітара", "Фортепіано", "Барабани", "Укулеле", "Скрипка", "Бандура", "Хор", "DJ і діджеїнг", "Написання пісень", "Звукорежисура", "Бітмейкінг", "Музична теорія", "Джем-сейшни", "Етнічні інструменти"]}, {"id": "dance", "label": "Танці", "tint": "#F5DFDF", "icon": "M13 3.5a1.8 1.8 0 1 0 0 .01M9 21l2.5-6 3 2 1 4M7 12l3.5-4 4 2.5 3-1M11.5 15l-1-5", "subs": ["Сальса", "Бачата", "Кізомба", "Аргентинське танго", "Свінг і лінді-хоп", "Хастл", "Бальні танці", "Контемпорарі", "Хіп-хоп", "Брейк-данс", "High heels", "Народні танці", "Східні танці", "K-pop dance", "Pole dance", "Танці для пар", "Контактна імпровізація"]}, {"id": "stage", "label": "Сцена і виступи", "tint": "#F3E3EC", "icon": "M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM6 11a6 6 0 0 0 12 0M12 17v4M8 21h8", "subs": ["Акторська майстерність", "Імпровізація", "Стендап", "Ораторське мистецтво", "Сценічна мова", "Ляльковий театр", "Клоунада", "Драматургія", "Сторітелінг", "Ведучий заходів"]}, {"id": "martial", "label": "Єдиноборства", "tint": "#F6DCD6", "icon": "M7 10V7a4 4 0 0 1 4-4h3a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H9a3 3 0 0 1-3-3v-2a2 2 0 0 1 1-2zM8 17v4h8v-4", "subs": ["Бокс", "Кікбоксинг", "Муай-тай", "ММА", "Вільна боротьба", "Греко-римська боротьба", "Дзюдо", "Бразильське джиу-джитсу", "Самбо", "Карате", "Тхеквондо", "Айкідо", "Кунг-фу", "Фехтування", "Бойовий гопак", "Самооборона для жінок"]}, {"id": "fitness", "label": "Спорт і фітнес", "tint": "#DCEBE2", "icon": "M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12", "subs": ["Тренажерний зал", "Функціональний тренінг", "Кросфіт", "Калістеніка і воркаут", "Пілатес", "Стретчинг", "Зумба і аеробіка", "Біг і бігові клуби", "Плавання", "Скелелазіння і болдеринг", "Гімнастика", "Акробатика", "Батут", "Скандинавська ходьба", "Фітнес 60+"]}, {"id": "team", "label": "Командні та ракеткові", "tint": "#E2EEDA", "icon": "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7l4 3-1.5 5h-5L8 10z", "subs": ["Футбол", "Баскетбол", "Волейбол", "Пляжний волейбол", "Падел", "Теніс", "Настільний теніс", "Бадмінтон", "Сквош", "Хокей", "Регбі", "Гандбол", "Алтимат-фрізбі"]}, {"id": "outdoor", "label": "Природа і пригоди", "tint": "#D6EBE4", "icon": "M3 20l6-10 4 6 3-4 5 8zM16 6a2 2 0 1 0 0-.01", "subs": ["Походи", "Кемпінг", "Каякінг", "SUP-серфінг", "Вітрильний спорт", "Велопрогулянки", "Скейтборд", "Ролики", "Лижі і сноуборд", "Альпінізм", "Мотузкові парки", "Верхова їзда", "Риболовля", "Орієнтування", "Спостереження за птахами", "Бушкрафт і виживання"]}, {"id": "yoga", "label": "Йога і тілесні практики", "tint": "#E6F0E0", "icon": "M12 5a2 2 0 1 0 0-.01M5 12c3 0 5-1 7-3 2 2 4 3 7 3M12 9v5l-4 6M12 14l4 6", "subs": ["Хатха-йога", "Віньяса", "Аштанга", "Кундаліні-йога", "Йога-нідра", "Аеройога", "Йога для вагітних", "Йога на природі", "Цигун", "Тайцзі", "Тілесно-орієнтовані практики", "Фейс-фітнес", "Мʼяка гімнастика для спини"]}, {"id": "breath", "label": "Дихання і медитація", "tint": "#E0EEF0", "icon": "M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h8", "subs": ["Медитація", "Майндфулнес", "Холотропне дихання", "Дихальні практики", "Метод Вім Хофа", "Звукова медитація", "Тибетські чаші і гонг", "Холодові практики", "Ретрити тиші", "Вечірні практики для сну"]}, {"id": "psy", "label": "Психологія і саморозвиток", "tint": "#F2E6DA", "icon": "M12 21a9 9 0 1 0-8-4.9L3 21l4.9-1A9 9 0 0 0 12 21zM12 15s-3.5-2-3.5-4.2a1.9 1.9 0 0 1 3.5-1 1.9 1.9 0 0 1 3.5 1C15.5 13 12 15 12 15z", "subs": ["Лекції з психології", "Терапія в колі", "Групи підтримки", "Арт-терапія", "Психодрама", "Тілесна терапія", "Жіночі кола", "Чоловічі кола", "Психологія стосунків", "Робота зі стресом і вигоранням", "Емоційний інтелект", "Підтримка ветеранів і родин", "Групи для батьків", "Коучинг", "Нейрографіка", "Кризова психологічна допомога"]}, {"id": "health", "label": "Здоровʼя і турбота", "tint": "#E3EEEA", "icon": "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 8v8M8 12h8", "subs": ["Курси масажу", "Здорове харчування", "Нутриціологія", "Здоровʼя спини", "Реабілітація і ЛФК", "Сон і відновлення", "Жіноче здоровʼя", "Лекції про здоровʼя"]}, {"id": "lang", "label": "Мови", "tint": "#E5E9F7", "icon": "M4 5h16v11H9l-5 4zM8 9h8M8 12h5", "subs": ["Англійська", "Німецька", "Польська", "Французька", "Іспанська", "Італійська", "Японська", "Корейська", "Китайська", "Українська мова", "Українська жестова мова", "Розмовні клуби", "Мовні обміни"]}, {"id": "know", "label": "Лекції і знання", "tint": "#ECEED6", "icon": "M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5M8 7h7", "subs": ["Історія", "Філософія", "Науково-популярні лекції", "Астрономія", "Економіка для всіх", "Право для всіх", "Кіноклуби", "Екскурсії Києвом", "Краєзнавство", "Архітектура міста"]}, {"id": "write", "label": "Література і письмо", "tint": "#F1EBDD", "icon": "M14 4l6 6L9 21H3v-6zM12 6l6 6", "subs": ["Книжкові клуби", "Креативне письмо", "Поезія і слем", "Журналістика", "Сценарна майстерність", "Блогінг", "Нон-фікшн клуби", "Читання вголос"]}, {"id": "it", "label": "IT і цифрові навички", "tint": "#DFEAF2", "icon": "M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14", "subs": ["Програмування з нуля", "Python", "Веб-розробка", "UX/UI дизайн", "Графічний дизайн", "3D-моделювання", "Робототехніка", "Arduino і електроніка", "Створення ігор", "Штучний інтелект", "Кібербезпека", "Excel і аналітика", "SMM", "Цифрова грамотність 60+"]}, {"id": "biz", "label": "Бізнес і карʼєра", "tint": "#E8EDE4", "icon": "M4 8h16v11H4zM9 8V5h6v3M4 13h16", "subs": ["Підприємництво", "Маркетинг", "Продажі", "Фінансова грамотність", "Інвестиції", "Публічні виступи", "Нетворкінг-зустрічі", "Персональний бренд", "Переговори", "Управління проєктами", "Карʼєрні консультації"]}, {"id": "food", "label": "Кулінарія", "tint": "#FBEBD9", "icon": "M7 14a4 4 0 0 1-1-7.9A5 5 0 0 1 15.6 5 4 4 0 1 1 17 14M7 14h10v6H7z", "subs": ["Випічка", "Хліб і закваска", "Десерти", "Українська кухня", "Італійська кухня", "Азійська кухня", "Веганська кухня", "Ферментація", "Сироваріння", "Шоколад", "Барбекю і гриль", "Кулінарія для дітей"]}, {"id": "drinks", "label": "Напої і дегустації", "tint": "#F3E6DA", "icon": "M5 8h12v5a6 6 0 0 1-12 0zM17 9h1a3 3 0 0 1 0 6h-1M8 3v2M11 3v2M14 3v2", "subs": ["Кава і бариста", "Чайні церемонії", "Дегустації вина", "Крафтове пиво", "Коктейлі і міксологія", "Сидр і медовуха", "Безалкогольні напої"]}, {"id": "games", "label": "Ігри та інтелект", "tint": "#ECEED6", "icon": "M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zM8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01", "subs": ["Шахи", "Шашки", "Го", "Настільні ігри", "Рольові ігри (D&D)", "Мафія", "Квізи", "Квести", "Бридж", "Нарди", "Скрабл", "Кубик Рубіка", "Кіберспорт", "Спортивний покер"]}, {"id": "beauty", "label": "Краса і стиль", "tint": "#F7E4EA", "icon": "M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z", "subs": ["Макіяж", "Зачіски і догляд за волоссям", "Манікюр", "Стилістика і гардероб", "Барберинг", "Парфумерія", "Косметика своїми руками"]}, {"id": "home", "label": "Сад, дім і тварини", "tint": "#E1EFD9", "icon": "M12 21v-8M12 13c0-5 3-8 8-9 0 5-3 8-8 9zM12 15c0-3-2-5-6-6 0 3 2 5 6 6z", "subs": ["Садівництво", "Кімнатні рослини", "Міське фермерство", "Бонсай", "Флористика і букети", "Дизайн інтерʼєру", "Ремонт своїми руками", "Дресирування собак", "Акваріумістика", "Бджільництво"]}, {"id": "kids", "label": "Діти і родина", "tint": "#FDF0D5", "icon": "M9 7a3 3 0 1 0 0-.01M17 9a2 2 0 1 0 0-.01M4 21v-3a5 5 0 0 1 10 0v3M14 21v-2a3 3 0 0 1 6 0v2", "subs": ["Розвиток малюків", "Дитячий спорт", "Творчі гуртки", "Робототехніка для дітей", "Підготовка до школи", "Заняття мама + малюк", "Сімейні майстер-класи", "Підліткові клуби", "Табори вихідного дня"]}, {"id": "safety", "label": "Безпека і перша допомога", "tint": "#F6E0DC", "icon": "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM12 9v6M9 12h6", "subs": ["Домедична допомога", "Тактична медицина", "Стрілецька підготовка", "Цивільний захист", "Мінна безпека", "Самооборона", "Виживання в місті"]}, {"id": "volunteer", "label": "Волонтерство і громада", "tint": "#E4EEDF", "icon": "M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z", "subs": ["Плетіння маскувальних сіток", "Окопні свічки", "Волонтерські кухні", "Допомога тваринам", "Толоки і прибирання", "Донорство крові", "Сусідські спільноти"]}, {"id": "collect", "label": "Колекції і техніка", "tint": "#E6E9EC", "icon": "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1", "subs": ["Стендове моделювання", "Нумізматика", "Філателія", "Вінтаж і антикваріат", "Радіоаматорство", "Авто і мото", "Ремонт техніки", "Годинники", "LEGO і конструктори"]}, {"id": "esoteric", "label": "Езотерика", "tint": "#ECE6F3", "icon": "M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10zM17 3v4M15 5h4", "subs": ["Таро", "Астрологія", "Нумерологія", "Енергетичні практики"]}];
+    const q = this.state.q.trim().toLowerCase();
+    const plural = (n) => {
+      const a = n % 10, b = n % 100;
+      return n + ' ' + (a === 1 && b !== 11 ? 'напрям' : (a >= 2 && a <= 4 && !(b >= 12 && b <= 14) ? 'напрями' : 'напрямів'));
+    };
+    let total = 0;
+    const cats = CATS.map((c) => {
+      const catHit = !!q && c.label.toLowerCase().indexOf(q) !== -1;
+      const subs = c.subs.filter((s) => !q || catHit || s.toLowerCase().indexOf(q) !== -1);
+      total += q ? subs.length : 0;
+      return {
+        anchor: 'cat-' + c.id, label: c.label, tint: c.tint, icon: c.icon, count: plural(c.subs.length),
+        visible: subs.length > 0,
+        shown: subs.map((s) => {
+          const hit = !!q && s.toLowerCase().indexOf(q) !== -1;
+          return { label: s, bg: hit ? '#2F6B4F' : '#FFFFFF', fg: hit ? '#FFFFFF' : '#16241D' };
+        })
+      };
+    }).filter((c) => c.visible);
+    return {
+      q: this.state.q,
+      hasQ: !!q,
+      setQ: (e) => this.setState({ q: e.target.value }),
+      clearQ: () => this.setState({ q: '' }),
+      resultLabel: q ? (cats.length ? 'Знайшли ' + plural(total) + ' у ' + cats.length + ' категоріях' : 'Нічого не знайшли') : '29 категорій, 338 напрямів',
+      empty: !cats.length,
+      jump: CATS.map((c) => ({ label: c.label, href: '#cat-' + c.id })),
+      cats,
+      formats: ["Майстер-клас", "Секція", "Курс", "Клуб", "Лекція", "Воркшоп", "Коло", "Група підтримки", "Ретрит", "Турнір", "Екскурсія", "Пробне заняття", "Індивідуально"],
+      audience: ["Для дорослих", "Для дітей", "Для підлітків", "Для пар", "Для сімей", "60+", "Для ветеранів", "Інклюзивно", "Без досвіду"]
+    };
+  }
+}
+</script>
+</body>
+</html>

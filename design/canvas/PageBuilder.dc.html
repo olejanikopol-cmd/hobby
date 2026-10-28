@@ -10,23 +10,33 @@
 <helmet>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700;800&amp;family=Onest:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&amp;display=swap" rel="stylesheet">
 <style>
-:root{--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
+:root{--f-logo:'Unbounded',sans-serif;--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
 body{margin:0;background:#FFFFFF}
 a{color:#2F6B4F}a:hover{color:#1F4D38}
 button,input,select,textarea{font-family:inherit}
 button{cursor:pointer}
-.stk-pop{animation:stk-pop .6s cubic-bezier(.2,1.5,.4,1) both}
-@keyframes stk-pop{from{opacity:0;transform:scale(.3) rotate(-25deg)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.stk-pop{animation:none}}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+a,button,input,select,textarea,label{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+a:hover,button:hover{transform:translateY(-1px)}
+a:active,button:active{transform:translateY(0) scale(.98)}
+:focus-visible{outline:3px solid rgba(47,107,79,.45);outline-offset:2px}
+input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,input[type=time]:focus,input[type=date]:focus,select:focus,textarea:focus{outline:none;border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+input[type=search]:focus{outline:none}
+label:has(> input[type=search]:focus){border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+.dc-in{animation:dc-in .55s cubic-bezier(.2,.8,.2,1) both}
+article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes dc-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
 </style>
 </helmet>
-<div style="min-height: 100vh; font-family: var(--f-body); color: #16241D; background: #F5F8F6">
+<div class="dc-in" style="min-height: 100vh; font-family: var(--f-body); color: #16241D; background: #F5F8F6">
 
   <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 14px 24px; background: #FFFFFF; border-bottom: 1px solid #DCE6DF">
     <a href="Landing.dc.html" aria-label="hobbyl — на головну" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #16241D">
       <svg aria-hidden="true" width="30" height="30" viewBox="0 0 28 28"><path d="M14 2C8.5 2 4.5 6.2 4.5 11.4c0 6.6 7.6 13.2 8.9 14.3.4.3.9.3 1.2 0 1.3-1.1 8.9-7.7 8.9-14.3C23.5 6.2 19.5 2 14 2z" fill="#2F6B4F"></path><circle cx="14" cy="11.5" r="4" fill="#FFFFFF"></circle></svg>
-      <span style="font-family: var(--f-wave); font-weight: 800; font-size: 26px">hobbyl</span>
+      <span style="font-family: var(--f-logo); font-weight: 800; font-size: 23px; letter-spacing: -0.04em; line-height: 1">hobbyl</span>
     </a>
     <span style="padding: 4px 12px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; font-size: 13px; font-weight: 800">Режим ведучого</span>
     <a href="HostDashboard.dc.html" style="margin-left: auto; font-size: 15px; font-weight: 700; text-decoration: none">← До кабінету ведучого</a>
@@ -36,7 +46,7 @@ button{cursor:pointer}
     <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
       <div style="display: flex; flex-direction: column; gap: 6px">
         <h1 style="margin: 0; font-family: var(--f-head); font-size: 36px; font-weight: 800">Оформлення сторінки</h1>
-        <p style="margin: 0; font-size: 16px; color: #56665D">Гончарство для новачків: перша чашка на кругу</p>
+        <p style="margin: 0; font-size: 16px; color: #56665D">Гончарство для новачків: перша чашка на кругу. Обкладинка й опис — те, що побачать учасники.</p>
       </div>
       <ol aria-label="Кроки" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
         <li><a href="CreateClass.dc.html" style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 6px; border-radius: 999px; background: #FFFFFF; color: #16241D; text-decoration: none; font-size: 14px; font-weight: 700"><span style="width: 28px; height: 28px; border-radius: 50%; background: #2F6B4F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800">1</span>Основне</a></li>
@@ -49,62 +59,17 @@ button{cursor:pointer}
 
       <div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 
-        <section aria-labelledby="stk-h" style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 24px; background: #FFFFFF">
-          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-            <h2 id="stk-h" style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Стікери на полях</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px">
-              <sc-for list="{{switches}}" as="sw" hint-placeholder-count="2">
-                <button type="button" onClick="{{sw.toggle}}" aria-pressed="{{sw.on}}" style="display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 14px; border: 0; border-radius: 12px; background: #F0F5F2; color: #16241D; font-size: 14px; font-weight: 600">
-                  <span aria-hidden="true" style="display: flex; justify-content: {{sw.justify}}; width: 36px; height: 20px; padding: 2px; box-sizing: border-box; border-radius: 999px; background: {{sw.track}}"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span>
-                  {{sw.label}}
-                </button>
-              </sc-for>
-            </div>
+        <section aria-labelledby="cov-h" style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 24px; background: #FFFFFF">
+          <h2 id="cov-h" style="margin: 0; font-family: var(--f-head); font-size: 22px; font-weight: 700">Обкладинка</h2>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #56665D">Найкраще працює живе фото з заняття. Поки фото немає — обери спокійний колір.</p>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 96px; border: 2px dashed #B9C9BF; border-radius: 18px; color: #3D4C44; font-size: 15px; font-weight: 600">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><circle cx="9" cy="10" r="1.8"></circle><path d="M21 16l-5-5-8 8"></path></svg>
+            Перетягни фото або <a href="#" style="font-weight: 800">обери файл</a>
           </div>
-          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #56665D">Ми підібрали набір під категорію заняття. Додай або прибери будь-які — до 8 штук.</p>
-
-          <div role="group" aria-label="Категорії стікерів" style="display: flex; flex-wrap: wrap; gap: 6px">
-            <sc-for list="{{catChips}}" as="c" hint-placeholder-count="9">
-              <button type="button" onClick="{{c.pick}}" aria-pressed="{{c.on}}" style="height: 40px; padding: 0 14px; border: 0; border-radius: 999px; background: {{c.bg}}; color: {{c.fg}}; font-size: 14px; font-weight: 700">{{c.label}}</button>
+          <div role="group" aria-label="Колір обкладинки" style="display: flex; flex-wrap: wrap; gap: 10px">
+            <sc-for list="{{covers}}" as="cv" hint-placeholder-count="6">
+              <button type="button" onClick="{{cv.pick}}" aria-pressed="{{cv.on}}" aria-label="{{cv.label}}" style="width: 48px; height: 48px; padding: 0; border: 3px solid {{cv.ring}}; border-radius: 50%; background: {{cv.color}}; box-shadow: inset 0 0 0 3px #FFFFFF"></button>
             </sc-for>
-          </div>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px">
-            <sc-for list="{{tiles}}" as="t" hint-placeholder-count="6">
-              <button type="button" onClick="{{t.toggle}}" aria-pressed="{{t.on}}" aria-label="{{t.aria}}" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 6px 8px; border: 2px solid {{t.bd}}; border-radius: 18px; background: {{t.bg}}; color: #16241D; font-size: 13px; font-weight: 600">
-                <dc-import name="Sticker" kind="{{t.kind}}" size="64" hint-size="64px,64px"></dc-import>
-                {{t.label}}
-                <sc-if value="{{t.on}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="position: absolute; right: 6px; top: 6px; width: 22px; height: 22px; border-radius: 50%; background: #2F6B4F; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span></sc-if>
-              </button>
-            </sc-for>
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 18px; background: #F5F8F6">
-            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px">
-              <span style="font-size: 14px; font-weight: 800">Обрано: {{pickedCount}} з 8</span>
-              <div style="display: flex; gap: 6px">
-                <button type="button" onClick="{{autoPick}}" style="height: 36px; padding: 0 12px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; font-size: 13px; font-weight: 700">Набір для категорії</button>
-                <button type="button" onClick="{{clearPick}}" style="height: 36px; padding: 0 12px; border: 0; border-radius: 999px; background: transparent; color: #A33A2B; font-size: 13px; font-weight: 700">Очистити</button>
-              </div>
-            </div>
-            <sc-if value="{{noPicked}}" hint-placeholder-val="{{false}}"><span style="font-size: 14px; color: #56665D">Стікерів немає — поля сторінки будуть чистими.</span></sc-if>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px">
-              <sc-for list="{{pickedList}}" as="p" hint-placeholder-count="6">
-                <button type="button" onClick="{{p.remove}}" aria-label="{{p.aria}}" style="display: flex; align-items: center; gap: 4px; height: 52px; padding: 0 10px 0 4px; border: 1.5px solid #DCE6DF; border-radius: 999px; background: #FFFFFF; color: #56665D">
-                  <dc-import name="Sticker" kind="{{p.kind}}" size="44" hint-size="44px,44px"></dc-import>
-                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
-                </button>
-              </sc-for>
-            </div>
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 6px">
-            <span style="font-size: 14px; font-weight: 700">Де розмістити</span>
-            <div role="group" aria-label="Де розмістити стікери" style="display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; border-radius: 999px; background: #F0F5F2; align-self: flex-start">
-              <sc-for list="{{layouts}}" as="l" hint-placeholder-count="3">
-                <button type="button" onClick="{{l.pick}}" aria-pressed="{{l.on}}" style="height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: {{l.bg}}; color: {{l.fg}}; font-size: 14px; font-weight: 700">{{l.label}}</button>
-              </sc-for>
-            </div>
           </div>
         </section>
 
@@ -195,27 +160,11 @@ button{cursor:pointer}
             <span style="flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center">hobbyl.com.ua/a/goncharstvo-podil</span>
           </div>
           <div style="position: relative; min-height: 640px; padding: 22px {{gutter}} 28px; box-sizing: border-box">
-            <sc-if value="{{showSide}}" hint-placeholder-val="{{true}}">
-              <div aria-hidden="true">
-                <sc-for list="{{previewSide}}" as="ps" hint-placeholder-count="6">
-                  <div class="{{animClass}}" style="position: absolute; left: {{ps.left}}; top: {{ps.top}}; animation-delay: {{ps.delay}}">
-                    <dc-import name="Sticker" kind="{{ps.kind}}" size="54" tilt="{{ps.tilt}}" hint-size="54px,54px"></dc-import>
-                  </div>
-                </sc-for>
-              </div>
-            </sc-if>
             <div style="display: flex; flex-direction: column; gap: 12px">
               <span style="align-self: flex-start; padding: 4px 10px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; font-size: 11px; font-weight: 800">Майстер-клас</span>
               <span style="font-family: var(--f-head); font-size: 22px; font-weight: 700; line-height: 1.2">Гончарство для новачків: перша чашка на кругу</span>
               <span style="font-size: 12px; color: #56665D">веде Олена Ткач, сьогодні, 19:00, Поділ</span>
-              <sc-if value="{{showInline}}" hint-placeholder-val="{{false}}">
-                <div aria-hidden="true" style="display: flex; flex-wrap: wrap; gap: 4px">
-                  <sc-for list="{{pickedList}}" as="pi" hint-placeholder-count="6">
-                    <dc-import name="Sticker" kind="{{pi.kind}}" size="38" hint-size="38px,38px"></dc-import>
-                  </sc-for>
-                </div>
-              </sc-if>
-              <div aria-hidden="true" style="height: 120px; border-radius: 14px; background: #F4E4D4"></div>
+              <div aria-hidden="true" style="height: 120px; border-radius: 14px; background: {{coverColor}}; transition: background-color .3s ease"></div>
               <span style="font-family: var(--f-head); font-size: 15px; font-weight: 700">Про заняття</span>
               <sc-for list="{{previewBlocks}}" as="pb" hint-placeholder-count="5">
                 <sc-if value="{{pb.isText}}" hint-placeholder-val="{{true}}">
@@ -237,20 +186,16 @@ button{cursor:pointer}
             </div>
           </div>
         </div>
-        <span style="font-size: 13px; line-height: 1.5; color: #56665D; text-align: center">На комп’ютері стікери стоять на білих полях. На телефоні — рядком під назвою.</span>
+        <span style="font-size: 13px; line-height: 1.5; color: #56665D; text-align: center">Попередній перегляд оновлюється одразу, як ти щось змінюєш.</span>
       </aside>
     </div>
   </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2100}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1900}}'>
 class Component extends DCLogic {
   state = {
-    cat: 'craft',
-    picked: ['jug', 'wheel', 'cup', 'yarn', 'candle', 'sparkle'],
-    show: true,
-    anim: true,
-    layout: 'both',
+    cover: 'clay',
     device: 'desktop',
     nextId: 7,
     blocks: [
@@ -282,17 +227,9 @@ class Component extends DCLogic {
     this.setState({ nextId: id + 1, blocks: this.state.blocks.concat([Object.assign({ id }, fresh)]) });
   }
 
-  togglePick(kind) {
-    const p = this.state.picked;
-    if (p.indexOf(kind) !== -1) this.setState({ picked: p.filter((k) => k !== kind) });
-    else if (p.length < 8) this.setState({ picked: p.concat([kind]) });
-  }
-
   renderVals() {
-    const CATS = [{"id": "craft", "label": "Ремесла", "items": [{"kind": "jug", "label": "Глечик"}, {"kind": "cup", "label": "Чашка"}, {"kind": "wheel", "label": "Гончарний круг"}, {"kind": "yarn", "label": "Клубок"}, {"kind": "candle", "label": "Свічка"}, {"kind": "hammer", "label": "Молоток"}]}, {"id": "sport", "label": "Спорт", "items": [{"kind": "glove", "label": "Рукавичка"}, {"kind": "ball", "label": "М'яч"}, {"kind": "sneaker", "label": "Кросівок"}, {"kind": "dumbbell", "label": "Гантеля"}, {"kind": "medal", "label": "Медаль"}]}, {"id": "art", "label": "Мистецтво", "items": [{"kind": "palette", "label": "Палітра"}, {"kind": "brush", "label": "Пензель"}, {"kind": "pencil", "label": "Олівець"}, {"kind": "camera", "label": "Фотоапарат"}]}, {"id": "dance", "label": "Танці", "items": [{"kind": "note", "label": "Нота"}, {"kind": "disco", "label": "Диско-куля"}, {"kind": "star", "label": "Зірка"}]}, {"id": "games", "label": "Ігри", "items": [{"kind": "pawn", "label": "Пішак"}, {"kind": "dice", "label": "Кубик"}, {"kind": "card", "label": "Карта"}, {"kind": "puzzle", "label": "Пазл"}]}, {"id": "nature", "label": "На природі", "items": [{"kind": "leaf", "label": "Листок"}, {"kind": "sun", "label": "Сонце"}, {"kind": "mountain", "label": "Гора"}, {"kind": "flower", "label": "Квітка"}, {"kind": "tent", "label": "Намет"}]}, {"id": "music", "label": "Музика", "items": [{"kind": "guitar", "label": "Гітара"}, {"kind": "headphones", "label": "Навушники"}, {"kind": "mic", "label": "Мікрофон"}, {"kind": "drum", "label": "Барабан"}]}, {"id": "food", "label": "Кулінарія", "items": [{"kind": "croissant", "label": "Круасан"}, {"kind": "coffee", "label": "Кава"}, {"kind": "whisk", "label": "Віничок"}]}, {"id": "mood", "label": "Настрій", "items": [{"kind": "heart", "label": "Серце"}, {"kind": "sparkle", "label": "Іскра"}, {"kind": "smile", "label": "Усмішка"}, {"kind": "rainbow", "label": "Веселка"}]}];
     const s = this.state;
-    const LABEL = {};
-    CATS.forEach((c) => c.items.forEach((it) => { LABEL[it.kind] = it.label; }));
+    const COVERS = [['clay', 'Глина', '#F4E4D4'], ['sage', 'Шавлія', '#DCEBE2'], ['sky', 'Небо', '#DDE8F0'], ['lilac', 'Бузок', '#EDE3F6'], ['rose', 'Троянда', '#F5DFDF'], ['sun', 'Сонце', '#FDF0D5']];
     const STYLES = [
       ['normal', 'Звичайний', 'var(--f-body)', '400', '17px', '13px', '1.6', '#16241D'],
       ['bold', 'Жирний', 'var(--f-body)', '700', '17px', '13px', '1.6', '#16241D'],
@@ -302,27 +239,11 @@ class Component extends DCLogic {
     const ST = {};
     STYLES.forEach((x) => { ST[x[0]] = { font: x[2], fw: x[3], fs: x[4], pfs: x[5], lh: x[6], color: x[7] }; });
     const TYPE = { text: ['Текст', '#E4EFE8', '#1F4D38'], video: ['Відео', '#FFF1D6', '#6B4A0E'], link: ['Посилання', '#E3E6F4', '#2B3A6B'], photo: ['Фото', '#F4E4D4', '#6B3A1E'] };
-    const cat = CATS.find((c) => c.id === s.cat) || CATS[0];
     const desktop = s.device === 'desktop';
-    const sides = s.layout === 'both' ? ['L', 'R'] : (s.layout === 'left' ? ['L'] : ['R']);
-    const counters = { L: 0, R: 0 };
-    const sw = (label, on, toggle) => ({ label, on, toggle, track: on ? '#2F6B4F' : '#C9D6CE', justify: on ? 'flex-end' : 'flex-start' });
+    const cover = COVERS.find((c) => c[0] === s.cover) || COVERS[0];
     return {
-      switches: [
-        sw('Показувати', s.show, () => this.setState({ show: !s.show })),
-        sw('Анімація появи', s.anim, () => this.setState({ anim: !s.anim }))
-      ],
-      catChips: CATS.map((c) => ({ label: c.label, on: c.id === s.cat, bg: c.id === s.cat ? '#16241D' : '#F0F5F2', fg: c.id === s.cat ? '#FFFFFF' : '#16241D', pick: () => this.setState({ cat: c.id }) })),
-      tiles: cat.items.map((it) => {
-        const on = s.picked.indexOf(it.kind) !== -1;
-        return { kind: it.kind, label: it.label, on, aria: (on ? 'Прибрати стікер ' : 'Додати стікер ') + it.label, bd: on ? '#2F6B4F' : '#DCE6DF', bg: on ? '#E4EFE8' : '#FFFFFF', toggle: () => this.togglePick(it.kind) };
-      }),
-      pickedCount: s.picked.length,
-      noPicked: s.picked.length === 0,
-      pickedList: s.picked.map((k) => ({ kind: k, aria: 'Прибрати стікер ' + (LABEL[k] || k), remove: () => this.togglePick(k) })),
-      autoPick: () => this.setState({ picked: cat.items.slice(0, 4).map((it) => it.kind).concat(['sparkle', 'heart']).filter((k, i, a) => a.indexOf(k) === i).slice(0, 8) }),
-      clearPick: () => this.setState({ picked: [] }),
-      layouts: [['both', 'Обидва боки'], ['left', 'Лише ліворуч'], ['right', 'Лише праворуч']].map(([id, label]) => ({ label, on: s.layout === id, bg: s.layout === id ? '#FFFFFF' : 'transparent', fg: '#16241D', pick: () => this.setState({ layout: id }) })),
+      covers: COVERS.map(([id, label, color]) => ({ label: 'Колір обкладинки: ' + label, color, on: s.cover === id, ring: s.cover === id ? '#2F6B4F' : '#DCE6DF', pick: () => this.setState({ cover: id }) })),
+      coverColor: cover[2],
       blockCards: s.blocks.map((b) => Object.assign({}, b, ST[b.style] || {}, {
         isText: b.type === 'text', isVideo: b.type === 'video', isLink: b.type === 'link', isPhoto: b.type === 'photo',
         typeLabel: TYPE[b.type][0], badgeBg: TYPE[b.type][1], badgeFg: TYPE[b.type][2],
@@ -341,15 +262,7 @@ class Component extends DCLogic {
       adders: [['text', 'Текст'], ['video', 'Відео'], ['link', 'Посилання'], ['photo', 'Фото']].map(([t, label]) => ({ label, add: () => this.addBlock(t) })),
       devices: [['desktop', 'Комп’ютер'], ['phone', 'Телефон']].map(([id, label]) => ({ label, on: s.device === id, bg: s.device === id ? '#16241D' : 'transparent', fg: s.device === id ? '#FFFFFF' : '#16241D', pick: () => this.setState({ device: id }) })),
       frameW: desktop ? '100%' : '320px',
-      gutter: desktop ? '84px' : '16px',
-      showSide: s.show && desktop,
-      showInline: s.show && !desktop && s.picked.length > 0,
-      animClass: s.anim ? 'stk-pop' : '',
-      previewSide: s.picked.map((k, i) => {
-        const side = sides[i % sides.length];
-        const n = counters[side]++;
-        return { kind: k, left: side === 'L' ? '14px' : 'calc(100% - 68px)', top: (24 + n * 150 + (side === 'R' ? 60 : 0)) + 'px', tilt: i % 2 ? 8 : -8, delay: (i * 0.08).toFixed(2) + 's' };
-      }),
+      gutter: desktop ? '32px' : '16px',
       previewBlocks: s.blocks.map((b) => Object.assign({}, ST[b.style] || {}, b, {
         isText: b.type === 'text', isVideo: b.type === 'video', isLink: b.type === 'link', isPhoto: b.type === 'photo',
         shown: b.text || 'Порожній текст', title: b.title || 'Без підпису', url: b.url || 'посилання не вказано'

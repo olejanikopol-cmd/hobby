@@ -16,9 +16,21 @@ body{margin:0;background:#FFFFFF}
 a{color:#2F6B4F}a:hover{color:#1F4D38}
 button,input{font-family:inherit}
 button{cursor:pointer}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+a,button,input,select,textarea,label{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+a:hover,button:hover{transform:translateY(-1px)}
+a:active,button:active{transform:translateY(0) scale(.98)}
+:focus-visible{outline:3px solid rgba(47,107,79,.45);outline-offset:2px}
+input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,input[type=time]:focus,input[type=date]:focus,select:focus,textarea:focus{outline:none;border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+input[type=search]:focus{outline:none}
+label:has(> input[type=search]:focus){border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+.dc-in{animation:dc-in .55s cubic-bezier(.2,.8,.2,1) both}
+article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes dc-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
 </style>
 </helmet>
-<div style="width: 390px; height: 844px; position: relative; overflow: hidden; font-family: var(--f-body); color: #16241D; background: #EEF4EF">
+<div class="dc-in" style="width: 390px; height: 844px; position: relative; overflow: hidden; font-family: var(--f-body); color: #16241D; background: #EEF4EF">
 
   <div aria-label="Карта Києва" style="position: absolute; left: 0; top: 0; width: 390px; height: 520px">
     <img src="/_blob/73e3e263376253f36736404bcaad95f9" alt="Карта Києва" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block">

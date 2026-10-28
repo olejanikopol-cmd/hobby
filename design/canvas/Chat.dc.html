@@ -10,20 +10,33 @@
 <helmet>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700;800&amp;family=Onest:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&amp;display=swap" rel="stylesheet">
 <style>
-:root{--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
+:root{--f-logo:'Unbounded',sans-serif;--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
 body{margin:0;background:#FFFFFF}
 a{color:#2F6B4F}a:hover{color:#1F4D38}
 button,input{font-family:inherit}
 button{cursor:pointer}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+a,button,input,select,textarea,label{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+a:hover,button:hover{transform:translateY(-1px)}
+a:active,button:active{transform:translateY(0) scale(.98)}
+:focus-visible{outline:3px solid rgba(47,107,79,.45);outline-offset:2px}
+input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,input[type=time]:focus,input[type=date]:focus,select:focus,textarea:focus{outline:none;border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+input[type=search]:focus{outline:none}
+label:has(> input[type=search]:focus){border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+.dc-in{animation:dc-in .55s cubic-bezier(.2,.8,.2,1) both}
+article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes dc-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
 </style>
 </helmet>
-<div style="min-height: 100vh; font-family: var(--f-body); color: #16241D; background: #F5F8F6">
+<div class="dc-in" style="min-height: 100vh; font-family: var(--f-body); color: #16241D; background: #F5F8F6">
 
   <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 14px 24px; background: #FFFFFF; border-bottom: 1px solid #DCE6DF">
     <a href="Landing.dc.html" aria-label="hobbyl — на головну" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #16241D">
       <svg aria-hidden="true" width="30" height="30" viewBox="0 0 28 28"><path d="M14 2C8.5 2 4.5 6.2 4.5 11.4c0 6.6 7.6 13.2 8.9 14.3.4.3.9.3 1.2 0 1.3-1.1 8.9-7.7 8.9-14.3C23.5 6.2 19.5 2 14 2z" fill="#2F6B4F"></path><circle cx="14" cy="11.5" r="4" fill="#FFFFFF"></circle></svg>
-      <span style="font-family: var(--f-wave); font-weight: 800; font-size: 26px">hobbyl</span>
+      <span style="font-family: var(--f-logo); font-weight: 800; font-size: 23px; letter-spacing: -0.04em; line-height: 1">hobbyl</span>
     </a>
     <a href="Main.dc.html" style="font-size: 15px; font-weight: 700; text-decoration: none; color: #16241D">Карта</a>
     <a href="Cabinet.dc.html" style="margin-left: auto; font-size: 15px; font-weight: 700; text-decoration: none">← Мій кабінет</a>

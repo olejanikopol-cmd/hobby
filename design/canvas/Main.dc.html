@@ -10,20 +10,33 @@
 <helmet>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700;800&amp;family=Onest:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&amp;display=swap" rel="stylesheet">
 <style>
-:root{--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
+:root{--f-logo:'Unbounded',sans-serif;--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
 body{margin:0;background:#FFFFFF}
 a{color:#2F6B4F}a:hover{color:#1F4D38}
 button,input{font-family:inherit}
 button{cursor:pointer}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+a,button,input,select,textarea,label{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+a:hover,button:hover{transform:translateY(-1px)}
+a:active,button:active{transform:translateY(0) scale(.98)}
+:focus-visible{outline:3px solid rgba(47,107,79,.45);outline-offset:2px}
+input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,input[type=time]:focus,input[type=date]:focus,select:focus,textarea:focus{outline:none;border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+input[type=search]:focus{outline:none}
+label:has(> input[type=search]:focus){border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+.dc-in{animation:dc-in .55s cubic-bezier(.2,.8,.2,1) both}
+article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes dc-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
 </style>
 </helmet>
-<div style="min-height: 100vh; display: flex; flex-direction: column; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
+<div class="dc-in" style="min-height: 100vh; display: flex; flex-direction: column; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
 
   <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 14px 24px; border-bottom: 1px solid #DCE6DF">
     <a href="Landing.dc.html" aria-label="hobbyl — на головну" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #16241D">
       <svg aria-hidden="true" width="30" height="30" viewBox="0 0 28 28"><path d="M14 2C8.5 2 4.5 6.2 4.5 11.4c0 6.6 7.6 13.2 8.9 14.3.4.3.9.3 1.2 0 1.3-1.1 8.9-7.7 8.9-14.3C23.5 6.2 19.5 2 14 2z" fill="{{accent}}"></path><circle cx="14" cy="11.5" r="4" fill="#FFFFFF"></circle></svg>
-      <span style="font-family: var(--f-wave); font-weight: 800; font-size: 26px">hobbyl</span>
+      <span style="font-family: var(--f-logo); font-weight: 800; font-size: 23px; letter-spacing: -0.04em; line-height: 1">hobbyl</span>
     </a>
     <button type="button" style="display: flex; align-items: center; gap: 6px; height: 44px; padding: 0 14px; border: 1px solid #D3DED7; border-radius: 999px; background: #FFFFFF; color: #16241D; font-size: 15px; font-weight: 600">
       <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
@@ -35,12 +48,13 @@ button{cursor:pointer}
       <input type="search" aria-label="Пошук хобі" placeholder="Гончарство, бокс, йога…" style="flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: 15px; color: #16241D">
     </label>
     <div style="margin-left: auto; display: flex; align-items: center; gap: 4px">
+      <a href="Categories.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 14px; font-size: 15px; font-weight: 700; text-decoration: none; color: #16241D">Категорії</a>
       <a href="CreateClass.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 14px; font-size: 15px; font-weight: 700; text-decoration: none; color: {{accent}}">Стати ведучим</a>
       <a href="Auth.dc.html" style="display: flex; align-items: center; text-decoration: none; height: 44px; padding: 0 22px; border: 0; border-radius: 999px; background: {{accent}}; color: #FFFFFF; font-size: 15px; font-weight: 700">Увійти</a>
     </div>
   </header>
 
-  <section aria-label="Фільтри" style="display: flex; flex-direction: column; gap: 10px; padding: 14px 24px; border-bottom: 1px solid #DCE6DF">
+  <section aria-label="Фільтри" style="position: relative; z-index: 30; display: flex; flex-direction: column; gap: 10px; padding: 14px 24px; border-bottom: 1px solid #DCE6DF">
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
       <sc-for list="{{whenChips}}" as="c" hint-placeholder-count="6">
         <button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid {{c.bd}}; background: {{c.bg}}; color: {{c.fg}}; font-size: 15px; font-weight: 700">
@@ -55,15 +69,68 @@ button{cursor:pointer}
       <span style="margin-left: auto; font-size: 13px; color: #56665D">Ср, 28 жовтня, 17:40. «Зараз» — старт у найближчі 2 години</span>
     </div>
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
-      <sc-for list="{{catChips}}" as="c" hint-placeholder-count="7">
+      <button type="button" onClick="{{togglePanel}}" aria-expanded="{{panelOpen}}" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px 0 16px; border: 0; border-radius: 12px; background: #16241D; color: #FFFFFF; font-size: 14px; font-weight: 700">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"></rect></svg>
+        Усі категорії
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate({{chevron}}); transition: transform .25s ease"><path d="M6 9l6 6 6-6"></path></svg>
+      </button>
+      <sc-if value="{{hasActive}}" hint-placeholder-val="{{false}}">
+        <span style="display: flex; align-items: center; gap: 4px; height: 44px; padding: 0 4px 0 14px; border-radius: 12px; background: #E4EFE8; color: #1F4D38; font-size: 14px; font-weight: 700">
+          {{activeLabel}}
+          <button type="button" onClick="{{clearCat}}" aria-label="Скинути категорію" style="width: 36px; height: 36px; border: 0; border-radius: 10px; background: transparent; color: #1F4D38; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+        </span>
+      </sc-if>
+      <sc-for list="{{catChips}}" as="c" hint-placeholder-count="6">
         <button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: {{c.bg}}; color: {{c.fg}}; font-size: 14px; font-weight: 600">{{c.label}}</button>
       </sc-for>
       <span aria-hidden="true" style="width: 1px; height: 24px; margin: 0 6px; background: #DCE6DF"></span>
       <button type="button" onClick="{{toggleFree}}" aria-pressed="{{freeOn}}" style="display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 14px; border: 0; border-radius: 12px; background: #F0F5F2; color: #16241D; font-size: 14px; font-weight: 600">
-        <span aria-hidden="true" style="display: flex; justify-content: {{freeJustify}}; width: 36px; height: 20px; padding: 2px; box-sizing: border-box; border-radius: 999px; background: {{freeTrack}}"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span>
+        <span aria-hidden="true" style="display: block; width: 36px; height: 20px; padding: 2px; box-sizing: border-box; border-radius: 999px; background: {{freeTrack}}; transition: background-color .25s ease"><span style="display: block; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 1px 3px rgba(22,36,29,0.25); transform: translateX({{freeX}}); transition: transform .25s cubic-bezier(.2,.8,.2,1)"></span></span>
         Лише безкоштовні
       </button>
     </div>
+
+    <sc-if value="{{panelOpen}}" hint-placeholder-val="{{false}}">
+      <div class="dc-in" role="dialog" aria-label="Категорії" style="position: absolute; left: 24px; right: 24px; top: calc(100% - 4px); display: flex; flex-direction: column; gap: 14px; height: 560px; max-height: 70vh; padding: 18px; box-sizing: border-box; border: 1px solid #DCE6DF; border-radius: 26px; background: #FFFFFF; box-shadow: 0 30px 70px rgba(22,36,29,0.20)">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+          <label style="flex: 1 1 320px; display: flex; align-items: center; gap: 10px; height: 48px; padding: 0 16px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #F5F8F6; box-sizing: border-box">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#56665D" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+            <input type="search" aria-label="Пошук категорії" placeholder="Пошук: бокс, психологія, дихання…" value="{{panelQ}}" onChange="{{setPanelQ}}" style="flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: 15px; color: #16241D">
+          </label>
+          <a href="Categories.dc.html" style="display: flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 700; text-decoration: none">Повний каталог →</a>
+          <button type="button" onClick="{{togglePanel}}" aria-label="Закрити" style="width: 44px; height: 44px; border: 0; border-radius: 50%; background: #F0F5F2; color: #16241D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+        </div>
+        <div style="flex: 1; min-height: 0; display: flex; gap: 16px">
+          <div style="flex: 0 0 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; padding-right: 4px">
+            <sc-for list="{{panelCats}}" as="pc" hint-placeholder-count="12">
+              <button type="button" onClick="{{pc.pick}}" aria-pressed="{{pc.on}}" style="flex: 0 0 auto; display: flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 10px; border: 0; border-radius: 14px; background: {{pc.bg}}; color: #16241D; text-align: left; font-size: 14px; font-weight: 700">
+                <span aria-hidden="true" style="flex: 0 0 32px; height: 32px; border-radius: 10px; background: {{pc.tint}}; color: #2F6B4F; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{pc.icon}}"></path></svg></span>
+                <span style="flex: 1; min-width: 0">{{pc.label}}</span>
+                <span style="font-size: 12px; font-weight: 600; color: #56665D">{{pc.count}}</span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="flex: 1; min-width: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 16px; border-radius: 20px; background: {{pcur.tint}}">
+            <sc-if value="{{pcur.has}}" hint-placeholder-val="{{true}}">
+              <div style="display: flex; flex-direction: column; gap: 14px">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+                  <span style="font-family: var(--f-head); font-size: 22px; font-weight: 700">{{pcur.label}}</span>
+                  <button type="button" onClick="{{pcur.pickAll}}" style="height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: #16241D; color: #FFFFFF; font-size: 14px; font-weight: 700">Усе в категорії</button>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px">
+                  <sc-for list="{{pcur.subs}}" as="ps" hint-placeholder-count="12">
+                    <button type="button" onClick="{{ps.pick}}" aria-pressed="{{ps.on}}" style="display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 0; border-radius: 999px; background: {{ps.bg}}; color: {{ps.fg}}; font-size: 14px; font-weight: 600">{{ps.label}}<sc-if value="{{ps.hasCount}}" hint-placeholder-val="{{false}}"><span style="padding: 1px 7px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; font-size: 11px; font-weight: 800">{{ps.n}}</span></sc-if></button>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{pcur.none}}" hint-placeholder-val="{{false}}">
+              <span style="font-size: 15px; color: #56665D">Нічого не знайшли. Спробуй інше слово або відкрий повний каталог.</span>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+    </sc-if>
   </section>
 
   <main style="display: flex; flex-wrap: wrap; flex: 1; background: #F5F8F6">
@@ -74,11 +141,11 @@ button{cursor:pointer}
         <span style="font-size: 14px; font-weight: 600; color: #56665D; white-space: nowrap">{{countLabel}}</span>
       </div>
       <sc-if value="{{isEmpty}}" hint-placeholder-val="{{false}}">
-        <div style="padding: 32px 20px; border-radius: 18px; background: #F5F8F6; text-align: center; color: #56665D; font-size: 15px; line-height: 1.5">Нічого не знайшли за цими фільтрами.<br>Спробуйте «Тиждень» або «Завжди».</div>
+        <div style="padding: 32px 20px; border-radius: 18px; background: #F5F8F6; text-align: center; color: #56665D; font-size: 15px; line-height: 1.5">Нічого не знайшли за цими фільтрами.<br>Спробуйте «Тиждень», «Завжди» або іншу категорію.</div>
       </sc-if>
       <sc-for list="{{items}}" as="it" hint-placeholder-count="5">
         <article style="display: flex; gap: 14px; padding: 12px; border-radius: 20px; background: #FFFFFF; border: 1.5px solid {{it.border}}; box-shadow: {{it.shadow}}">
-          <div aria-hidden="true" style="flex: 0 0 108px; min-height: 136px; border-radius: 14px; background: {{it.tint}}; display: flex; align-items: flex-end; padding: 10px; box-sizing: border-box; font-family: var(--f-wave); font-size: 15px; font-weight: 700; color: #16241D">{{it.catLabel}}</div>
+          <div aria-hidden="true" style="flex: 0 0 108px; min-height: 136px; border-radius: 14px; background: {{it.tint}}; display: flex; align-items: flex-end; padding: 10px; box-sizing: border-box; font-family: var(--f-wave); font-size: 13px; font-weight: 700; line-height: 1.25; color: #16241D">{{it.catLabel}}</div>
           <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
               <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: {{it.kindColor}}">{{it.kind}}</span>
@@ -107,7 +174,7 @@ button{cursor:pointer}
         <img src="/_blob/56e7e88fecc0c1a3bdb186ccc1b72186" alt="Карта Києва" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block">
         <sc-for list="{{pins}}" as="p" hint-placeholder-count="6">
         <button type="button" onClick="{{p.pick}}" aria-label="{{p.aria}}" style="position: absolute; left: {{p.x}}%; top: {{p.y}}%; z-index: {{p.z}}; transform: translate(-50%, -50%); min-width: 44px; height: 44px; padding: 0; border: 0; background: transparent; display: flex; align-items: center; justify-content: center">
-          <span style="display: block; padding: 6px 12px; border-radius: 999px; background: {{p.bg}}; color: {{p.fg}}; border: 2px solid {{p.ring}}; font-size: 13px; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 12px rgba(22,36,29,0.18)">{{p.label}}</span>
+          <span style="display: block; padding: 6px 12px; border-radius: 999px; background: {{p.bg}}; color: {{p.fg}}; border: 2px solid {{p.ring}}; font-size: 13px; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 12px rgba(22,36,29,0.18); transform: {{p.scale}}; transition: transform .3s cubic-bezier(.2,1.4,.4,1), background-color .25s ease, color .25s ease">{{p.label}}</span>
         </button>
       </sc-for>
       </div>
@@ -149,36 +216,47 @@ button{cursor:pointer}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2F6B4F","options":["#2F6B4F","#2E7D5B","#4A7A5E"]},"$preview":{"width":1440,"height":1000}}'>
 class Component extends DCLogic {
-  state = { when: 'today', cat: 'all', freeOnly: false, sel: 'pottery' };
+  state = { when: 'today', cat: 'all', sub: null, freeOnly: false, sel: 'pottery', panelOpen: false, panelCat: 'psy', panelQ: '' };
 
   renderVals() {
+    const TAX = [{"id": "craft", "label": "Ремесла і рукоділля", "tint": "#F4E4D4", "icon": "M9 3h6M10 3v3c-3 2-5 5-5 9a7 7 0 0 0 14 0c0-4-2-7-5-9V3", "subs": ["Гончарство і кераміка", "Ліплення з глини", "Столярка і різьба по дереву", "В’язання спицями і гачком", "Вишивка", "Шиття і крій", "Макраме", "Свічки і мило", "Ювелірка і біжутерія", "Вироби зі шкіри", "Ковальство", "Скло і вітраж", "Епоксидна смола", "Ляльки та іграшки", "Писанкарство", "Петриківський розпис", "Лозоплетіння", "Квілінг і оригамі", "Реставрація меблів", "Ткацтво"]}, {"id": "art", "label": "Мистецтво", "tint": "#E3E6F4", "icon": "M12 3a9 9 0 1 0 0 18c1.7 0 2-1.2 2-2s-.8-1.6 0-2.6 2-1 3-1a4 4 0 0 0 4-4c0-4.5-4-8.4-9-8.4zM7.5 11.5h.01M10 7.5h.01M15 7.5h.01", "subs": ["Малювання для початківців", "Скетчинг", "Акварель", "Олійний живопис", "Акрил", "Цифрове малювання", "Каліграфія і леттеринг", "Ілюстрація", "Комікси", "Скульптура", "Графіті і стріт-арт", "Гравюра і лінорит", "Мозаїка", "Пленер", "Іконопис", "Історія мистецтва"]}, {"id": "photo", "label": "Фото і відео", "tint": "#DDE8F0", "icon": "M4 8h3l2-3h6l2 3h3v11H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z", "subs": ["Фотографія з нуля", "Мобільна фотографія", "Портретна зйомка", "Плівкова фотографія", "Фотопрогулянки", "Відеозйомка", "Монтаж відео", "Reels і TikTok", "Зйомка дроном", "Анімація", "Кольорокорекція"]}, {"id": "music", "label": "Музика", "tint": "#EDE3F6", "icon": "M9 18V5l11-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM20 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z", "subs": ["Вокал", "Гітара", "Фортепіано", "Барабани", "Укулеле", "Скрипка", "Бандура", "Хор", "DJ і діджеїнг", "Написання пісень", "Звукорежисура", "Бітмейкінг", "Музична теорія", "Джем-сейшни", "Етнічні інструменти"]}, {"id": "dance", "label": "Танці", "tint": "#F5DFDF", "icon": "M13 3.5a1.8 1.8 0 1 0 0 .01M9 21l2.5-6 3 2 1 4M7 12l3.5-4 4 2.5 3-1M11.5 15l-1-5", "subs": ["Сальса", "Бачата", "Кізомба", "Аргентинське танго", "Свінг і лінді-хоп", "Хастл", "Бальні танці", "Контемпорарі", "Хіп-хоп", "Брейк-данс", "High heels", "Народні танці", "Східні танці", "K-pop dance", "Pole dance", "Танці для пар", "Контактна імпровізація"]}, {"id": "stage", "label": "Сцена і виступи", "tint": "#F3E3EC", "icon": "M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM6 11a6 6 0 0 0 12 0M12 17v4M8 21h8", "subs": ["Акторська майстерність", "Імпровізація", "Стендап", "Ораторське мистецтво", "Сценічна мова", "Ляльковий театр", "Клоунада", "Драматургія", "Сторітелінг", "Ведучий заходів"]}, {"id": "martial", "label": "Єдиноборства", "tint": "#F6DCD6", "icon": "M7 10V7a4 4 0 0 1 4-4h3a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H9a3 3 0 0 1-3-3v-2a2 2 0 0 1 1-2zM8 17v4h8v-4", "subs": ["Бокс", "Кікбоксинг", "Муай-тай", "ММА", "Вільна боротьба", "Греко-римська боротьба", "Дзюдо", "Бразильське джиу-джитсу", "Самбо", "Карате", "Тхеквондо", "Айкідо", "Кунг-фу", "Фехтування", "Бойовий гопак", "Самооборона для жінок"]}, {"id": "fitness", "label": "Спорт і фітнес", "tint": "#DCEBE2", "icon": "M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12", "subs": ["Тренажерний зал", "Функціональний тренінг", "Кросфіт", "Калістеніка і воркаут", "Пілатес", "Стретчинг", "Зумба і аеробіка", "Біг і бігові клуби", "Плавання", "Скелелазіння і болдеринг", "Гімнастика", "Акробатика", "Батут", "Скандинавська ходьба", "Фітнес 60+"]}, {"id": "team", "label": "Командні та ракеткові", "tint": "#E2EEDA", "icon": "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7l4 3-1.5 5h-5L8 10z", "subs": ["Футбол", "Баскетбол", "Волейбол", "Пляжний волейбол", "Падел", "Теніс", "Настільний теніс", "Бадмінтон", "Сквош", "Хокей", "Регбі", "Гандбол", "Алтимат-фрізбі"]}, {"id": "outdoor", "label": "Природа і пригоди", "tint": "#D6EBE4", "icon": "M3 20l6-10 4 6 3-4 5 8zM16 6a2 2 0 1 0 0-.01", "subs": ["Походи", "Кемпінг", "Каякінг", "SUP-серфінг", "Вітрильний спорт", "Велопрогулянки", "Скейтборд", "Ролики", "Лижі і сноуборд", "Альпінізм", "Мотузкові парки", "Верхова їзда", "Риболовля", "Орієнтування", "Спостереження за птахами", "Бушкрафт і виживання"]}, {"id": "yoga", "label": "Йога і тілесні практики", "tint": "#E6F0E0", "icon": "M12 5a2 2 0 1 0 0-.01M5 12c3 0 5-1 7-3 2 2 4 3 7 3M12 9v5l-4 6M12 14l4 6", "subs": ["Хатха-йога", "Віньяса", "Аштанга", "Кундаліні-йога", "Йога-нідра", "Аеройога", "Йога для вагітних", "Йога на природі", "Цигун", "Тайцзі", "Тілесно-орієнтовані практики", "Фейс-фітнес", "Мʼяка гімнастика для спини"]}, {"id": "breath", "label": "Дихання і медитація", "tint": "#E0EEF0", "icon": "M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h8", "subs": ["Медитація", "Майндфулнес", "Холотропне дихання", "Дихальні практики", "Метод Вім Хофа", "Звукова медитація", "Тибетські чаші і гонг", "Холодові практики", "Ретрити тиші", "Вечірні практики для сну"]}, {"id": "psy", "label": "Психологія і саморозвиток", "tint": "#F2E6DA", "icon": "M12 21a9 9 0 1 0-8-4.9L3 21l4.9-1A9 9 0 0 0 12 21zM12 15s-3.5-2-3.5-4.2a1.9 1.9 0 0 1 3.5-1 1.9 1.9 0 0 1 3.5 1C15.5 13 12 15 12 15z", "subs": ["Лекції з психології", "Терапія в колі", "Групи підтримки", "Арт-терапія", "Психодрама", "Тілесна терапія", "Жіночі кола", "Чоловічі кола", "Психологія стосунків", "Робота зі стресом і вигоранням", "Емоційний інтелект", "Підтримка ветеранів і родин", "Групи для батьків", "Коучинг", "Нейрографіка", "Кризова психологічна допомога"]}, {"id": "health", "label": "Здоровʼя і турбота", "tint": "#E3EEEA", "icon": "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 8v8M8 12h8", "subs": ["Курси масажу", "Здорове харчування", "Нутриціологія", "Здоровʼя спини", "Реабілітація і ЛФК", "Сон і відновлення", "Жіноче здоровʼя", "Лекції про здоровʼя"]}, {"id": "lang", "label": "Мови", "tint": "#E5E9F7", "icon": "M4 5h16v11H9l-5 4zM8 9h8M8 12h5", "subs": ["Англійська", "Німецька", "Польська", "Французька", "Іспанська", "Італійська", "Японська", "Корейська", "Китайська", "Українська мова", "Українська жестова мова", "Розмовні клуби", "Мовні обміни"]}, {"id": "know", "label": "Лекції і знання", "tint": "#ECEED6", "icon": "M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5M8 7h7", "subs": ["Історія", "Філософія", "Науково-популярні лекції", "Астрономія", "Економіка для всіх", "Право для всіх", "Кіноклуби", "Екскурсії Києвом", "Краєзнавство", "Архітектура міста"]}, {"id": "write", "label": "Література і письмо", "tint": "#F1EBDD", "icon": "M14 4l6 6L9 21H3v-6zM12 6l6 6", "subs": ["Книжкові клуби", "Креативне письмо", "Поезія і слем", "Журналістика", "Сценарна майстерність", "Блогінг", "Нон-фікшн клуби", "Читання вголос"]}, {"id": "it", "label": "IT і цифрові навички", "tint": "#DFEAF2", "icon": "M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14", "subs": ["Програмування з нуля", "Python", "Веб-розробка", "UX/UI дизайн", "Графічний дизайн", "3D-моделювання", "Робототехніка", "Arduino і електроніка", "Створення ігор", "Штучний інтелект", "Кібербезпека", "Excel і аналітика", "SMM", "Цифрова грамотність 60+"]}, {"id": "biz", "label": "Бізнес і карʼєра", "tint": "#E8EDE4", "icon": "M4 8h16v11H4zM9 8V5h6v3M4 13h16", "subs": ["Підприємництво", "Маркетинг", "Продажі", "Фінансова грамотність", "Інвестиції", "Публічні виступи", "Нетворкінг-зустрічі", "Персональний бренд", "Переговори", "Управління проєктами", "Карʼєрні консультації"]}, {"id": "food", "label": "Кулінарія", "tint": "#FBEBD9", "icon": "M7 14a4 4 0 0 1-1-7.9A5 5 0 0 1 15.6 5 4 4 0 1 1 17 14M7 14h10v6H7z", "subs": ["Випічка", "Хліб і закваска", "Десерти", "Українська кухня", "Італійська кухня", "Азійська кухня", "Веганська кухня", "Ферментація", "Сироваріння", "Шоколад", "Барбекю і гриль", "Кулінарія для дітей"]}, {"id": "drinks", "label": "Напої і дегустації", "tint": "#F3E6DA", "icon": "M5 8h12v5a6 6 0 0 1-12 0zM17 9h1a3 3 0 0 1 0 6h-1M8 3v2M11 3v2M14 3v2", "subs": ["Кава і бариста", "Чайні церемонії", "Дегустації вина", "Крафтове пиво", "Коктейлі і міксологія", "Сидр і медовуха", "Безалкогольні напої"]}, {"id": "games", "label": "Ігри та інтелект", "tint": "#ECEED6", "icon": "M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zM8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01", "subs": ["Шахи", "Шашки", "Го", "Настільні ігри", "Рольові ігри (D&D)", "Мафія", "Квізи", "Квести", "Бридж", "Нарди", "Скрабл", "Кубик Рубіка", "Кіберспорт", "Спортивний покер"]}, {"id": "beauty", "label": "Краса і стиль", "tint": "#F7E4EA", "icon": "M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z", "subs": ["Макіяж", "Зачіски і догляд за волоссям", "Манікюр", "Стилістика і гардероб", "Барберинг", "Парфумерія", "Косметика своїми руками"]}, {"id": "home", "label": "Сад, дім і тварини", "tint": "#E1EFD9", "icon": "M12 21v-8M12 13c0-5 3-8 8-9 0 5-3 8-8 9zM12 15c0-3-2-5-6-6 0 3 2 5 6 6z", "subs": ["Садівництво", "Кімнатні рослини", "Міське фермерство", "Бонсай", "Флористика і букети", "Дизайн інтерʼєру", "Ремонт своїми руками", "Дресирування собак", "Акваріумістика", "Бджільництво"]}, {"id": "kids", "label": "Діти і родина", "tint": "#FDF0D5", "icon": "M9 7a3 3 0 1 0 0-.01M17 9a2 2 0 1 0 0-.01M4 21v-3a5 5 0 0 1 10 0v3M14 21v-2a3 3 0 0 1 6 0v2", "subs": ["Розвиток малюків", "Дитячий спорт", "Творчі гуртки", "Робототехніка для дітей", "Підготовка до школи", "Заняття мама + малюк", "Сімейні майстер-класи", "Підліткові клуби", "Табори вихідного дня"]}, {"id": "safety", "label": "Безпека і перша допомога", "tint": "#F6E0DC", "icon": "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM12 9v6M9 12h6", "subs": ["Домедична допомога", "Тактична медицина", "Стрілецька підготовка", "Цивільний захист", "Мінна безпека", "Самооборона", "Виживання в місті"]}, {"id": "volunteer", "label": "Волонтерство і громада", "tint": "#E4EEDF", "icon": "M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z", "subs": ["Плетіння маскувальних сіток", "Окопні свічки", "Волонтерські кухні", "Допомога тваринам", "Толоки і прибирання", "Донорство крові", "Сусідські спільноти"]}, {"id": "collect", "label": "Колекції і техніка", "tint": "#E6E9EC", "icon": "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1", "subs": ["Стендове моделювання", "Нумізматика", "Філателія", "Вінтаж і антикваріат", "Радіоаматорство", "Авто і мото", "Ремонт техніки", "Годинники", "LEGO і конструктори"]}, {"id": "esoteric", "label": "Езотерика", "tint": "#ECE6F3", "icon": "M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10zM17 3v4M15 5h4", "subs": ["Таро", "Астрологія", "Нумерологія", "Енергетичні практики"]}];
     const ITEMS = [
-      { id: 'pottery', title: 'Гончарство для новачків: перша чашка на кругу', kind: 'Майстер-клас', cat: 'craft', time: 'Сьогодні, 19:00–21:00', place: 'Поділ', host: 'Олена Ткач', price: '650 ₴', pk: 'paid', x: 41.1, y: 40.9, tags: ['now', 'today', 'week'] },
-      { id: 'chess', title: 'Шахи у сквері: грають усі охочі', kind: 'Клуб', cat: 'games', time: 'Щодня, 16:00–20:00', place: 'Золоті ворота', host: 'клуб «Е4»', price: 'Безкоштовно', pk: 'free', x: 40.5, y: 52.3, tags: ['now', 'today', 'tomorrow', 'weekend', 'week', 'always'] },
-      { id: 'boxing', title: 'Секція боксу для дорослих', kind: 'Секція', cat: 'sport', time: 'Пн, Ср, Пт, 19:30', place: 'Позняки', host: 'Андрій Мельник', price: '1400 ₴/міс', pk: 'paid', x: 83.6, y: 87.8, tags: ['now', 'today', 'week', 'always'] },
-      { id: 'games', title: 'Вечір настільних ігор', kind: 'Клуб', cat: 'games', time: 'Щосереди, 18:30', place: 'Лук’янівка', host: 'клуб «Кубик»', price: '150 ₴', pk: 'paid', x: 29.3, y: 43.0, tags: ['now', 'today', 'week', 'always'] },
-      { id: 'salsa', title: 'Сальса: урок і вечірка', kind: 'Майстер-клас', cat: 'dance', time: 'Завтра, 20:00', place: 'Лівобережна', host: 'Ірина Бондар', price: '300 ₴', pk: 'paid', x: 70.7, y: 50.0, tags: ['tomorrow', 'week'] },
-      { id: 'yoga', title: 'Йога на світанку біля води', kind: 'Секція', cat: 'nature', time: 'Вт, Чт, Сб, 07:00', place: 'Оболонь', host: 'Марта Лисенко', price: 'Донат', pk: 'donate', x: 41.8, y: 15.6, tags: ['tomorrow', 'weekend', 'week', 'always'] },
-      { id: 'run', title: 'Біговий клуб: 5 км островом', kind: 'Клуб', cat: 'nature', time: 'Щосуботи, 08:00', place: 'Труханів острів', host: 'клуб «Острів»', price: 'Безкоштовно', pk: 'free', x: 51.8, y: 43.0, tags: ['weekend', 'week', 'always'] },
-      { id: 'wood', title: 'Столярка: дошка для подачі своїми руками', kind: 'Майстер-клас', cat: 'craft', time: 'Нд, 1 листопада, 12:00', place: 'Видубичі', host: 'майстерня «Стружка»', price: '900 ₴', pk: 'paid', x: 57.9, y: 82.2, tags: ['weekend', 'week'] },
-      { id: 'watercolor', title: 'Акварель з нуля: курс на 8 занять', kind: 'Курс', cat: 'art', time: 'Старт 3 листопада, вт, 18:30', place: 'Печерськ', host: 'Софія Гнатюк', price: '3200 ₴ за курс', pin: '3200 ₴', pk: 'paid', x: 51.8, y: 63.3, tags: ['week'] }
+      { id: 'pottery', title: 'Гончарство для новачків: перша чашка на кругу', kind: 'Майстер-клас', cat: 'craft', sub: 'Гончарство і кераміка', time: 'Сьогодні, 19:00–21:00', place: 'Поділ', host: 'Олена Ткач', price: '650 ₴', pk: 'paid', x: 41.1, y: 40.9, tags: ['now', 'today', 'week'] },
+      { id: 'psylecture', title: 'Лекція: як працює тривога і що з нею робити', kind: 'Лекція', cat: 'psy', sub: 'Лекції з психології', time: 'Сьогодні, 19:30', place: 'Липки', host: 'Марія Гордієнко', price: '250 ₴', pk: 'paid', x: 47.5, y: 57.0, tags: ['now', 'today', 'week'] },
+      { id: 'chess', title: 'Шахи у сквері: грають усі охочі', kind: 'Клуб', cat: 'games', sub: 'Шахи', time: 'Щодня, 16:00–20:00', place: 'Золоті ворота', host: 'клуб «Е4»', price: 'Безкоштовно', pk: 'free', x: 40.5, y: 52.3, tags: ['now', 'today', 'tomorrow', 'weekend', 'week', 'always'] },
+      { id: 'boxing', title: 'Секція боксу для дорослих', kind: 'Секція', cat: 'martial', sub: 'Бокс', time: 'Пн, Ср, Пт, 19:30', place: 'Позняки', host: 'Андрій Мельник', price: '1400 ₴/міс', pk: 'paid', x: 83.6, y: 87.8, tags: ['now', 'today', 'week', 'always'] },
+      { id: 'games', title: 'Вечір настільних ігор', kind: 'Клуб', cat: 'games', sub: 'Настільні ігри', time: 'Щосереди, 18:30', place: 'Лук’янівка', host: 'клуб «Кубик»', price: '150 ₴', pk: 'paid', x: 29.3, y: 43.0, tags: ['now', 'today', 'week', 'always'] },
+      { id: 'circle', title: 'Терапевтичне коло: втома і вигорання', kind: 'Коло', cat: 'psy', sub: 'Терапія в колі', time: 'Щочетверга, 19:00', place: 'Шулявка', host: 'психологиня Інна Руденко', price: 'Донат', pk: 'donate', x: 31.0, y: 56.0, tags: ['tomorrow', 'week', 'always'] },
+      { id: 'salsa', title: 'Сальса: урок і вечірка', kind: 'Майстер-клас', cat: 'dance', sub: 'Сальса', time: 'Завтра, 20:00', place: 'Лівобережна', host: 'Ірина Бондар', price: '300 ₴', pk: 'paid', x: 70.7, y: 50.0, tags: ['tomorrow', 'week'] },
+      { id: 'yoga', title: 'Йога на світанку біля води', kind: 'Секція', cat: 'yoga', sub: 'Йога на природі', time: 'Вт, Чт, Сб, 07:00', place: 'Оболонь', host: 'Марта Лисенко', price: 'Донат', pk: 'donate', x: 41.8, y: 15.6, tags: ['tomorrow', 'weekend', 'week', 'always'] },
+      { id: 'breath', title: 'Холотропне дихання: глибока сесія з інтеграцією', kind: 'Воркшоп', cat: 'breath', sub: 'Холотропне дихання', time: 'Сб, 31 жовтня, 11:00', place: 'Осокорки', host: 'студія «Подих»', price: '1200 ₴', pk: 'paid', x: 76.0, y: 76.0, tags: ['weekend', 'week'] },
+      { id: 'run', title: 'Біговий клуб: 5 км островом', kind: 'Клуб', cat: 'fitness', sub: 'Біг і бігові клуби', time: 'Щосуботи, 08:00', place: 'Труханів острів', host: 'клуб «Острів»', price: 'Безкоштовно', pk: 'free', x: 51.8, y: 43.0, tags: ['weekend', 'week', 'always'] },
+      { id: 'wood', title: 'Столярка: дошка для подачі своїми руками', kind: 'Майстер-клас', cat: 'craft', sub: 'Столярка і різьба по дереву', time: 'Нд, 1 листопада, 12:00', place: 'Видубичі', host: 'майстерня «Стружка»', price: '900 ₴', pk: 'paid', x: 57.9, y: 82.2, tags: ['weekend', 'week'] },
+      { id: 'watercolor', title: 'Акварель з нуля: курс на 8 занять', kind: 'Курс', cat: 'art', sub: 'Акварель', time: 'Старт 3 листопада, вт, 18:30', place: 'Печерськ', host: 'Софія Гнатюк', price: '3200 ₴ за курс', pin: '3200 ₴', pk: 'paid', x: 51.8, y: 63.3, tags: ['week'] }
     ];
-    const CATS = [['all', 'Усі'], ['craft', 'Ремесла'], ['sport', 'Спорт'], ['art', 'Мистецтво'], ['dance', 'Танці'], ['games', 'Ігри'], ['nature', 'На природі']];
-    const CAT_LABEL = {};
-    CATS.forEach(([id, label]) => { CAT_LABEL[id] = label; });
-    const TINT = { craft: '#F4E4D4', sport: '#DCEBE2', art: '#E3E6F4', dance: '#F5DFDF', games: '#ECEED6', nature: '#D6EBE4' };
+    const BY = {};
+    TAX.forEach((c) => { BY[c.id] = c; });
+    const QUICK = [['all', 'Усі'], ['craft', 'Ремесла'], ['martial', 'Єдиноборства'], ['dance', 'Танці'], ['psy', 'Психологія'], ['breath', 'Дихання'], ['games', 'Ігри']];
     const WHEN = [['now', 'Зараз'], ['today', 'Сьогодні'], ['tomorrow', 'Завтра'], ['weekend', 'Вихідні'], ['week', 'Тиждень'], ['always', 'Завжди']];
     const HEAD = { now: 'Починається зараз', today: 'Сьогодні в Києві', tomorrow: 'Завтра в Києві', weekend: 'На вихідних', week: 'Цього тижня', always: 'Працюють постійно' };
     const PRICE = { paid: { bg: '#F5F8F6', fg: '#16241D', pin: '#FFFFFF' }, free: { bg: '#E4EFE8', fg: '#1F4D38', pin: '#E4EFE8' }, donate: { bg: '#FFF1D6', fg: '#6B4A0E', pin: '#FFF1D6' } };
 
     const s = this.state;
     const accent = this.props.accent ?? '#2F6B4F';
-    const list = ITEMS.filter((it) => it.tags.indexOf(s.when) !== -1 && (s.cat === 'all' || it.cat === s.cat) && (!s.freeOnly || it.pk !== 'paid'));
+    const inWhen = ITEMS.filter((it) => it.tags.indexOf(s.when) !== -1);
+    const list = inWhen.filter((it) => (s.cat === 'all' || it.cat === s.cat) && (!s.sub || it.sub === s.sub) && (!s.freeOnly || it.pk !== 'paid'));
     const sel = list.find((it) => it.id === s.sel) || list[0] || null;
     const n = list.length;
     const m10 = n % 10;
     const m100 = n % 100;
-    const word = m10 >= 1 && m10 <= 4 && !(m100 >= 11 && m100 <= 14) ? 'заняття' : 'занять';
+    const word = m10 === 1 && m100 !== 11 ? 'заняття' : (m10 >= 2 && m10 <= 4 && !(m100 >= 12 && m100 <= 14) ? 'заняття' : 'занять');
+
+    const q = s.panelQ.trim().toLowerCase();
+    const match = (c) => !q || c.label.toLowerCase().indexOf(q) !== -1 || c.subs.some((x) => x.toLowerCase().indexOf(q) !== -1);
+    const shownCats = TAX.filter(match);
+    const cur = shownCats.find((c) => c.id === s.panelCat) || shownCats[0] || null;
+    const curSubs = cur ? cur.subs.filter((x) => !q || cur.label.toLowerCase().indexOf(q) !== -1 || x.toLowerCase().indexOf(q) !== -1) : [];
+    const subCount = (sub) => ITEMS.filter((it) => it.sub === sub).length;
 
     return {
       accent,
@@ -186,13 +264,34 @@ class Component extends DCLogic {
         const on = s.when === id;
         return { label, live: id === 'now', pressed: on, bg: on ? accent : '#FFFFFF', fg: on ? '#FFFFFF' : '#16241D', bd: on ? accent : '#D3DED7', pick: () => this.setState({ when: id }) };
       }),
-      catChips: CATS.map(([id, label]) => {
-        const on = s.cat === id;
-        return { label, pressed: on, bg: on ? '#16241D' : '#F0F5F2', fg: on ? '#FFFFFF' : '#16241D', pick: () => this.setState({ cat: id }) };
+      catChips: QUICK.map(([id, label]) => {
+        const on = s.cat === id && !s.sub;
+        return { label, pressed: on, bg: on ? '#2F6B4F' : '#F0F5F2', fg: on ? '#FFFFFF' : '#16241D', pick: () => this.setState({ cat: id, sub: null }) };
       }),
+      hasActive: !!s.sub,
+      activeLabel: s.sub ? (BY[s.cat] ? BY[s.cat].label + ' › ' : '') + s.sub : '',
+      clearCat: () => this.setState({ cat: 'all', sub: null }),
+      panelOpen: s.panelOpen,
+      chevron: s.panelOpen ? '180deg' : '0deg',
+      togglePanel: () => this.setState({ panelOpen: !s.panelOpen }),
+      panelQ: s.panelQ,
+      setPanelQ: (e) => this.setState({ panelQ: e.target.value }),
+      panelCats: shownCats.map((c) => {
+        const on = !!cur && c.id === cur.id;
+        return { label: c.label, icon: c.icon, tint: c.tint, count: String(c.subs.length), on, bg: on ? '#F0F5F2' : 'transparent', pick: () => this.setState({ panelCat: c.id }) };
+      }),
+      pcur: cur ? {
+        has: true, none: false, label: cur.label, tint: cur.tint,
+        pickAll: () => this.setState({ cat: cur.id, sub: null, panelOpen: false }),
+        subs: curSubs.map((x) => {
+          const on = s.sub === x;
+          const cnt = subCount(x);
+          return { label: x, on, n: String(cnt), hasCount: cnt > 0, bg: on ? '#2F6B4F' : '#FFFFFF', fg: on ? '#FFFFFF' : '#16241D', pick: () => this.setState({ cat: cur.id, sub: x, panelOpen: false }) };
+        })
+      } : { has: false, none: true, tint: '#F5F8F6', subs: [] },
       freeOn: s.freeOnly,
       freeTrack: s.freeOnly ? accent : '#C9D6CE',
-      freeJustify: s.freeOnly ? 'flex-end' : 'flex-start',
+      freeX: s.freeOnly ? '16px' : '0px',
       toggleFree: () => this.setState({ freeOnly: !s.freeOnly }),
       heading: HEAD[s.when],
       countLabel: n + ' ' + word,
@@ -200,9 +299,9 @@ class Component extends DCLogic {
       items: list.map((it) => {
         const on = !!sel && sel.id === it.id;
         return Object.assign({}, it, {
-          catLabel: CAT_LABEL[it.cat], tint: TINT[it.cat], kindColor: accent,
+          catLabel: it.sub, tint: BY[it.cat].tint, kindColor: accent,
           priceBg: PRICE[it.pk].bg, priceFg: PRICE[it.pk].fg,
-          border: on ? accent : '#DCE6DF', shadow: on ? '0 8px 20px rgba(22,36,29,0.10)' : 'none',
+          border: on ? accent : '#DCE6DF', shadow: on ? '0 10px 24px rgba(22,36,29,0.10)' : 'none',
           pick: () => this.setState({ sel: it.id })
         });
       }),
@@ -211,12 +310,12 @@ class Component extends DCLogic {
         return {
           x: it.x, y: it.y, label: it.pin || it.price, aria: it.title + ', ' + it.price,
           bg: on ? accent : PRICE[it.pk].pin, fg: on ? '#FFFFFF' : PRICE[it.pk].fg,
-          ring: on ? '#FFFFFF' : 'rgba(22,36,29,0.08)', z: on ? 3 : 1,
+          ring: on ? '#FFFFFF' : 'rgba(22,36,29,0.08)', z: on ? 3 : 1, scale: on ? 'scale(1.12)' : 'scale(1)',
           pick: () => this.setState({ sel: it.id })
         };
       }),
       hasSel: !!sel,
-      sel: sel ? Object.assign({}, sel, { tint: TINT[sel.cat], priceBg: PRICE[sel.pk].bg, priceFg: PRICE[sel.pk].fg }) : {}
+      sel: sel ? Object.assign({}, sel, { tint: BY[sel.cat].tint, priceBg: PRICE[sel.pk].bg, priceFg: PRICE[sel.pk].fg }) : {}
     };
   }
 }

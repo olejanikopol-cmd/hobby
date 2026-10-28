@@ -90,31 +90,16 @@
       "x": 1520,
       "y": 6500,
       "w": 1440,
-      "h": 2000,
+      "h": 2100,
       "title": "Ведучий: створити заняття",
       "expand": "fill",
       "is_interactive": true
     },
-    "StickerLibrary.dc.html": {
+    "PageBuilder.dc.html": {
       "x": 0,
       "y": 8920,
       "w": 1440,
-      "h": 1400,
-      "title": "Бібліотека стікерів",
-      "expand": "fill"
-    },
-    "Sticker.dc.html": {
-      "x": 3040,
-      "y": 8920,
-      "w": 200,
-      "h": 200,
-      "title": "Стікер (компонент)"
-    },
-    "PageBuilder.dc.html": {
-      "x": 1520,
-      "y": 8920,
-      "w": 1440,
-      "h": 2100,
+      "h": 1900,
       "title": "Ведучий: оформлення сторінки",
       "expand": "fill",
       "is_interactive": true
@@ -145,11 +130,21 @@
       "title": "Правила і конфіденційність",
       "expand": "fill",
       "is_interactive": true
+    },
+    "Categories.dc.html": {
+      "x": 2960,
+      "y": 0,
+      "w": 1440,
+      "h": 3400,
+      "title": "Усі категорії (каталог)",
+      "expand": "fill",
+      "is_interactive": true
     }
   },
   "order": [
     "Landing.dc.html",
     "Fonts.dc.html",
+    "Categories.dc.html",
     "Main.dc.html",
     "Mobile.dc.html",
     "Auth.dc.html",
@@ -158,9 +153,7 @@
     "Host.dc.html",
     "Cabinet.dc.html",
     "CreateClass.dc.html",
-    "StickerLibrary.dc.html",
     "PageBuilder.dc.html",
-    "Sticker.dc.html",
     "HostDashboard.dc.html",
     "Chat.dc.html",
     "Legal.dc.html"
@@ -169,9 +162,9 @@
     "t0": {
       "x": 0,
       "y": -300,
-      "text": "hobbyl: лендинг і шрифти",
+      "text": "hobbyl: лендинг, шрифти, каталог категорій",
       "kind": "title1",
-      "maxW": 2720
+      "maxW": 4400
     },
     "t1": {
       "x": 0,
@@ -197,9 +190,9 @@
     "t4": {
       "x": 0,
       "y": 8640,
-      "text": "Стікери і оформлення сторінки",
+      "text": "Оформлення сторінки ведучим",
       "kind": "title1",
-      "maxW": 3240
+      "maxW": 1440
     },
     "t5": {
       "x": 0,

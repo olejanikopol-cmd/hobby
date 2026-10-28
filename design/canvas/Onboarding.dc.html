@@ -16,73 +16,102 @@ body{margin:0;background:#FFFFFF}
 a{color:#2F6B4F}a:hover{color:#1F4D38}
 button,input{font-family:inherit}
 button{cursor:pointer}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+a,button,input,select,textarea,label{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+a:hover,button:hover{transform:translateY(-1px)}
+a:active,button:active{transform:translateY(0) scale(.98)}
+:focus-visible{outline:3px solid rgba(47,107,79,.45);outline-offset:2px}
+input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,input[type=time]:focus,input[type=date]:focus,select:focus,textarea:focus{outline:none;border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+input[type=search]:focus{outline:none}
+label:has(> input[type=search]:focus){border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+.dc-in{animation:dc-in .55s cubic-bezier(.2,.8,.2,1) both}
+article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes dc-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
 </style>
 </helmet>
-<div style="width: 390px; height: 844px; box-sizing: border-box; padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 18px; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
+<div class="dc-in" style="width: 390px; height: 844px; box-sizing: border-box; padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 14px; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
   <div style="display: flex; flex-direction: column; gap: 8px">
     <span style="font-size: 13px; font-weight: 700; color: #56665D">Крок 1 з 2</span>
     <div style="height: 6px; border-radius: 999px; background: #E4EFE8"><div style="width: 50%; height: 100%; border-radius: 999px; background: #2F6B4F"></div></div>
   </div>
 
-  <div style="display: flex; flex-direction: column; gap: 6px">
-    <span style="font-family: var(--f-wave); font-size: 20px; font-weight: 700; color: #2F6B4F">Привіт!</span>
-    <h1 style="margin: 0; font-family: var(--f-head); font-size: 30px; font-weight: 800; line-height: 1.15">Що тобі цікаво?</h1>
-    <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #56665D">Обери кілька — покажемо це першим на карті. Змінити можна будь-коли.</p>
+  <div style="display: flex; flex-direction: column; gap: 4px">
+    <span style="font-family: var(--f-wave); font-size: 18px; font-weight: 700; color: #2F6B4F">Привіт!</span>
+    <h1 style="margin: 0; font-family: var(--f-head); font-size: 28px; font-weight: 800; line-height: 1.15">Що тобі цікаво?</h1>
+    <p style="margin: 0; font-size: 14px; line-height: 1.45; color: #56665D">Обери напрями — покажемо їх першими на карті.</p>
   </div>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 8px">
-    <sc-for list="{{tags}}" as="t" hint-placeholder-count="16">
-      <button type="button" onClick="{{t.toggle}}" aria-pressed="{{t.on}}" style="height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid {{t.bd}}; background: {{t.bg}}; color: {{t.fg}}; font-size: 15px; font-weight: 700">{{t.label}}</button>
-    </sc-for>
+  <label style="display: flex; align-items: center; gap: 10px; height: 46px; padding: 0 14px; border: 1.5px solid #D3DED7; border-radius: 999px; background: #F5F8F6; box-sizing: border-box">
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#56665D" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+    <input type="search" aria-label="Пошук напряму" placeholder="Бокс, кераміка, медитація…" value="{{q}}" onChange="{{setQ}}" style="flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: 15px; color: #16241D">
+  </label>
+
+  <sc-if value="{{noQ}}" hint-placeholder-val="{{true}}">
+    <div role="group" aria-label="Категорії" style="display: flex; gap: 6px; overflow-x: auto; margin: 0 -20px; padding: 0 20px 4px">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="6">
+        <button type="button" onClick="{{t.pick}}" aria-pressed="{{t.on}}" style="flex: 0 0 auto; height: 40px; padding: 0 14px; border: 0; border-radius: 999px; background: {{t.bg}}; color: {{t.fg}}; font-size: 14px; font-weight: 700; white-space: nowrap">{{t.label}}<sc-if value="{{t.hasPicked}}" hint-placeholder-val="{{false}}"><span style="margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: #F0B23E; color: #16241D; font-size: 11px; font-weight: 800">{{t.picked}}</span></sc-if></button>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <div style="flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 22px; background: {{areaTint}}">
+    <span style="font-size: 13px; font-weight: 800; color: #3D4C44">{{areaTitle}}</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px">
+      <sc-for list="{{subs}}" as="x" hint-placeholder-count="12">
+        <button type="button" onClick="{{x.toggle}}" aria-pressed="{{x.on}}" style="display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 1.5px solid {{x.bd}}; border-radius: 999px; background: {{x.bg}}; color: {{x.fg}}; font-size: 14px; font-weight: 600; text-align: left">
+          <sc-if value="{{x.on}}" hint-placeholder-val="{{false}}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
+          {{x.label}}
+        </button>
+      </sc-for>
+    </div>
+    <sc-if value="{{noResults}}" hint-placeholder-val="{{false}}"><span style="font-size: 14px; color: #56665D">Нічого не знайшли — спробуй інше слово.</span></sc-if>
   </div>
 
-  <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 20px; background: #F5F8F6">
-    <span style="font-size: 15px; font-weight: 800">Де шукати?</span>
-    <button type="button" style="display: flex; align-items: center; gap: 10px; height: 48px; padding: 0 16px; border: 1.5px solid #D3DED7; border-radius: 14px; background: #FFFFFF; color: #16241D; font-size: 15px; font-weight: 700">
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F6B4F" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
-      Поруч зі мною
-    </button>
-    <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #56665D">
-      або обери район
-      <select style="height: 48px; padding: 0 12px; border: 1.5px solid #D3DED7; border-radius: 14px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #16241D">
-        <option>Увесь Київ</option>
-        <option>Поділ</option>
-        <option>Печерськ</option>
-        <option>Оболонь</option>
-        <option>Позняки</option>
-        <option>Лівобережна</option>
-      </select>
-    </label>
-  </div>
-
-  <label style="display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 15px; font-weight: 600">
+  <label style="display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 14px; font-weight: 600">
     <input type="checkbox" style="width: 22px; height: 22px; margin: 0; accent-color: #2F6B4F">
     Я теж веду заняття — хочу сторінку ведучого
   </label>
 
-  <div style="margin-top: auto; display: flex; gap: 10px">
-    <a href="Main.dc.html" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; height: 52px; padding: 0 20px; border-radius: 999px; color: #3D4C44; text-decoration: none; font-size: 16px; font-weight: 700">Пропустити</a>
-    <a href="Main.dc.html" style="flex: 1; display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 800">Далі {{countLabel}}</a>
+  <div style="display: flex; gap: 10px">
+    <a href="Main.dc.html" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; height: 52px; padding: 0 18px; border-radius: 999px; color: #3D4C44; text-decoration: none; font-size: 16px; font-weight: 700">Пропустити</a>
+    <a href="Main.dc.html" style="flex: 1; display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 800">Далі, {{countLabel}}</a>
   </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
-  state = { picked: ['Гончарство', 'Йога', 'Настільні ігри'] };
+  state = { tab: 'craft', q: '', picked: ['Гончарство і кераміка', 'Хатха-йога', 'Настільні ігри'] };
 
   renderVals() {
-    const ALL = ['Гончарство', 'Бокс', 'Йога', 'Шахи', 'Сальса', 'Акварель', 'Біг', 'Настільні ігри', 'Столярка', 'Скелелазіння', 'Фото', 'Вокал', 'Кулінарія', 'Вишивка'];
-    const picked = this.state.picked;
+    const TAX = [{"id": "craft", "label": "Ремесла і рукоділля", "tint": "#F4E4D4", "subs": ["Гончарство і кераміка", "Ліплення з глини", "Столярка і різьба по дереву", "В’язання спицями і гачком", "Вишивка", "Шиття і крій", "Макраме", "Свічки і мило", "Ювелірка і біжутерія", "Вироби зі шкіри", "Ковальство", "Скло і вітраж", "Епоксидна смола", "Ляльки та іграшки", "Писанкарство", "Петриківський розпис", "Лозоплетіння", "Квілінг і оригамі", "Реставрація меблів", "Ткацтво"]}, {"id": "art", "label": "Мистецтво", "tint": "#E3E6F4", "subs": ["Малювання для початківців", "Скетчинг", "Акварель", "Олійний живопис", "Акрил", "Цифрове малювання", "Каліграфія і леттеринг", "Ілюстрація", "Комікси", "Скульптура", "Графіті і стріт-арт", "Гравюра і лінорит", "Мозаїка", "Пленер", "Іконопис", "Історія мистецтва"]}, {"id": "photo", "label": "Фото і відео", "tint": "#DDE8F0", "subs": ["Фотографія з нуля", "Мобільна фотографія", "Портретна зйомка", "Плівкова фотографія", "Фотопрогулянки", "Відеозйомка", "Монтаж відео", "Reels і TikTok", "Зйомка дроном", "Анімація", "Кольорокорекція"]}, {"id": "music", "label": "Музика", "tint": "#EDE3F6", "subs": ["Вокал", "Гітара", "Фортепіано", "Барабани", "Укулеле", "Скрипка", "Бандура", "Хор", "DJ і діджеїнг", "Написання пісень", "Звукорежисура", "Бітмейкінг", "Музична теорія", "Джем-сейшни", "Етнічні інструменти"]}, {"id": "dance", "label": "Танці", "tint": "#F5DFDF", "subs": ["Сальса", "Бачата", "Кізомба", "Аргентинське танго", "Свінг і лінді-хоп", "Хастл", "Бальні танці", "Контемпорарі", "Хіп-хоп", "Брейк-данс", "High heels", "Народні танці", "Східні танці", "K-pop dance", "Pole dance", "Танці для пар", "Контактна імпровізація"]}, {"id": "stage", "label": "Сцена і виступи", "tint": "#F3E3EC", "subs": ["Акторська майстерність", "Імпровізація", "Стендап", "Ораторське мистецтво", "Сценічна мова", "Ляльковий театр", "Клоунада", "Драматургія", "Сторітелінг", "Ведучий заходів"]}, {"id": "martial", "label": "Єдиноборства", "tint": "#F6DCD6", "subs": ["Бокс", "Кікбоксинг", "Муай-тай", "ММА", "Вільна боротьба", "Греко-римська боротьба", "Дзюдо", "Бразильське джиу-джитсу", "Самбо", "Карате", "Тхеквондо", "Айкідо", "Кунг-фу", "Фехтування", "Бойовий гопак", "Самооборона для жінок"]}, {"id": "fitness", "label": "Спорт і фітнес", "tint": "#DCEBE2", "subs": ["Тренажерний зал", "Функціональний тренінг", "Кросфіт", "Калістеніка і воркаут", "Пілатес", "Стретчинг", "Зумба і аеробіка", "Біг і бігові клуби", "Плавання", "Скелелазіння і болдеринг", "Гімнастика", "Акробатика", "Батут", "Скандинавська ходьба", "Фітнес 60+"]}, {"id": "team", "label": "Командні та ракеткові", "tint": "#E2EEDA", "subs": ["Футбол", "Баскетбол", "Волейбол", "Пляжний волейбол", "Падел", "Теніс", "Настільний теніс", "Бадмінтон", "Сквош", "Хокей", "Регбі", "Гандбол", "Алтимат-фрізбі"]}, {"id": "outdoor", "label": "Природа і пригоди", "tint": "#D6EBE4", "subs": ["Походи", "Кемпінг", "Каякінг", "SUP-серфінг", "Вітрильний спорт", "Велопрогулянки", "Скейтборд", "Ролики", "Лижі і сноуборд", "Альпінізм", "Мотузкові парки", "Верхова їзда", "Риболовля", "Орієнтування", "Спостереження за птахами", "Бушкрафт і виживання"]}, {"id": "yoga", "label": "Йога і тілесні практики", "tint": "#E6F0E0", "subs": ["Хатха-йога", "Віньяса", "Аштанга", "Кундаліні-йога", "Йога-нідра", "Аеройога", "Йога для вагітних", "Йога на природі", "Цигун", "Тайцзі", "Тілесно-орієнтовані практики", "Фейс-фітнес", "Мʼяка гімнастика для спини"]}, {"id": "breath", "label": "Дихання і медитація", "tint": "#E0EEF0", "subs": ["Медитація", "Майндфулнес", "Холотропне дихання", "Дихальні практики", "Метод Вім Хофа", "Звукова медитація", "Тибетські чаші і гонг", "Холодові практики", "Ретрити тиші", "Вечірні практики для сну"]}, {"id": "psy", "label": "Психологія і саморозвиток", "tint": "#F2E6DA", "subs": ["Лекції з психології", "Терапія в колі", "Групи підтримки", "Арт-терапія", "Психодрама", "Тілесна терапія", "Жіночі кола", "Чоловічі кола", "Психологія стосунків", "Робота зі стресом і вигоранням", "Емоційний інтелект", "Підтримка ветеранів і родин", "Групи для батьків", "Коучинг", "Нейрографіка", "Кризова психологічна допомога"]}, {"id": "health", "label": "Здоровʼя і турбота", "tint": "#E3EEEA", "subs": ["Курси масажу", "Здорове харчування", "Нутриціологія", "Здоровʼя спини", "Реабілітація і ЛФК", "Сон і відновлення", "Жіноче здоровʼя", "Лекції про здоровʼя"]}, {"id": "lang", "label": "Мови", "tint": "#E5E9F7", "subs": ["Англійська", "Німецька", "Польська", "Французька", "Іспанська", "Італійська", "Японська", "Корейська", "Китайська", "Українська мова", "Українська жестова мова", "Розмовні клуби", "Мовні обміни"]}, {"id": "know", "label": "Лекції і знання", "tint": "#ECEED6", "subs": ["Історія", "Філософія", "Науково-популярні лекції", "Астрономія", "Економіка для всіх", "Право для всіх", "Кіноклуби", "Екскурсії Києвом", "Краєзнавство", "Архітектура міста"]}, {"id": "write", "label": "Література і письмо", "tint": "#F1EBDD", "subs": ["Книжкові клуби", "Креативне письмо", "Поезія і слем", "Журналістика", "Сценарна майстерність", "Блогінг", "Нон-фікшн клуби", "Читання вголос"]}, {"id": "it", "label": "IT і цифрові навички", "tint": "#DFEAF2", "subs": ["Програмування з нуля", "Python", "Веб-розробка", "UX/UI дизайн", "Графічний дизайн", "3D-моделювання", "Робототехніка", "Arduino і електроніка", "Створення ігор", "Штучний інтелект", "Кібербезпека", "Excel і аналітика", "SMM", "Цифрова грамотність 60+"]}, {"id": "biz", "label": "Бізнес і карʼєра", "tint": "#E8EDE4", "subs": ["Підприємництво", "Маркетинг", "Продажі", "Фінансова грамотність", "Інвестиції", "Публічні виступи", "Нетворкінг-зустрічі", "Персональний бренд", "Переговори", "Управління проєктами", "Карʼєрні консультації"]}, {"id": "food", "label": "Кулінарія", "tint": "#FBEBD9", "subs": ["Випічка", "Хліб і закваска", "Десерти", "Українська кухня", "Італійська кухня", "Азійська кухня", "Веганська кухня", "Ферментація", "Сироваріння", "Шоколад", "Барбекю і гриль", "Кулінарія для дітей"]}, {"id": "drinks", "label": "Напої і дегустації", "tint": "#F3E6DA", "subs": ["Кава і бариста", "Чайні церемонії", "Дегустації вина", "Крафтове пиво", "Коктейлі і міксологія", "Сидр і медовуха", "Безалкогольні напої"]}, {"id": "games", "label": "Ігри та інтелект", "tint": "#ECEED6", "subs": ["Шахи", "Шашки", "Го", "Настільні ігри", "Рольові ігри (D&D)", "Мафія", "Квізи", "Квести", "Бридж", "Нарди", "Скрабл", "Кубик Рубіка", "Кіберспорт", "Спортивний покер"]}, {"id": "beauty", "label": "Краса і стиль", "tint": "#F7E4EA", "subs": ["Макіяж", "Зачіски і догляд за волоссям", "Манікюр", "Стилістика і гардероб", "Барберинг", "Парфумерія", "Косметика своїми руками"]}, {"id": "home", "label": "Сад, дім і тварини", "tint": "#E1EFD9", "subs": ["Садівництво", "Кімнатні рослини", "Міське фермерство", "Бонсай", "Флористика і букети", "Дизайн інтерʼєру", "Ремонт своїми руками", "Дресирування собак", "Акваріумістика", "Бджільництво"]}, {"id": "kids", "label": "Діти і родина", "tint": "#FDF0D5", "subs": ["Розвиток малюків", "Дитячий спорт", "Творчі гуртки", "Робототехніка для дітей", "Підготовка до школи", "Заняття мама + малюк", "Сімейні майстер-класи", "Підліткові клуби", "Табори вихідного дня"]}, {"id": "safety", "label": "Безпека і перша допомога", "tint": "#F6E0DC", "subs": ["Домедична допомога", "Тактична медицина", "Стрілецька підготовка", "Цивільний захист", "Мінна безпека", "Самооборона", "Виживання в місті"]}, {"id": "volunteer", "label": "Волонтерство і громада", "tint": "#E4EEDF", "subs": ["Плетіння маскувальних сіток", "Окопні свічки", "Волонтерські кухні", "Допомога тваринам", "Толоки і прибирання", "Донорство крові", "Сусідські спільноти"]}, {"id": "collect", "label": "Колекції і техніка", "tint": "#E6E9EC", "subs": ["Стендове моделювання", "Нумізматика", "Філателія", "Вінтаж і антикваріат", "Радіоаматорство", "Авто і мото", "Ремонт техніки", "Годинники", "LEGO і конструктори"]}, {"id": "esoteric", "label": "Езотерика", "tint": "#ECE6F3", "subs": ["Таро", "Астрологія", "Нумерологія", "Енергетичні практики"]}];
+    const s = this.state;
+    const q = s.q.trim().toLowerCase();
+    const cur = TAX.find((c) => c.id === s.tab) || TAX[0];
+    const toggle = (label) => this.setState({ picked: s.picked.indexOf(label) !== -1 ? s.picked.filter((p) => p !== label) : s.picked.concat([label]) });
+    let pool = cur.subs;
+    if (q) {
+      pool = [];
+      TAX.forEach((c) => c.subs.forEach((x) => { if (x.toLowerCase().indexOf(q) !== -1 || c.label.toLowerCase().indexOf(q) !== -1) pool.push(x); }));
+    }
+    const n = s.picked.length;
     return {
-      tags: ALL.map((label) => {
-        const on = picked.indexOf(label) !== -1;
-        return {
-          label, on,
-          bg: on ? '#2F6B4F' : '#FFFFFF', fg: on ? '#FFFFFF' : '#16241D', bd: on ? '#2F6B4F' : '#D3DED7',
-          toggle: () => this.setState({ picked: on ? picked.filter((p) => p !== label) : picked.concat([label]) })
-        };
+      q: s.q,
+      noQ: !q,
+      setQ: (e) => this.setState({ q: e.target.value }),
+      tabs: TAX.map((c) => {
+        const on = c.id === cur.id;
+        const picked = c.subs.filter((x) => s.picked.indexOf(x) !== -1).length;
+        return { label: c.label, on, picked: String(picked), hasPicked: picked > 0, bg: on ? '#16241D' : '#F0F5F2', fg: on ? '#FFFFFF' : '#16241D', pick: () => this.setState({ tab: c.id }) };
       }),
-      countLabel: 'обрано ' + picked.length
+      areaTint: q ? '#F5F8F6' : cur.tint,
+      areaTitle: q ? 'Знайдено: ' + pool.length : cur.label,
+      noResults: !!q && pool.length === 0,
+      subs: pool.slice(0, 40).map((label) => {
+        const on = s.picked.indexOf(label) !== -1;
+        return { label, on, bg: on ? '#2F6B4F' : '#FFFFFF', fg: on ? '#FFFFFF' : '#16241D', bd: on ? '#2F6B4F' : 'rgba(22,36,29,0.10)', toggle: () => toggle(label) };
+      }),
+      countLabel: 'обрано ' + n
     };
   }
 }

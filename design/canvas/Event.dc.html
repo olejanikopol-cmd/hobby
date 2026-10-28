@@ -10,37 +10,33 @@
 <helmet>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700;800&amp;family=Onest:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&amp;display=swap" rel="stylesheet">
 <style>
-:root{--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
+:root{--f-logo:'Unbounded',sans-serif;--f-head:'Golos Text',sans-serif;--f-wave:'Comfortaa',cursive;--f-body:'Onest',system-ui,sans-serif}
 body{margin:0;background:#FFFFFF}
 a{color:#2F6B4F}a:hover{color:#1F4D38}
 button,input{font-family:inherit}
 button{cursor:pointer}
-.stk-pop{animation:stk-pop .7s cubic-bezier(.2,1.5,.4,1) both}
-.stk-float{animation:stk-float 6s ease-in-out infinite}
-@keyframes stk-pop{from{opacity:0;transform:scale(.3) rotate(-25deg)}to{opacity:1;transform:none}}
-@keyframes stk-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@media (max-width:1399px){.stk-side{display:none}}
-@media (min-width:1400px){.stk-inline{display:none !important}}
-@media (prefers-reduced-motion:reduce){.stk-pop,.stk-float{animation:none}}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+a,button,input,select,textarea,label{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+a:hover,button:hover{transform:translateY(-1px)}
+a:active,button:active{transform:translateY(0) scale(.98)}
+:focus-visible{outline:3px solid rgba(47,107,79,.45);outline-offset:2px}
+input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,input[type=time]:focus,input[type=date]:focus,select:focus,textarea:focus{outline:none;border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+input[type=search]:focus{outline:none}
+label:has(> input[type=search]:focus){border-color:#2F6B4F !important;box-shadow:0 0 0 4px rgba(47,107,79,.14)}
+.dc-in{animation:dc-in .55s cubic-bezier(.2,.8,.2,1) both}
+article{animation:dc-in .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes dc-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
 </style>
 </helmet>
-<div style="position: relative; min-height: 100vh; overflow: hidden; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
-
-  <div aria-hidden="true" class="stk-side">
-    <sc-for list="{{side}}" as="st" hint-placeholder-count="6">
-      <div class="stk-pop" style="position: absolute; left: {{st.left}}; top: {{st.top}}; z-index: 1; animation-delay: {{st.delay}}">
-        <div class="stk-float" style="animation-delay: {{st.floatDelay}}">
-          <dc-import name="Sticker" kind="{{st.kind}}" size="{{st.size}}" tilt="{{st.tilt}}" hint-size="100px,100px"></dc-import>
-        </div>
-      </div>
-    </sc-for>
-  </div>
+<div class="dc-in" style="position: relative; min-height: 100vh; font-family: var(--f-body); color: #16241D; background: #FFFFFF">
 
   <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 14px 24px; border-bottom: 1px solid #DCE6DF">
     <a href="Main.dc.html" aria-label="hobbyl — на карту" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #16241D">
       <svg aria-hidden="true" width="30" height="30" viewBox="0 0 28 28"><path d="M14 2C8.5 2 4.5 6.2 4.5 11.4c0 6.6 7.6 13.2 8.9 14.3.4.3.9.3 1.2 0 1.3-1.1 8.9-7.7 8.9-14.3C23.5 6.2 19.5 2 14 2z" fill="#2F6B4F"></path><circle cx="14" cy="11.5" r="4" fill="#FFFFFF"></circle></svg>
-      <span style="font-family: var(--f-wave); font-weight: 800; font-size: 26px">hobbyl</span>
+      <span style="font-family: var(--f-logo); font-weight: 800; font-size: 23px; letter-spacing: -0.04em; line-height: 1">hobbyl</span>
     </a>
     <label style="flex: 1 1 260px; max-width: 520px; display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 16px; border: 1px solid #D3DED7; border-radius: 999px; background: #F5F8F6; box-sizing: border-box">
       <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#56665D" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
@@ -57,15 +53,15 @@ button{cursor:pointer}
     <nav aria-label="Ви тут" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; color: #56665D">
       <a href="Main.dc.html" style="font-weight: 600">Карта Києва</a>
       <span aria-hidden="true">›</span>
-      <a href="Main.dc.html" style="font-weight: 600">Ремесла</a>
+      <a href="Categories.dc.html" style="font-weight: 600">Ремесла і рукоділля</a>
       <span aria-hidden="true">›</span>
-      <span>Гончарство</span>
+      <span>Гончарство і кераміка</span>
     </nav>
 
     <div style="display: flex; flex-direction: column; gap: 14px">
       <div style="display: flex; flex-wrap: wrap; gap: 8px">
         <span style="padding: 6px 12px; border-radius: 999px; background: #2F6B4F; color: #FFFFFF; font-size: 13px; font-weight: 800">Майстер-клас</span>
-        <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">Ремесла</span>
+        <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">Гончарство і кераміка</span>
         <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">Поділ</span>
         <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">2 години</span>
         <span style="padding: 6px 12px; border-radius: 999px; background: #F0F5F2; font-size: 13px; font-weight: 700">Без досвіду</span>
@@ -76,11 +72,6 @@ button{cursor:pointer}
         <span>веде <a href="Host.dc.html" style="font-weight: 700">Олена Ткач</a></span>
         <span>Сьогодні, 19:00</span>
         <span>Поділ</span>
-      </div>
-      <div aria-hidden="true" class="stk-inline" style="display: flex; flex-wrap: wrap; gap: 6px">
-        <sc-for list="{{side}}" as="st" hint-placeholder-count="6">
-          <div class="stk-pop" style="animation-delay: {{st.delay}}"><dc-import name="Sticker" kind="{{st.kind}}" size="56" tilt="{{st.tilt}}" hint-size="56px,56px"></dc-import></div>
-        </sc-for>
       </div>
     </div>
 
@@ -276,15 +267,6 @@ class Component extends DCLogic {
 
   renderVals() {
     const s = this.state;
-    // Що ведуча обрала в «Оформленні сторінки»
-    const STICKERS = [
-      { kind: 'jug', side: 'L', top: 150, tilt: -10 },
-      { kind: 'wheel', side: 'R', top: 320, tilt: 8 },
-      { kind: 'cup', side: 'L', top: 700, tilt: 6 },
-      { kind: 'yarn', side: 'R', top: 900, tilt: -8 },
-      { kind: 'candle', side: 'L', top: 1260, tilt: -6 },
-      { kind: 'sparkle', side: 'R', top: 1500, tilt: 10 }
-    ];
     const BLOCKS = [
       { type: 'text', style: 'wavy', text: 'Глина слухається — перевірено!' },
       { type: 'text', style: 'normal', text: 'Сядете за гончарний круг уперше — і підете додому з відчуттям, що глина слухається. Олена покаже, як центрувати глину, витягнути стінки і зробити ручку.' },
@@ -300,11 +282,6 @@ class Component extends DCLogic {
       wavy: { font: 'var(--f-wave)', fs: '24px', fw: '700', lh: '1.3', color: '#2F6B4F' }
     };
     return {
-      side: STICKERS.map((st, i) => ({
-        kind: st.kind, tilt: st.tilt, size: 100,
-        left: st.side === 'L' ? 'calc(50% - 716px)' : 'calc(50% + 612px)',
-        top: st.top + 'px', delay: (0.15 + i * 0.12).toFixed(2) + 's', floatDelay: (i * -0.9).toFixed(1) + 's'
-      })),
       blocks: BLOCKS.map((b) => Object.assign({
         isText: b.type === 'text', isVideo: b.type === 'video', isLink: b.type === 'link', isPhoto: b.type === 'photo',
         playing: s.playing, paused: !s.playing, progress: s.playing ? '38%' : '0%',
